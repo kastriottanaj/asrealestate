@@ -1,14 +1,24 @@
-import { useState } from "react";
-import { Bed, Bath, Maximize2, MapPin, ArrowRight } from "lucide-react";
-import { properties, formatPrice } from "../data/properties";
+import { useState, useEffect } from "react";
+import { Bed, Bath, Maximize2, MapPin, ArrowRight, Loader2 } from "lucide-react";
+import { fetchProperties } from "../api";
 
+const STATUS_MAP = { "Të gjitha": "", "Shitje": "shitje", "Qira": "qira" };
 const tabs = ["Të gjitha", "Shitje", "Qira"];
 
 export default function Properties() {
   const [tab, setTab] = useState("Të gjitha");
-  const list = properties.filter((p) =>
-    tab === "Të gjitha" ? true : p.status === tab
-  );
+  const [properties, setProperties] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    setLoading(true);
+    setError(null);
+    fetchProperties({ status: STATUS_MAP[tab] })
+      .then(setProperties)
+      .catch(() => setError("Nuk mund të ngarkohen pronat. Provoni përsëri."))
+      .finally(() => setLoading(false));
+  }, [tab]);
 
   return (
     <section id="prona" className="section">
@@ -42,11 +52,23 @@ export default function Properties() {
           </div>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {list.map((p) => (
-            <PropertyCard key={p.id} p={p} />
-          ))}
-        </div>
+        {loading && (
+          <div className="mt-12 flex justify-center items-center py-20">
+            <Loader2 className="h-8 w-8 text-brand-600 animate-spin" />
+          </div>
+        )}
+
+        {error && (
+          <div className="mt-12 text-center py-12 text-slate-500">{error}</div>
+        )}
+
+        {!loading && !error && (
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {properties.map((p) => (
+              <PropertyCard key={p.id} p={p} />
+            ))}
+          </div>
+        )}
 
         <div className="mt-14 rounded-2xl bg-slate-50 border border-slate-100 p-8 sm:p-10 text-center">
           <h3 className="text-2xl font-extrabold tracking-tight text-slate-900">
@@ -71,39 +93,38 @@ export default function Properties() {
 }
 
 function PropertyCard({ p }) {
-  const priceSuffix = p.status === "Qira" ? "/muaj" : "";
+  const imageSrc = p.image_src || p.image_url || '';
+  const priceSuffix = p.status === "qira" ? "/muaj" : "";
+
   return (
     <article className="group rounded-2xl overflow-hidden bg-white border border-slate-100 shadow-soft hover:shadow-card transition">
       <div className="relative aspect-[4/3] overflow-hidden">
         <img
-          src={p.image}
+          src={imageSrc}
           alt={p.title}
           loading="lazy"
           className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
         />
         <div className="absolute top-4 left-4 flex gap-2">
           <span className="rounded-full bg-brand-600 text-white text-xs font-bold px-3 py-1">
-            {p.status}
+            {p.status_display}
           </span>
           <span className="rounded-full bg-white/95 text-slate-800 text-xs font-semibold px-3 py-1">
-            {p.type}
+            {p.type_display}
           </span>
         </div>
         <div className="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
           <div className="text-white font-display font-extrabold text-2xl">
-            {p.currency}
-            {formatPrice(p.price)}
+            {p.formatted_price}
             <span className="text-sm font-semibold opacity-80">{priceSuffix}</span>
           </div>
         </div>
       </div>
       <div className="p-5">
-        <h3 className="font-bold text-lg text-slate-900 line-clamp-1">
-          {p.title}
-        </h3>
+        <h3 className="font-bold text-lg text-slate-900 line-clamp-1">{p.title}</h3>
         <div className="mt-1.5 flex items-center gap-1.5 text-slate-500 text-sm">
           <MapPin className="h-4 w-4 text-brand-600" />
-          {p.location}
+          {p.neighborhood || p.location_display}
         </div>
         <div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-4 text-sm text-slate-600">
           {p.bedrooms > 0 && (
