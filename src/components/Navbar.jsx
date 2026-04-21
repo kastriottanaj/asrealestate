@@ -8,6 +8,7 @@ const links = [
   { href: "#sherbimet", label: "Shërbimet" },
   { href: "#rreth", label: "Rreth Nesh" },
   { href: "#kontakti", label: "Kontakti" },
+  { href: "#ofroni", label: "Ofroni Pronën" },
 ];
 
 export default function Navbar() {
@@ -34,19 +35,33 @@ export default function Navbar() {
         <Logo variant={scrolled ? "dark" : "light"} />
 
         <nav className="hidden lg:flex items-center gap-1">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className={`px-4 py-2 text-sm font-semibold transition ${
-                scrolled
-                  ? "text-slate-700 hover:text-brand-700"
-                  : "text-white/90 hover:text-white"
-              }`}
-            >
-              {l.label}
-            </a>
-          ))}
+          {links.map((l) =>
+            l.href === "#ofroni" ? (
+              <a
+                key={l.href}
+                href={l.href}
+                className={`ml-1 px-4 py-2 text-sm font-semibold rounded-lg border transition ${
+                  scrolled
+                    ? "border-brand-600 text-brand-600 hover:bg-brand-50"
+                    : "border-white/70 text-white hover:bg-white/10"
+                }`}
+              >
+                {l.label}
+              </a>
+            ) : (
+              <a
+                key={l.href}
+                href={l.href}
+                className={`px-4 py-2 text-sm font-semibold transition ${
+                  scrolled
+                    ? "text-slate-700 hover:text-brand-700"
+                    : "text-white/90 hover:text-white"
+                }`}
+              >
+                {l.label}
+              </a>
+            )
+          )}
         </nav>
 
         <div className="hidden lg:flex items-center gap-3">
@@ -88,7 +103,10 @@ export default function Navbar() {
                 {l.label}
               </a>
             ))}
-            <a href="#kontakti" onClick={() => setOpen(false)} className="btn-primary mt-2">
+            <a href="#ofroni" onClick={() => setOpen(false)} className="btn-outline mt-1">
+              Ofroni Pronën
+            </a>
+            <a href="#kontakti" onClick={() => setOpen(false)} className="btn-primary mt-1">
               Konsultim falas
             </a>
           </div>
