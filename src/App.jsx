@@ -5,6 +5,7 @@ import Properties from "./components/Properties";
 import About from "./components/About";
 import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
+import Newsletter from "./components/Newsletter";
 import Footer from "./components/Footer";
 import "./App.css";
 
@@ -19,6 +20,7 @@ export default function App() {
         <About />
         <Testimonials />
         <Contact />
+        <Newsletter />
       </main>
       <Footer />
     </div>
