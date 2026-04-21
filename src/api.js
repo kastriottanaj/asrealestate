@@ -19,6 +19,17 @@ export async function fetchTestimonials() {
   return res.json();
 }
 
+export async function submitListingRequest(formData) {
+  const res = await fetch(`${BASE_URL}/listings/`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(formData),
+  });
+  const data = await res.json();
+  if (!res.ok) throw data;
+  return data;
+}
+
 export async function submitSubscriber(email) {
   const res = await fetch(`${BASE_URL}/subscribers/`, {
     method: 'POST',
