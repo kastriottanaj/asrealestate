@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Mail, Loader2, ArrowRight } from "lucide-react";
 import { submitSubscriber } from "../api";
+import { useLang } from "../LanguageContext";
 
 export default function Newsletter() {
+  const { t } = useLang();
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState("idle"); // idle | loading | success | error
   const [errorMsg, setErrorMsg] = useState("");
@@ -28,13 +30,13 @@ export default function Newsletter() {
         <div className="text-center lg:text-left">
           <div className="flex items-center justify-center lg:justify-start gap-2 mb-2">
             <Mail className="h-5 w-5 text-white/80" />
-            <span className="text-white/80 text-sm font-semibold uppercase tracking-widest">Newsletter</span>
+            <span className="text-white/80 text-sm font-semibold uppercase tracking-widest">{t.newsletter.label}</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
-            Merr ofertat para të tjerëve.
+            {t.newsletter.title}
           </h2>
           <p className="mt-2 text-brand-100 max-w-md">
-            Regjistrohu dhe merr pronat e reja, çmimet e tregut dhe këshilla investimi — direkt në emailin tënd.
+            {t.newsletter.sub}
           </p>
         </div>
 
@@ -67,9 +69,9 @@ export default function Newsletter() {
             {status === "loading" ? (
               <Loader2 className="h-4 w-4 animate-spin" />
             ) : status === "success" ? (
-              "Regjistruar ✓"
+              t.newsletter.success
             ) : (
-              <> Regjistrohu <ArrowRight className="h-4 w-4" /> </>
+              <>{t.newsletter.btn} <ArrowRight className="h-4 w-4" /></>
             )}
           </button>
         </form>

@@ -1,4 +1,4 @@
-# AS Capital Real Estate — Demo Website
+b# AS Capital Real Estate — Demo Website
 
 ## Project Context
 This is a frontend demo site built in **Vite + React + Tailwind** for **AS Capital Real Estate**, a real estate agency in Kosovo (Hasan Prishtina, Obiliq). Services: **Shitje, Qira, Investime** (Sales, Rentals, Investments). Brand color is bright blue (`brand-600` / `#1e88e5`), logo is an "AS" mark with a house-roof motif, tagline is *"Pasuri të paluajtshme • Investime të sigurta • Besueshmëri."*

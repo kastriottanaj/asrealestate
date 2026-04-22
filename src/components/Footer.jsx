@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import Logo from "./Logo";
+import { useLang } from "../LanguageContext";
 
 function FacebookIcon(props) {
   return (
@@ -20,14 +21,14 @@ function InstagramIcon(props) {
 }
 
 export default function Footer() {
+  const { t } = useLang();
   return (
     <footer className="bg-slate-950 text-slate-300">
       <div className="container-x py-16 grid gap-10 md:grid-cols-4">
         <div className="md:col-span-2">
           <Logo variant="light" />
           <p className="mt-5 text-sm leading-relaxed text-slate-400 max-w-sm">
-            Partneri juaj i besueshëm për shitje, qira dhe investime në pasuri
-            të paluajtshme në Kosovë. Vlerë afatgjatë, rezultate të qëndrueshme.
+            {t.footer.desc}
           </p>
           <div className="mt-6 flex gap-3">
             <a
@@ -52,7 +53,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="text-white font-bold mb-4">Navigimi</h4>
+          <h4 className="text-white font-bold mb-4">{t.footer.nav}</h4>
           <ul className="space-y-2 text-sm">
             <li><a href="#ballina" className="hover:text-white">Ballina</a></li>
             <li><a href="#prona" className="hover:text-white">Prona</a></li>
@@ -63,7 +64,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="text-white font-bold mb-4">Kontakti</h4>
+          <h4 className="text-white font-bold mb-4">{t.footer.contact}</h4>
           <ul className="space-y-3 text-sm">
             <li className="flex items-start gap-2">
               <Phone className="h-4 w-4 mt-0.5 text-brand-400 shrink-0" />
@@ -83,7 +84,7 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <div className="container-x py-6 flex flex-col sm:flex-row gap-2 items-center justify-between text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} AS Capital Real Estate. Të gjitha të drejtat e rezervuara.</p>
+          <p>© {new Date().getFullYear()} AS Capital Real Estate. {t.footer.copyright}</p>
           <p>Pasuri të paluajtshme • Investime të sigurta • Besueshmëri</p>
         </div>
       </div>
