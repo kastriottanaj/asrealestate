@@ -1,5 +1,4 @@
-const _url = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
-const BASE_URL = _url.endsWith('/api') ? _url : _url + '/api';
+const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
 
 export async function fetchProperties(filters = {}) {
   const params = new URLSearchParams();
