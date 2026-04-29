@@ -1,4 +1,4 @@
-import { Search, MapPin, Home, Tag } from "lucide-react";
+import { Search, MapPin, Home, Tag, Euro } from "lucide-react";
 import { useLang } from "../LanguageContext";
 
 const STATS = {
@@ -14,12 +14,20 @@ const TAGLINE = {
 };
 
 const PROPERTY_TYPES = {
-  sq: ["Banesë", "Vilë", "Zyre", "Lokal", "Tokë"],
-  en: ["Apartment", "Villa", "Office", "Shop", "Land"],
-  de: ["Wohnung", "Villa", "Büro", "Laden", "Grundstück"],
+  sq: ["Banesë", "Shtëpi", "Penthouse", "Vilë", "Zyre", "Objekt", "Lokal", "Biznes", "Depo", "Tokë"],
+  en: ["Apartment", "House", "Penthouse", "Villa", "Office", "Building", "Shop", "Business", "Warehouse", "Land"],
+  de: ["Wohnung", "Haus", "Penthouse", "Villa", "Büro", "Gebäude", "Laden", "Geschäft", "Lager", "Grundstück"],
 };
 
 const LOCATIONS = ["Prishtinë", "Obiliq", "Fushë Kosovë", "Lipjan", "Graçanicë"];
+
+const PRICE_RANGES = {
+  sq: ["0 – 50,000 €", "50,000 – 100,000 €", "100,000 – 150,000 €", "150,000 – 250,000 €", "250,000 – 500,000 €", "500,000+ €"],
+  en: ["0 – 50,000 €", "50,000 – 100,000 €", "100,000 – 150,000 €", "150,000 – 250,000 €", "250,000 – 500,000 €", "500,000+ €"],
+  de: ["0 – 50,000 €", "50,000 – 100,000 €", "100,000 – 150,000 €", "150,000 – 250,000 €", "250,000 – 500,000 €", "500,000+ €"],
+};
+
+const PRICE_LABEL = { sq: "Diapazoni i çmimeve", en: "Price range", de: "Preisbereich" };
 
 const SEARCH_LABEL = {
   sq: "Gjej pronën që ju përshtatet",
@@ -77,10 +85,11 @@ export default function Hero() {
             <span className="text-xs font-bold uppercase tracking-[0.14em] text-brand-700">{SEARCH_LABEL[lang]}</span>
             <span className="text-[11px] font-semibold text-slate-500">{FREE_LABEL[lang]}</span>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-2">
             <Field icon={<Tag className="h-4 w-4" />} label={t.hero.search.purpose} options={t.hero.purposes} />
             <Field icon={<Home className="h-4 w-4" />} label={t.hero.search.type} options={PROPERTY_TYPES[lang]} />
             <Field icon={<MapPin className="h-4 w-4" />} label={t.hero.search.location} options={LOCATIONS} />
+            <Field icon={<Euro className="h-4 w-4" />} label={PRICE_LABEL[lang]} options={PRICE_RANGES[lang]} placeholder=" " />
             <button className="btn-primary h-full w-full md:w-auto md:px-8">
               <Search className="h-4 w-4" />
               {t.hero.search.btn}
@@ -101,13 +110,14 @@ export default function Hero() {
   );
 }
 
-function Field({ icon, label, options }) {
+function Field({ icon, label, options, placeholder }) {
   return (
     <label className="flex items-center gap-3 rounded-xl bg-slate-50 px-4 py-3 cursor-pointer hover:bg-slate-100 transition">
       <span className="text-brand-600">{icon}</span>
       <div className="flex-1 min-w-0">
         <div className="text-[10px] font-bold uppercase tracking-wider text-slate-500">{label}</div>
         <select className="w-full bg-transparent text-sm font-semibold text-slate-900 focus:outline-none cursor-pointer">
+          {placeholder && <option value="" disabled selected>{placeholder}</option>}
           {options.map((o) => <option key={o}>{o}</option>)}
         </select>
       </div>

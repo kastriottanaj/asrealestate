@@ -4,7 +4,7 @@ export default function Logo({ variant = "dark", className = "" }) {
       <img
         src="/logo.svg"
         alt="AS Capital Real Estate"
-        className={`h-16 w-auto transition ${
+        className={`h-28 w-auto transition ${
           variant === "light" ? "brightness-0 invert" : ""
         }`}
       />

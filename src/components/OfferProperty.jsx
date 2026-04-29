@@ -4,9 +4,9 @@ import { submitListingRequest } from "../api";
 import { useLang } from "../LanguageContext";
 
 const PROPERTY_TYPES = {
-  sq: [{ value: "banese", label: "Banesë" }, { value: "penthouse", label: "Penthouse" }, { value: "vile", label: "Vilë" }, { value: "zyre", label: "Zyre" }, { value: "lokal", label: "Lokal" }, { value: "toke", label: "Tokë" }],
-  en: [{ value: "banese", label: "Apartment" }, { value: "penthouse", label: "Penthouse" }, { value: "vile", label: "Villa" }, { value: "zyre", label: "Office" }, { value: "lokal", label: "Shop" }, { value: "toke", label: "Land" }],
-  de: [{ value: "banese", label: "Wohnung" }, { value: "penthouse", label: "Penthouse" }, { value: "vile", label: "Villa" }, { value: "zyre", label: "Büro" }, { value: "lokal", label: "Laden" }, { value: "toke", label: "Grundstück" }],
+  sq: [{ value: "banese", label: "Banesë" }, { value: "shtepi", label: "Shtëpi" }, { value: "penthouse", label: "Penthouse" }, { value: "vile", label: "Vilë" }, { value: "zyre", label: "Zyre" }, { value: "objekt", label: "Objekt" }, { value: "lokal", label: "Lokal" }, { value: "biznes", label: "Biznes" }, { value: "depo", label: "Depo" }, { value: "toke", label: "Tokë" }],
+  en: [{ value: "banese", label: "Apartment" }, { value: "shtepi", label: "House" }, { value: "penthouse", label: "Penthouse" }, { value: "vile", label: "Villa" }, { value: "zyre", label: "Office" }, { value: "objekt", label: "Building" }, { value: "lokal", label: "Shop" }, { value: "biznes", label: "Business" }, { value: "depo", label: "Warehouse" }, { value: "toke", label: "Land" }],
+  de: [{ value: "banese", label: "Wohnung" }, { value: "shtepi", label: "Haus" }, { value: "penthouse", label: "Penthouse" }, { value: "vile", label: "Villa" }, { value: "zyre", label: "Büro" }, { value: "objekt", label: "Gebäude" }, { value: "lokal", label: "Laden" }, { value: "biznes", label: "Geschäft" }, { value: "depo", label: "Lager" }, { value: "toke", label: "Grundstück" }],
 };
 
 const COPY = {

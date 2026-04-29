@@ -23,9 +23,9 @@ const STATUS_LABEL = {
   de: { shitje: "Kauf", qira: "Miete" },
 };
 const TYPE_LABEL = {
-  sq: { banese: "Banesë", penthouse: "Penthouse", vile: "Vilë", zyre: "Zyre", lokal: "Lokal", toke: "Tokë" },
-  en: { banese: "Apartment", penthouse: "Penthouse", vile: "Villa", zyre: "Office", lokal: "Shop", toke: "Land" },
-  de: { banese: "Wohnung", penthouse: "Penthouse", vile: "Villa", zyre: "Büro", lokal: "Laden", toke: "Grundstück" },
+  sq: { banese: "Banesë", shtepi: "Shtëpi", penthouse: "Penthouse", vile: "Vilë", zyre: "Zyre", objekt: "Objekt", lokal: "Lokal", biznes: "Biznes", depo: "Depo", toke: "Tokë" },
+  en: { banese: "Apartment", shtepi: "House", penthouse: "Penthouse", vile: "Villa", zyre: "Office", objekt: "Building", lokal: "Shop", biznes: "Business", depo: "Warehouse", toke: "Land" },
+  de: { banese: "Wohnung", shtepi: "Haus", penthouse: "Penthouse", vile: "Villa", zyre: "Büro", objekt: "Gebäude", lokal: "Laden", biznes: "Geschäft", depo: "Lager", toke: "Grundstück" },
 };
 
 const BEDROOMS = ["Të gjitha", "1", "2", "3", "4", "5+"];
@@ -42,9 +42,11 @@ export default function Properties() {
   const [showFilters, setShowFilters] = useState(false);
 
   // Detailed filters
-  const [ownership, setOwnership] = useState(null); // null | true | false
+  const [ownership, setOwnership] = useState(null);
   const [bedrooms, setBedrooms] = useState("Të gjitha");
   const [furnishing, setFurnishing] = useState("Të gjitha");
+  const [priceMin, setPriceMin] = useState("");
+  const [priceMax, setPriceMax] = useState("");
 
   useEffect(() => {
     setLoading(true);
@@ -70,12 +72,16 @@ export default function Properties() {
     setOwnership(null);
     setBedrooms("Të gjitha");
     setFurnishing("Të gjitha");
+    setPriceMin("");
+    setPriceMax("");
   };
 
   const activeFiltersCount = [
     ownership !== null,
     bedrooms !== "Të gjitha",
     furnishing !== "Të gjitha",
+    priceMin !== "",
+    priceMax !== "",
   ].filter(Boolean).length;
 
   return (
@@ -195,6 +201,28 @@ export default function Properties() {
                       {f}
                     </button>
                   ))}
+                </div>
+              </div>
+
+              {/* Diapazoni i çmimeve */}
+              <div className="sm:col-span-2 lg:col-span-3">
+                <p className="text-sm font-semibold text-slate-700 mb-2">Diapazoni i çmimeve (€)</p>
+                <div className="flex items-center gap-3">
+                  <input
+                    type="number"
+                    placeholder="Min. çmimi"
+                    value={priceMin}
+                    onChange={(e) => setPriceMin(e.target.value)}
+                    className="w-full rounded-lg border border-slate-200 px-4 py-2.5 text-sm focus:border-brand-600 focus:ring-2 focus:ring-brand-100 outline-none"
+                  />
+                  <span className="text-slate-400 font-bold shrink-0">—</span>
+                  <input
+                    type="number"
+                    placeholder="Max. çmimi"
+                    value={priceMax}
+                    onChange={(e) => setPriceMax(e.target.value)}
+                    className="w-full rounded-lg border border-slate-200 px-4 py-2.5 text-sm focus:border-brand-600 focus:ring-2 focus:ring-brand-100 outline-none"
+                  />
                 </div>
               </div>
             </div>
