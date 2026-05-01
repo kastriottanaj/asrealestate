@@ -46,7 +46,7 @@ export default function Contact() {
           <div className="lg:col-span-2 space-y-4">
             <InfoCard icon={Phone} title={t.contact.cards.phone} value="+383 49 579 992" href="tel:+38349579992" />
             <InfoCard icon={MessageCircle} title={t.contact.cards.whatsapp} value={t.contact.cards.whatsappVal} href="https://wa.me/38349579992" />
-            <InfoCard icon={Mail} title={t.contact.cards.email} value="info@ascapital-re.com" href="mailto:info@ascapital-re.com" />
+            <InfoCard icon={Mail} title={t.contact.cards.email} value="info@ascapitalrealestate.com" href="mailto:info@ascapitalrealestate.com" />
             <InfoCard icon={MapPin} title={t.contact.cards.office} value="Hasan Prishtina, Obiliq, Kosovë 15000" />
           </div>
 

@@ -72,7 +72,7 @@ export default function Footer() {
             </li>
             <li className="flex items-start gap-2">
               <Mail className="h-4 w-4 mt-0.5 text-brand-400 shrink-0" />
-              <a href="mailto:info@ascapital-re.com" className="hover:text-white">info@ascapital-re.com</a>
+              <a href="mailto:info@ascapitalrealestate.com" className="hover:text-white">info@ascapitalrealestate.com</a>
             </li>
             <li className="flex items-start gap-2">
               <MapPin className="h-4 w-4 mt-0.5 text-brand-400 shrink-0" />
