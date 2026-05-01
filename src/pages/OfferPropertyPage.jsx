@@ -4,6 +4,10 @@ import OfferProperty from "../components/OfferProperty";
 import ProcessSection from "../components/ProcessSection";
 import FeatureGrid from "../components/FeatureGrid";
 import FAQSection from "../components/FAQSection";
+import PainGain from "../components/PainGain";
+import StatsBar from "../components/StatsBar";
+import PullQuote from "../components/PullQuote";
+import BigCta from "../components/BigCta";
 import Newsletter from "../components/Newsletter";
 import { useLang } from "../LanguageContext";
 import { breadcrumbJsonLd, faqPageJsonLd, webPageJsonLd } from "../seo/jsonLd";
@@ -13,19 +17,19 @@ const SEO = {
   sq: {
     title: "Listoni pronën tuaj — Shitje dhe qira me AS Capital",
     description:
-      "Listim profesional i pronës suaj me AS Capital — vlerësim falas i tregut, foto cilësore, marketing i drejtuar dhe negocim. Komision vetëm pas mbylljes.",
-    breadcrumb: "Ofroni Pronën",
+      "Listoni pronën tuaj me AS Capital Real Estate në Kosovë. Vlerësim falas, fotografi profesionale, akses te 1200+ blerës dhe qiramarrës të verifikuar. Komision vetëm pas mbylljes.",
+    breadcrumb: "Ofroni pronën",
   },
   en: {
-    title: "List your property — Sell or rent with AS Capital",
+    title: "List your property — Sales and rentals with AS Capital",
     description:
-      "Professional listing of your property with AS Capital — free market valuation, quality photography, targeted marketing and negotiation. Commission only after closing.",
-    breadcrumb: "List Your Property",
+      "List your property with AS Capital Real Estate in Kosovo. Free valuation, professional photos, access to 1200+ verified buyers and tenants. Commission only after closing.",
+    breadcrumb: "List property",
   },
   de: {
-    title: "Immobilie inserieren — Verkaufen oder vermieten mit AS Capital",
+    title: "Inserieren Sie Ihre Immobilie — Verkauf und Vermietung mit AS Capital",
     description:
-      "Professionelle Listung Ihrer Immobilie mit AS Capital — kostenlose Marktbewertung, hochwertige Fotos, gezieltes Marketing und Verhandlung. Provision erst nach Abschluss.",
+      "Inserieren Sie bei AS Capital Real Estate im Kosovo. Kostenlose Bewertung, professionelle Fotos, Zugang zu 1200+ geprüften Käufern und Mietern. Provision erst nach Abschluss.",
     breadcrumb: "Immobilie inserieren",
   },
 };
@@ -33,9 +37,42 @@ const SEO = {
 const COPY = {
   sq: {
     eyebrow: "Ofroni pronën",
-    title: "Listoni pronën tuaj me AS Capital",
+    title: "Pronën tuaj — shitur ose dhënë me qira më shpejt, në çmim më të mirë",
     subtitle:
-      "Shitje e shpejtë, qira e sigurt, ose vlerësim falas i tregut — listingu juaj merr promovim profesional, fotografi cilësore dhe akses te një databazë e gjerë blerësish dhe qiramarrësish të verifikuar.",
+      "Mesatarja jonë: 4–10 javë për banesa të çmimuara realisht në Prishtinën qendrore. Listingu juaj merr fotografi profesionale, marketing të dedikuar dhe akses te databaza jonë e 1200+ blerësve dhe qiramarrësve të verifikuar. Komision vetëm pas mbylljes.",
+    stats: {
+      eyebrow: "Numra realë nga listingjet tona",
+      title: "Çfarë do të thotë 'shitje më e shpejtë' me ne",
+      items: [
+        { value: "4–10 javë", label: "Mesatarja e shitjes në Prishtinë" },
+        { value: "1200+", label: "Blerës dhe qiramarrës aktivë" },
+        { value: "0%", label: "Komision para mbylljes" },
+        { value: "5–7 ditë", label: "Listingu gati për publikim" },
+      ],
+    },
+    pain: {
+      eyebrow: "Pse të mos e listoni vetë",
+      title: "Listing vetëm vs. listing me AS Capital",
+      subtitle: "Postimi në Facebook është i lehtë. Por çfarë ju kushton në çmim final, kohë dhe rrezik?",
+      painLabel: "Vetë në Facebook",
+      gainLabel: "Me AS Capital",
+      pain: [
+        "Foto me telefon — humbni mijëra euro në çmimin final",
+        "Mesazhe nga njerëz pa para, pa interes të vërtetë, pa kontekst",
+        "Vizita pa fund nga 'turistë' që nuk blejnë kurrë",
+        "Negocim emocional që nuk e fitoni — sepse blerësi sheh që doni të shisni",
+        "Kontrata standarde që nuk ju mbron — rrezik ligjor pas dorëzimit",
+        "Listingu zhduket në 'rrjetin' e Facebook brenda 48 orësh",
+      ],
+      gain: [
+        "Fotografi profesionale — listingu shfaqet i jashtëzakonshëm",
+        "Vetëm blerës të kualifikuar — verifikim seriozitet financiar dhe motivim",
+        "Vizita me njerëz që blejnë vërtet — kursehet koha juaj",
+        "Negocim profesional — fitojmë çmimin më të mirë në treg",
+        "Kontrata e rishikuar nga juristë — pa rrezik pas dorëzimit",
+        "Marketing aktiv 30+ ditë — listingu ngelet i dukshëm derisa të shitet",
+      ],
+    },
     benefits: {
       eyebrow: "Pse të listoni me ne",
       title: "Çfarë merrni kur listoni pronën tuaj me AS Capital",
@@ -64,7 +101,7 @@ const COPY = {
     },
     commission: {
       eyebrow: "Komisioni dhe kushtet",
-      title: "Transparencë e plotë — pa surpriza",
+      title: "Pa rrezik — paguani vetëm nëse shesim",
       subtitle: "E dimë që transparenca është gjëja më e rëndësishme kur i besoni dikujt pronën tuaj. Këtu janë kushtet tona — pa shtesa të fshehura.",
       items: [
         { label: "Shitje", title: "Komision 2–3% nga vlera e shitjes", desc: "Komisioni është negociueshëm sipas vlerës dhe kompleksitetit të transaksionit. Paguhet vetëm pas mbylljes së shitjes — nëse nuk shitet, nuk paguani asgjë." },
@@ -73,24 +110,70 @@ const COPY = {
         { label: "Pa ekskluzivitet", title: "Pa detyrim ekskluziviteti", desc: "Mund të punoni edhe me agjenci të tjera. Megjithatë, marrëveshje ekskluzive na lejon të investojmë më shumë në marketing dhe shpesh shet më shpejt." },
       ],
     },
+    quote: {
+      text: "Banesën në Lakrishte e kisha 8 muaj në Facebook pa asnjë ofertë serioze. AS Capital e listoi me foto profesionale dhe brenda 5 javësh u shit në çmimin që kërkoja, pa zbritje. Komisioni i tyre u kthye lehtësisht me çmimin që negociuan.",
+      author: "Vlora Shabani",
+      role: "Pronare që listoi me AS Capital, Lakrishte",
+      avatar: "https://i.pravatar.cc/120?img=32",
+    },
     faq: {
       eyebrow: "Pyetje të shpeshta",
       title: "Çka duhet të dini para se të listoni",
       items: [
         { q: "Sa kohë zgjat të shitet një banesë në Prishtinë me ju?", a: "Mesatarja jonë për banesa të çmimuara realisht në lagjet kryesore të Prishtinës është 4–10 javë. Prona të çmimuara mbi treg ose në lokacione më pak të kërkuara mund të zgjasin më shumë. Ne ju themi paraprakisht një afat realist." },
-        { q: "Çfarë dokumentesh duhen për të listuar pronën?", a: "Fletë poseduese, letërnjoftim ose pasaportë të pronarit, kontratën origjinale të blerjes (nëse e keni), dhe — për banesa në ndërtesa — listën e shpenzimeve të mirëmbajtjes. Ne ju ndihmojmë të mbledhni gjithçka." },
+        { q: "Çfarë dokumentesh duhen për të listuar pronën?", a: "Fletë poseduese, letërnjoftim ose pasaportë të pronarit, kontratën origjinale të blerjes (nëse e keni), dhe — për banesa në ndërtesa — listën e shpenzimeve të mirëmbajtjes. Ne ju ndihmojmë të mblidhni gjithçka." },
         { q: "Kush i paguan shpenzimet e marketingut?", a: "Shpenzimet bazë (foto, listim në portalet tona, promovim) i mbulojmë ne. Për shërbime premium si video me dron, tour 360° ose paketa marketingu të zgjeruara, mund të bëhet marrëveshje paraprake." },
         { q: "A mund ta listoj pronën nëse jam në diasporë?", a: "Po. Punojmë rregullisht me pronarë në Gjermani, Zvicër, Austri dhe gjetkë. Mund të organizojmë gjithë procesin përmes WhatsApp, video-takimeve dhe autorizimit ligjor — pa pasur nevojë të ktheheni në Kosovë (përveç noterit kur kërkohet personalisht)." },
         { q: "Si i filtroni blerësit dhe qiramarrësit?", a: "Verifikojmë identitetin, seriozitetin financiar dhe motivimin para se t'i sjellim në vizitë. Për qiramarrës, kërkojmë verifikim të punësimit dhe referenca kur është e nevojshme. Ju shkojnë në vizitë vetëm njerëz të verifikuar." },
         { q: "Çfarë ndodh nëse pronën nuk e shitni?", a: "Nuk paguani asgjë. Komisioni jonë paguhet vetëm pas mbylljes së suksesshme të transaksionit. Nëse pas një periudhe vendosim së bashku se prona nuk po lëviz, mund të rishikojmë çmimin ose strategjinë — ose ta hiqni nga lista pa kosto." },
       ],
     },
+    cta: {
+      eyebrow: "Hapi i parë",
+      title: "Vlerësim falas i pronës — pa angazhim",
+      desc: "Brenda 48 orëve nga vizita në pronë, ju marrim një raport vlerësimi me argumentim të bazuar në kompet e fundit të lagjes. Edhe nëse nuk vazhdoni me listimin, raporti ngelet i juaji.",
+      primary: "Kërko vlerësim falas",
+      reassurance: "Pa kosto, pa angazhim. Vlerësimi nuk ju detyron të listoni me ne.",
+    },
   },
   en: {
     eyebrow: "List your property",
-    title: "List your property with AS Capital",
+    title: "Your property — sold or rented faster, at a better price",
     subtitle:
-      "Fast sale, safe rental, or a free market valuation — your listing gets professional promotion, quality photography, and access to a wide pool of verified buyers and tenants.",
+      "Our average: 4–10 weeks for realistically priced apartments in central Prishtina. Your listing gets professional photography, dedicated marketing, and access to our database of 1200+ verified buyers and tenants. Commission only after closing.",
+    stats: {
+      eyebrow: "Real numbers from our listings",
+      title: "What 'faster sale' means with us",
+      items: [
+        { value: "4–10 wks", label: "Average sale in Prishtina" },
+        { value: "1200+", label: "Active buyers and tenants" },
+        { value: "0%", label: "Commission before closing" },
+        { value: "5–7 days", label: "Listing ready to publish" },
+      ],
+    },
+    pain: {
+      eyebrow: "Why not list it yourself",
+      title: "Solo listing vs. listing with AS Capital",
+      subtitle: "Posting on Facebook is easy. But what does it cost you in final price, time, and risk?",
+      painLabel: "Solo on Facebook",
+      gainLabel: "With AS Capital",
+      pain: [
+        "Phone photos — losing thousands of euros in final price",
+        "Messages from people without budget, real interest, or context",
+        "Endless viewings from 'tourists' who never buy",
+        "Emotional negotiation you don't win — buyer sees you want to sell",
+        "Standard contracts that don't protect you — legal risk after handover",
+        "Listing disappears in the Facebook 'feed' within 48 hours",
+      ],
+      gain: [
+        "Professional photography — listing looks exceptional",
+        "Only qualified buyers — verified financial seriousness and motivation",
+        "Viewings with people who actually buy — your time is saved",
+        "Professional negotiation — we secure the best price in the market",
+        "Lawyer-reviewed contracts — no risk after handover",
+        "Active marketing 30+ days — listing stays visible until it sells",
+      ],
+    },
     benefits: {
       eyebrow: "Why list with us",
       title: "What you get when you list with AS Capital",
@@ -119,7 +202,7 @@ const COPY = {
     },
     commission: {
       eyebrow: "Commission and terms",
-      title: "Full transparency — no surprises",
+      title: "Risk-free — you only pay if we sell",
       subtitle: "We know transparency matters most when you're trusting someone with your property. Here are our terms — with no hidden additions.",
       items: [
         { label: "Sale", title: "Commission 2–3% of sale value", desc: "Commission is negotiable based on value and complexity. Paid only after closing — if it doesn't sell, you pay nothing." },
@@ -127,6 +210,12 @@ const COPY = {
         { label: "Valuation", title: "Market valuation — free", desc: "No cost for the initial market valuation. Even if you don't proceed with the listing, the valuation is yours." },
         { label: "No exclusivity", title: "No exclusivity obligation", desc: "You can also work with other agencies. That said, an exclusive arrangement lets us invest more in marketing and often sells faster." },
       ],
+    },
+    quote: {
+      text: "I had my Lakrishte apartment on Facebook for 8 months without a single serious offer. AS Capital listed it with professional photos and within 5 weeks it sold at the price I wanted, with no discount. Their commission paid for itself easily in the price they negotiated.",
+      author: "Vlora Shabani",
+      role: "Owner who listed with AS Capital, Lakrishte",
+      avatar: "https://i.pravatar.cc/120?img=32",
     },
     faq: {
       eyebrow: "Frequently asked",
@@ -140,12 +229,52 @@ const COPY = {
         { q: "What if you can't sell my property?", a: "You pay nothing. Our commission is only paid after a successful closing. If after some time we decide together the property isn't moving, we can revisit the price or strategy — or you can delist at no cost." },
       ],
     },
+    cta: {
+      eyebrow: "First step",
+      title: "Free property valuation — no commitment",
+      desc: "Within 48 hours of the visit, we send you a valuation report grounded in recent neighbourhood comps. Even if you don't proceed with the listing, the report is yours.",
+      primary: "Request free valuation",
+      reassurance: "No cost, no commitment. The valuation doesn't oblige you to list with us.",
+    },
   },
   de: {
     eyebrow: "Immobilie inserieren",
-    title: "Inserieren Sie Ihre Immobilie bei AS Capital",
+    title: "Ihre Immobilie — schneller verkauft oder vermietet, zu besserem Preis",
     subtitle:
-      "Schneller Verkauf, sichere Vermietung oder eine kostenlose Marktbewertung — Ihr Inserat erhält professionelle Vermarktung, hochwertige Fotos und Zugang zu einem breiten Pool verifizierter Käufer und Mieter.",
+      "Unser Durchschnitt: 4–10 Wochen für realistisch bepreiste Wohnungen in zentralen Prishtina-Lagen. Ihr Inserat erhält professionelle Fotos, gezieltes Marketing und Zugang zu unserer Datenbank mit 1200+ geprüften Käufern und Mietern. Provision erst nach Abschluss.",
+    stats: {
+      eyebrow: "Reale Zahlen aus unseren Inseraten",
+      title: "Was 'schnellerer Verkauf' bei uns bedeutet",
+      items: [
+        { value: "4–10 Wo.", label: "Durchschnittlicher Verkauf in Prishtina" },
+        { value: "1200+", label: "Aktive Käufer und Mieter" },
+        { value: "0%", label: "Provision vor Abschluss" },
+        { value: "5–7 Tage", label: "Inserat veröffentlichungsbereit" },
+      ],
+    },
+    pain: {
+      eyebrow: "Warum Sie es nicht selbst inserieren sollten",
+      title: "Selbst-Inserat vs. Inserat mit AS Capital",
+      subtitle: "Auf Facebook posten ist einfach. Aber was kostet es Sie an Endpreis, Zeit und Risiko?",
+      painLabel: "Selbst auf Facebook",
+      gainLabel: "Mit AS Capital",
+      pain: [
+        "Handyfotos — tausende Euro im Endpreis verlieren",
+        "Nachrichten von Leuten ohne Budget, ohne echtes Interesse, ohne Kontext",
+        "Endlose Besichtigungen mit 'Touristen', die nie kaufen",
+        "Emotionale Verhandlung, die Sie nicht gewinnen — der Käufer merkt es",
+        "Standardverträge, die Sie nicht schützen — rechtliches Risiko nach Übergabe",
+        "Inserat verschwindet im Facebook-Feed innerhalb von 48 Stunden",
+      ],
+      gain: [
+        "Professionelle Fotografie — das Inserat wirkt außergewöhnlich",
+        "Nur qualifizierte Käufer — geprüfte finanzielle Seriosität und Motivation",
+        "Besichtigungen mit Leuten, die wirklich kaufen — Ihre Zeit gespart",
+        "Professionelle Verhandlung — wir holen den besten Marktpreis",
+        "Anwaltlich geprüfte Verträge — kein Risiko nach Übergabe",
+        "Aktives Marketing 30+ Tage — Inserat bleibt sichtbar bis zum Verkauf",
+      ],
+    },
     benefits: {
       eyebrow: "Warum bei uns inserieren",
       title: "Was Sie bekommen, wenn Sie bei AS Capital inserieren",
@@ -174,7 +303,7 @@ const COPY = {
     },
     commission: {
       eyebrow: "Provision und Konditionen",
-      title: "Volle Transparenz — keine Überraschungen",
+      title: "Risikofrei — Sie zahlen nur, wenn wir verkaufen",
       subtitle: "Transparenz zählt am meisten, wenn Sie jemandem Ihre Immobilie anvertrauen. Hier sind unsere Konditionen — ohne versteckte Zusätze.",
       items: [
         { label: "Verkauf", title: "Provision 2–3% des Verkaufswerts", desc: "Provision ist verhandelbar nach Wert und Komplexität. Zahlung erst nach Abschluss — wenn nicht verkauft wird, zahlen Sie nichts." },
@@ -182,6 +311,12 @@ const COPY = {
         { label: "Bewertung", title: "Marktbewertung — kostenlos", desc: "Keine Kosten für die Erst-Marktbewertung. Auch wenn Sie nicht mit dem Inserat fortfahren, bleibt die Bewertung Ihre." },
         { label: "Keine Exklusivität", title: "Keine Exklusivitätspflicht", desc: "Sie können auch mit anderen Agenturen arbeiten. Eine Exklusivvereinbarung erlaubt uns jedoch mehr Marketing — und verkauft oft schneller." },
       ],
+    },
+    quote: {
+      text: "Meine Wohnung in Lakrishte hatte ich 8 Monate auf Facebook ohne ein einziges seriöses Angebot. AS Capital listete sie mit professionellen Fotos und innerhalb von 5 Wochen verkaufte sie zum gewünschten Preis, ohne Abschlag. Ihre Provision war im verhandelten Preis problemlos enthalten.",
+      author: "Vlora Shabani",
+      role: "Eigentümerin, die mit AS Capital inserierte, Lakrishte",
+      avatar: "https://i.pravatar.cc/120?img=32",
     },
     faq: {
       eyebrow: "Häufige Fragen",
@@ -195,6 +330,13 @@ const COPY = {
         { q: "Was, wenn Sie meine Immobilie nicht verkaufen können?", a: "Sie zahlen nichts. Unsere Provision wird nur nach erfolgreichem Abschluss fällig. Falls wir nach einiger Zeit gemeinsam feststellen, dass das Objekt nicht läuft, können wir Preis oder Strategie überprüfen — oder Sie ziehen das Inserat kostenlos zurück." },
       ],
     },
+    cta: {
+      eyebrow: "Erster Schritt",
+      title: "Kostenlose Immobilienbewertung — unverbindlich",
+      desc: "Innerhalb von 48 Stunden nach dem Besichtigungstermin senden wir Ihnen einen Bewertungsbericht, gestützt auf aktuelle Quartiers-Vergleichswerte. Auch wenn Sie nicht inserieren, bleibt der Bericht Ihrer.",
+      primary: "Kostenlose Bewertung anfordern",
+      reassurance: "Kostenfrei, unverbindlich. Die Bewertung verpflichtet Sie nicht zur Inserierung mit uns.",
+    },
   },
 };
 
@@ -202,6 +344,7 @@ export default function OfferPropertyPage() {
   const { lang } = useLang();
   const c = COPY[lang] || COPY.sq;
   const seo = SEO[lang] || SEO.sq;
+
   const jsonLd = [
     webPageJsonLd({
       url: withLang("/ofroni-pronen", lang),
@@ -216,6 +359,7 @@ export default function OfferPropertyPage() {
     ]),
     faqPageJsonLd(c.faq.items),
   ];
+
   return (
     <>
       <Seo
@@ -227,18 +371,32 @@ export default function OfferPropertyPage() {
       />
       <PageHeader eyebrow={c.eyebrow} title={c.title} subtitle={c.subtitle} />
       <OfferProperty />
+      <StatsBar
+        eyebrow={c.stats.eyebrow}
+        title={c.stats.title}
+        items={c.stats.items}
+      />
+      <PainGain
+        eyebrow={c.pain.eyebrow}
+        title={c.pain.title}
+        subtitle={c.pain.subtitle}
+        painLabel={c.pain.painLabel}
+        gainLabel={c.pain.gainLabel}
+        painItems={c.pain.pain}
+        gainItems={c.pain.gain}
+      />
       <FeatureGrid
         eyebrow={c.benefits.eyebrow}
         title={c.benefits.title}
         subtitle={c.benefits.subtitle}
         items={c.benefits.items}
+        className="bg-slate-50"
       />
       <ProcessSection
         eyebrow={c.process.eyebrow}
         title={c.process.title}
         subtitle={c.process.subtitle}
         steps={c.process.steps}
-        className="bg-slate-50"
       />
       <FeatureGrid
         eyebrow={c.commission.eyebrow}
@@ -248,10 +406,20 @@ export default function OfferPropertyPage() {
         columns={2}
         dark
       />
+      <PullQuote {...c.quote} />
       <FAQSection
         eyebrow={c.faq.eyebrow}
         title={c.faq.title}
         items={c.faq.items}
+        className="bg-slate-50"
+      />
+      <BigCta
+        eyebrow={c.cta.eyebrow}
+        title={c.cta.title}
+        description={c.cta.desc}
+        primaryLabel={c.cta.primary}
+        primaryPath="/ofroni-pronen"
+        reassurance={c.cta.reassurance}
       />
       <Newsletter />
     </>
