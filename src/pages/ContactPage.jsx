@@ -3,6 +3,8 @@ import Seo from "../components/Seo";
 import PageHeader from "../components/PageHeader";
 import Contact from "../components/Contact";
 import FAQSection from "../components/FAQSection";
+import PainGain from "../components/PainGain";
+import PullQuote from "../components/PullQuote";
 import { useLang } from "../LanguageContext";
 import { agencyJsonLd } from "../seo/agency";
 import { breadcrumbJsonLd, faqPageJsonLd, webPageJsonLd } from "../seo/jsonLd";
@@ -10,21 +12,21 @@ import { withLang } from "../seo/lang";
 
 const SEO = {
   sq: {
-    title: "Kontakti — Telefono, WhatsApp, zyra në Obiliq",
+    title: "Kontakti — Konsultim falas, pa angazhim",
     description:
-      "AS Capital Real Estate — telefon +383 49 579 992, WhatsApp, email info@ascapitalrealestate.com, zyra në Hasan Prishtina, Obiliq. Konsultimi i parë gjithmonë falas.",
+      "Telefononi +383 49 579 992, na shkruani në WhatsApp, ose vizitoni zyrën tonë në Hasan Prishtina, Obiliq. Konsultimi i parë gjithmonë falas — përgjigje brenda 1–2 orësh.",
     breadcrumb: "Kontakti",
   },
   en: {
-    title: "Contact — Phone, WhatsApp, office in Obiliq",
+    title: "Contact — Free consultation, no commitment",
     description:
-      "AS Capital Real Estate — phone +383 49 579 992, WhatsApp, email info@ascapitalrealestate.com, office at Hasan Prishtina, Obiliq. First consultation always free.",
+      "Call +383 49 579 992, message us on WhatsApp, or visit our office at Hasan Prishtina, Obiliq. First consultation always free — replies within 1–2 hours.",
     breadcrumb: "Contact",
   },
   de: {
-    title: "Kontakt — Telefon, WhatsApp, Büro in Obiliq",
+    title: "Kontakt — Kostenlose Beratung, unverbindlich",
     description:
-      "AS Capital Real Estate — Telefon +383 49 579 992, WhatsApp, E-Mail info@ascapitalrealestate.com, Büro in Hasan Prishtina, Obiliq. Erstberatung immer kostenlos.",
+      "Rufen Sie +383 49 579 992 an, schreiben Sie uns auf WhatsApp, oder besuchen Sie unser Büro in Hasan Prishtina, Obiliq. Erstberatung immer kostenlos — Antwort innerhalb 1–2 Stunden.",
     breadcrumb: "Kontakt",
   },
 };
@@ -32,9 +34,9 @@ const SEO = {
 const COPY = {
   sq: {
     eyebrow: "Kontakti",
-    title: "Le të takohemi për një kafe",
+    title: "Le të takohemi për një kafe — pa presion, pa angazhim",
     subtitle:
-      "Telefononi, na shkruani në WhatsApp ose dërgoni mesazh përmes formës — konsultimi i parë është gjithmonë falas. Zyra jonë në Hasan Prishtina, Obiliq, është e hapur për takime gjatë gjithë javës së punës.",
+      "Konsultimi i parë është gjithmonë falas. Telefononi, na shkruani në WhatsApp, ose ardhni në zyrë në Hasan Prishtina, Obiliq. Përgjigje brenda 1–2 orësh në orarin e punës — pa formularë të gjatë, pa presion shitje.",
     channelsEyebrow: "Kanalet e kontaktit",
     channelsTitle: "Si të na kontaktoni — zgjidhni mënyrën që ju përshtatet",
     channelsSubtitle: "Kosova përdor WhatsApp për gjithçka — ne jemi gjithmonë në dispozicion atje. Por ju lutemi përdorni kanalin që ju përshtatet më shumë.",
@@ -44,6 +46,27 @@ const COPY = {
       { icon: Mail, title: "Email", value: "info@ascapitalrealestate.com", note: "Idealit për kërkesa të detajuara, dokumente formale ose tema që kanë nevojë për përgjigje me shkrim. Përgjigjemi brenda të njëjtës ditë pune.", href: "mailto:info@ascapitalrealestate.com" },
       { icon: MapPin, title: "Zyra", value: "Hasan Prishtina, Obiliq, Kosovë 15000", note: "Vini në zyrë për takim personal — ju lutemi caktoni një orar paraprak që të sigurohemi se jemi në dispozicion për ju pa pritje." },
     ],
+    pain: {
+      eyebrow: "Çfarë të prisni",
+      title: "Konsultimi i parë: çfarë është dhe çfarë nuk është",
+      subtitle: "Shumë vizitorë hezitojnë sepse mendojnë që 'konsultim falas' do të thotë presion shitjeje. Ja çka ka rëndësi për ne.",
+      painLabel: "Çka NUK është",
+      gainLabel: "Çka ËSHTË",
+      pain: [
+        "Nuk është një pitch shitjeje për të nënshkruar atë ditë",
+        "Nuk është detyrim që të punoni me ne pas takimit",
+        "Nuk është biseda gjenerike — ne dëgjojmë specifikën tuaj",
+        "Nuk ka kosto, fshehtazi ose hapur, për këtë konsultim",
+        "Nuk është 5 minuta — marrim kohën që ju nevojitet",
+      ],
+      gain: [
+        "Bisedë 30–60 minutëshe për situatën tuaj specifike",
+        "Pamje reale e tregut: çmime, lagje, afate për ju",
+        "Përgjigje për çdo pyetje juridike, financiare, procedurale",
+        "Vlerësim falas i pronës nëse jeni pronar",
+        "Hapat e qartë — nëse zgjidhni të vazhdoni, ose jo",
+      ],
+    },
     locationEyebrow: "Vendndodhja",
     locationTitle: "Si të na gjeni",
     locationParagraphs: [
@@ -59,6 +82,12 @@ const COPY = {
       { day: "E diel", time: "Mbyllur (WhatsApp në dispozicion për urgjenca)" },
     ],
     hoursNote: "Jashtë këtyre orëve, na shkruani në WhatsApp dhe ju kthejmë përgjigje në fillim të ditës së ardhshme të punës.",
+    quote: {
+      text: "Kisha frikë se konsultimi falas ishte trik shitjeje. Ishte e kundërta — më dëgjuan për 45 minuta, më treguan opsione që nuk i kisha menduar, dhe kur thashë 'do mendoj' nuk më telefonuan as një herë. Pas dy javësh u ktheva vetë.",
+      author: "Lirie Gashi",
+      role: "Bleresë, Ulpianë",
+      avatar: "https://i.pravatar.cc/120?img=49",
+    },
     faq: {
       eyebrow: "Para konsultimit",
       title: "Çfarë duhet të dini para se të na kontaktoni",
@@ -73,9 +102,9 @@ const COPY = {
   },
   en: {
     eyebrow: "Contact",
-    title: "Let's meet for a coffee",
+    title: "Let's meet for a coffee — no pressure, no commitment",
     subtitle:
-      "Call us, send a WhatsApp message, or use the form — your first consultation is always free. Our office in Hasan Prishtina, Obiliq, is open for appointments all week.",
+      "First consultation is always free. Call, WhatsApp, or visit our office at Hasan Prishtina, Obiliq. Replies within 1–2 hours during business hours — no long forms, no sales pressure.",
     channelsEyebrow: "Contact channels",
     channelsTitle: "How to reach us — pick the channel that suits you",
     channelsSubtitle: "Kosovo runs on WhatsApp — we're always available there. But please use whichever channel works best for you.",
@@ -85,6 +114,27 @@ const COPY = {
       { icon: Mail, title: "Email", value: "info@ascapitalrealestate.com", note: "Ideal for detailed inquiries, formal documents or topics that need a written response. Replies within the same business day.", href: "mailto:info@ascapitalrealestate.com" },
       { icon: MapPin, title: "Office", value: "Hasan Prishtina, Obiliq, Kosovo 15000", note: "Come in for an in-person meeting — please book ahead so we can make sure we're available for you without delay." },
     ],
+    pain: {
+      eyebrow: "What to expect",
+      title: "First consultation: what it is and what it isn't",
+      subtitle: "Many visitors hesitate because they think 'free consultation' means sales pressure. Here's what matters to us.",
+      painLabel: "What it is NOT",
+      gainLabel: "What it IS",
+      pain: [
+        "Not a sales pitch to sign that day",
+        "Not an obligation to work with us afterwards",
+        "Not a generic chat — we listen to your specifics",
+        "Not free with hidden costs — truly no cost",
+        "Not 5 minutes — we take the time you need",
+      ],
+      gain: [
+        "A 30–60 minute conversation about your specific situation",
+        "Real picture of the market: prices, neighbourhoods, timelines for you",
+        "Answers to every legal, financial, procedural question",
+        "Free property valuation if you're an owner",
+        "Clear next steps — whether you continue or not",
+      ],
+    },
     locationEyebrow: "Location",
     locationTitle: "How to find us",
     locationParagraphs: [
@@ -100,6 +150,12 @@ const COPY = {
       { day: "Sunday", time: "Closed (WhatsApp available for emergencies)" },
     ],
     hoursNote: "Outside these hours, send a WhatsApp message and we will reply at the start of the next business day.",
+    quote: {
+      text: "I was afraid the free consultation was a sales trick. It was the opposite — they listened for 45 minutes, showed me options I hadn't considered, and when I said 'I'll think about it' they didn't call me once. I came back two weeks later on my own.",
+      author: "Lirie Gashi",
+      role: "Buyer, Ulpianë",
+      avatar: "https://i.pravatar.cc/120?img=49",
+    },
     faq: {
       eyebrow: "Before consulting",
       title: "What you should know before contacting us",
@@ -114,9 +170,9 @@ const COPY = {
   },
   de: {
     eyebrow: "Kontakt",
-    title: "Treffen wir uns auf einen Kaffee",
+    title: "Treffen wir uns auf einen Kaffee — kein Druck, unverbindlich",
     subtitle:
-      "Rufen Sie uns an, schreiben Sie uns auf WhatsApp oder nutzen Sie das Formular — die Erstberatung ist immer kostenlos. Unser Büro in Hasan Prishtina, Obiliq, ist die ganze Woche für Termine geöffnet.",
+      "Die Erstberatung ist immer kostenlos. Anrufen, WhatsApp, oder Büro besuchen in Hasan Prishtina, Obiliq. Antwort innerhalb 1–2 Stunden zu Bürozeiten — keine langen Formulare, kein Verkaufsdruck.",
     channelsEyebrow: "Kontaktkanäle",
     channelsTitle: "So erreichen Sie uns — wählen Sie den passenden Kanal",
     channelsSubtitle: "Im Kosovo läuft alles über WhatsApp — wir sind dort immer erreichbar. Nutzen Sie aber gern den Kanal, der für Sie am besten passt.",
@@ -126,6 +182,27 @@ const COPY = {
       { icon: Mail, title: "E-Mail", value: "info@ascapitalrealestate.com", note: "Ideal für ausführliche Anfragen, formelle Unterlagen oder Themen, die eine schriftliche Antwort brauchen. Antwort am selben Werktag.", href: "mailto:info@ascapitalrealestate.com" },
       { icon: MapPin, title: "Büro", value: "Hasan Prishtina, Obiliq, Kosovo 15000", note: "Kommen Sie für ein persönliches Gespräch ins Büro — bitte vorab Termin vereinbaren, damit wir ohne Wartezeit für Sie da sind." },
     ],
+    pain: {
+      eyebrow: "Was Sie erwartet",
+      title: "Die Erstberatung: was sie ist und was nicht",
+      subtitle: "Viele Besucher zögern, weil sie denken, 'kostenlose Beratung' bedeutet Verkaufsdruck. Was uns wichtig ist.",
+      painLabel: "Was sie NICHT ist",
+      gainLabel: "Was sie IST",
+      pain: [
+        "Kein Verkaufsgespräch, das am selben Tag unterzeichnet werden muss",
+        "Keine Verpflichtung, danach mit uns zu arbeiten",
+        "Kein generisches Gespräch — wir hören auf Ihre Details",
+        "Nicht kostenlos mit versteckten Kosten — wirklich gratis",
+        "Keine 5 Minuten — wir nehmen uns die Zeit, die Sie brauchen",
+      ],
+      gain: [
+        "30–60 Minuten Gespräch über Ihre Situation",
+        "Reales Marktbild: Preise, Lagen, Zeitrahmen für Sie",
+        "Antworten auf jede rechtliche, finanzielle, prozedurale Frage",
+        "Kostenlose Immobilienbewertung, wenn Sie Eigentümer sind",
+        "Klare nächste Schritte — ob Sie fortfahren oder nicht",
+      ],
+    },
     locationEyebrow: "Lage",
     locationTitle: "So finden Sie uns",
     locationParagraphs: [
@@ -141,6 +218,12 @@ const COPY = {
       { day: "Sonntag", time: "Geschlossen (WhatsApp für Notfälle verfügbar)" },
     ],
     hoursNote: "Außerhalb dieser Zeiten schreiben Sie uns auf WhatsApp — Antwort am nächsten Werktag.",
+    quote: {
+      text: "Ich befürchtete, die kostenlose Beratung sei ein Verkaufstrick. Es war das Gegenteil — sie hörten 45 Minuten zu, zeigten mir Optionen, an die ich nicht gedacht hatte, und als ich 'ich überlege' sagte, riefen sie kein einziges Mal an. Zwei Wochen später kam ich von selbst zurück.",
+      author: "Lirie Gashi",
+      role: "Käuferin, Ulpianë",
+      avatar: "https://i.pravatar.cc/120?img=49",
+    },
     faq: {
       eyebrow: "Vor der Beratung",
       title: "Was Sie vor der Kontaktaufnahme wissen sollten",
@@ -220,7 +303,18 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="section bg-slate-50">
+      <PainGain
+        eyebrow={c.pain.eyebrow}
+        title={c.pain.title}
+        subtitle={c.pain.subtitle}
+        painLabel={c.pain.painLabel}
+        gainLabel={c.pain.gainLabel}
+        painItems={c.pain.pain}
+        gainItems={c.pain.gain}
+        className="bg-slate-50"
+      />
+
+      <section className="section">
         <div className="container-x grid gap-12 lg:grid-cols-2">
           <div>
             <span className="eyebrow">{c.locationEyebrow}</span>
@@ -248,6 +342,8 @@ export default function ContactPage() {
       </section>
 
       <Contact />
+
+      <PullQuote {...c.quote} />
 
       <FAQSection
         eyebrow={c.faq.eyebrow}

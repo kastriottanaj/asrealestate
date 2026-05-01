@@ -3,8 +3,11 @@ import PageHeader from "../components/PageHeader";
 import About from "../components/About";
 import FeatureGrid from "../components/FeatureGrid";
 import FAQSection from "../components/FAQSection";
+import StatsBar from "../components/StatsBar";
+import PainGain from "../components/PainGain";
+import PullQuote from "../components/PullQuote";
+import BigCta from "../components/BigCta";
 import Testimonials from "../components/Testimonials";
-import Contact from "../components/Contact";
 import { useLang } from "../LanguageContext";
 import { agencyJsonLd } from "../seo/agency";
 import { breadcrumbJsonLd, faqPageJsonLd, webPageJsonLd } from "../seo/jsonLd";
@@ -12,21 +15,21 @@ import { withLang } from "../seo/lang";
 
 const SEO = {
   sq: {
-    title: "Rreth Nesh — 8+ vite në tregun e Kosovës",
+    title: "Rreth Nesh — 8+ vite ekspertizë pasurish në Kosovë",
     description:
-      "AS Capital Real Estate — agjenci pasurish të paluajtshme me 8+ vite ekspertizë në Prishtinë dhe rajon. Misioni, vlerat, ekipi dhe angazhimet tona ndaj çdo klienti.",
+      "AS Capital Real Estate — agjenci pasurish të paluajtshme me 8+ vite ekspertizë lokale, 500+ prona të shitura dhe 1200+ familje të vendosura në Prishtinë dhe rajon.",
     breadcrumb: "Rreth Nesh",
   },
   en: {
-    title: "About Us — 8+ years in the Kosovo market",
+    title: "About Us — 8+ years of property expertise in Kosovo",
     description:
-      "AS Capital Real Estate — a Kosovo real estate agency with 8+ years of expertise across Prishtina and the region. Our mission, values, team and commitments to every client.",
+      "AS Capital Real Estate — a Kosovo real estate agency with 8+ years of local expertise, 500+ properties sold and 1200+ families settled across Prishtina and the region.",
     breadcrumb: "About Us",
   },
   de: {
-    title: "Über uns — 8+ Jahre auf dem Kosovo-Markt",
+    title: "Über uns — 8+ Jahre Immobilien-Expertise im Kosovo",
     description:
-      "AS Capital Real Estate — eine Kosovo-Immobilienagentur mit 8+ Jahren Expertise in Prishtina und Umgebung. Unsere Mission, Werte, das Team und unsere Kundenversprechen.",
+      "AS Capital Real Estate — eine Kosovo-Immobilienagentur mit 8+ Jahren lokaler Expertise, 500+ verkauften Objekten und 1200+ eingezogenen Familien in Prishtina und Umgebung.",
     breadcrumb: "Über uns",
   },
 };
@@ -34,9 +37,17 @@ const SEO = {
 const COPY = {
   sq: {
     eyebrow: "Rreth Nesh",
-    title: "AS Capital Real Estate — 8+ vite në tregun e Kosovës",
+    title: "8 vite, 500+ prona, 1200+ familje në shtëpinë e duhur",
     subtitle:
-      "Një ekip i përkushtuar agjentësh dhe këshilltarësh me ekspertizë të thellë lokale, që ka mbyllur qindra transaksione në Prishtinë dhe rajon. Misioni ynë: të bëjmë çdo blerje, qira dhe investim të sigurt, transparent dhe me vlerë afatgjatë.",
+      "AS Capital Real Estate u themelua me një bindje: tregu i Kosovës meriton ndërmjetës që punojnë për klientin, jo vetëm për provizionin. Sot, 8 nga 10 klientë na vijnë nga rekomandime — matja jonë më e rëndësishme e suksesit.",
+    stats: {
+      items: [
+        { value: "500+", label: "Transaksione të mbyllura" },
+        { value: "1200+", label: "Familje të vendosura" },
+        { value: "8 vite", label: "Në tregun e Kosovës" },
+        { value: "8/10", label: "Klientë nga rekomandime" },
+      ],
+    },
     story: {
       eyebrow: "Historia jonë",
       title: "Si nisi AS Capital Real Estate",
@@ -46,13 +57,36 @@ const COPY = {
         "Sot, 8 nga 10 klientë na vijnë nga rekomandimet — familjet që kanë blerë me ne i flasin për ne fqinjit, kushërinjtë në diasporë, kolegët në punë. Kjo është matja jonë më e rëndësishme e suksesit.",
       ],
     },
+    pain: {
+      eyebrow: "Pse na zgjedhin sërish",
+      title: "Çfarë ndryshon kur punoni me ekipin e duhur",
+      subtitle: "Tregu i Kosovës është i vogël por kompleks. Detajet e vogla bëjnë diferencën e madhe.",
+      painLabel: "Agjenci tradicionale",
+      gainLabel: "Me AS Capital",
+      pain: [
+        "Pa konsultim falas — paguani që në hapin e parë",
+        "Nuk verifikojnë pronën para listimit",
+        "Pa mbështetje ligjore gjatë procesit",
+        "Marrëdhënie transaksionale — pas shitjes ngeleni vetëm",
+        "Komision i kërkuar pa garanci për mbylljen",
+        "Pa komunikim në Shqip + Anglisht + Gjermanisht",
+      ],
+      gain: [
+        "Konsultim i parë gjithmonë falas, pa angazhim",
+        "Verifikim i plotë ligjor para se prona të hyjë në listë",
+        "Punojmë me noterë dhe juristë të besuar",
+        "Mbështetje pas dorëzimit — për çdo pyetje që mund të lindë",
+        "Komision vetëm pas mbylljes së suksesshme",
+        "Komunikojmë rrjedhshëm në 3 gjuhë me diasporën",
+      ],
+    },
     values: {
       eyebrow: "Vlerat tona",
       title: "Çfarë na drejton në çdo transaksion",
       items: [
         { label: "Besueshmëri", title: "Fjala jonë vlen", desc: "Çfarë premtojmë në takimin e parë, kjo është ajo që marrim përsipër. Pa kushte të fshehura, pa surpriza në ditën e nënshkrimit." },
         { label: "Transparencë", title: "Çdo numër i dokumentuar", desc: "Të gjitha çmimet, taksat, komisionet dhe shpenzimet janë në letër para se të nisni. Ju dini saktësisht ku po shkojnë paratë tuaja." },
-        { label: "Ekspertizë", title: "Njohja lokale që blerja kërkon", desc: "Tetë vite njohje aktive të tregut të Kosovës. Çmime reale, ndërtues të vërtetuar, projekte të ardhshme, infrastrukturë — gjithë konteksti që ndikon vendimin tuaj." },
+        { label: "Ekspertizë", title: "Njohja lokale që blerja kërkon", desc: "Tetë vite njohje aktive të tregut të Kosovës. Çmime reale, ndërtues të vërtetuar, projekte të ardhshme — gjithë konteksti që ndikon vendimin tuaj." },
         { label: "Përkushtim", title: "Marrëdhënie që zgjat", desc: "Marrëdhënia jonë nuk përfundon me dorëzimin. Pas blerjes, qëndrojmë në dispozicion për çdo pyetje, lidhje me ekipe mirëmbajtjeje, ose këshillim të mëtejshëm." },
       ],
     },
@@ -60,7 +94,7 @@ const COPY = {
       eyebrow: "Mbulimi gjeografik",
       title: "Lokacionet ku operojmë aktivisht",
       subtitle:
-        "Fokusi ynë është Prishtina dhe rajoni i saj — aty ku kemi më shumë se 8 vite njohje të thellë të tregut. Për lokacione më të largëta, punojmë me partnerë lokalë të besuar.",
+        "Fokusi ynë është Prishtina dhe rajoni i saj — aty ku kemi më shumë se 8 vite njohje të thellë të tregut.",
       items: [
         { title: "Prishtinë", desc: "Të gjitha lagjet — Qendër, Arbëri, Dardania, Ulpianë, Veternik, Bregu i Diellit, Aktash, Lakrishte, Sofalia dhe periferia." },
         { title: "Obiliq", desc: "Zyra jonë qendrore. Ekspertizë e thellë në tregun e banesave dhe shtëpive familjare në komunën e Obiliqit." },
@@ -75,12 +109,18 @@ const COPY = {
         "Këto nuk janë vetëm fjalë në një faqe — janë standardet që zbatojmë në çdo transaksion, pa përjashtim.",
       items: [
         { title: "Konsultim falas, gjithmonë", desc: "Takimi i parë, vizitat e pronave dhe diskutimi i opsioneve — të gjitha pa kosto, pa angazhim." },
-        { title: "Prona të verifikuara para se të hyjnë në listë", desc: "Çdo pronë kalon kontrollin tonë ligjor dhe teknik para se të paraqitet te klienti." },
+        { title: "Prona të verifikuara para listimit", desc: "Çdo pronë kalon kontrollin tonë ligjor dhe teknik para se të paraqitet te klienti." },
         { title: "Mbështetje juridike gjatë gjithë procesit", desc: "Punojmë me noterë dhe juristë të besuar për t'ju siguruar që çdo dokument është i rregullt." },
         { title: "Komunikim në Shqip, Anglisht, Gjermanisht", desc: "Klientët tanë në diasporë komunikojnë në gjuhën e tyre, me përgjigje brenda të njëjtës ditë pune." },
         { title: "Disponueshmëri pas dorëzimit", desc: "Marrëdhënia nuk përfundon me marrjen e çelësave. Qëndrojmë në dispozicion për pyetje dhe nevoja të mëtejshme." },
         { title: "Zero detyrim për ekskluzivitet", desc: "Mund të punoni me ne pa ndonjë kontratë ekskluzive — shërbimi ynë qëndron i njëjtë." },
       ],
+    },
+    quote: {
+      text: "Çka më bind te AS Capital nuk është që mbyllin transaksione — është që pas blerjes, kur kisha një pyetje për taksën në pronë 6 muaj më vonë, përgjigja erdhi në 30 minuta. Kjo është marrëdhënie e vërtetë.",
+      author: "Blerim Hoxha",
+      role: "Pronar lokali, Prishtinë",
+      avatar: "https://i.pravatar.cc/120?img=33",
     },
     faq: {
       eyebrow: "Pyetje për agjencinë",
@@ -92,12 +132,27 @@ const COPY = {
         { q: "Çfarë e bën AS Capital të ndryshëm nga agjencitë e tjera?", a: "Tre gjëra: ekspertizë vërtet lokale (njohim lagjet jo si emra në një portal, por si komunitete me histori dhe trende), procesi ynë i verifikimit para listimit (që ka shmangur shumë probleme për klientët tanë), dhe disponueshmëria pas dorëzimit (marrëdhënia jonë nuk është transaksionale)." },
       ],
     },
+    cta: {
+      eyebrow: "Le të takohemi",
+      title: "Le të bisedojmë për pronën që ju përshtatet — pa kosto, pa angazhim",
+      desc: "Ardhni në zyrë për një kafe, telefononi ose shkruani në WhatsApp. Konsultimi i parë është gjithmonë falas dhe pa presion.",
+      primary: "Konsultim falas",
+      reassurance: "Hapur e hënë–e premte 09:00–18:00 dhe e shtunë 10:00–14:00 me caktim paraprak.",
+    },
   },
   en: {
     eyebrow: "About Us",
-    title: "AS Capital Real Estate — 8+ years in the Kosovo market",
+    title: "8 years, 500+ properties, 1200+ families in the right home",
     subtitle:
-      "A dedicated team of agents and advisors with deep local expertise, having closed hundreds of transactions across Prishtina and the region. Our mission: make every purchase, rental and investment safe, transparent, and built for long-term value.",
+      "AS Capital Real Estate was founded on a single belief: Kosovo's market deserves brokers who work for the client, not just for the commission. Today, 8 in 10 of our clients come from referrals — our most important measure of success.",
+    stats: {
+      items: [
+        { value: "500+", label: "Closed transactions" },
+        { value: "1200+", label: "Families settled" },
+        { value: "8 years", label: "In the Kosovo market" },
+        { value: "8/10", label: "Clients from referrals" },
+      ],
+    },
     story: {
       eyebrow: "Our story",
       title: "How AS Capital Real Estate started",
@@ -107,13 +162,36 @@ const COPY = {
         "Today, 8 in 10 of our clients come from referrals — families who bought with us tell their neighbours, their relatives in the diaspora, their colleagues at work. That's the most important measure of our success.",
       ],
     },
+    pain: {
+      eyebrow: "Why clients choose us again",
+      title: "What changes when you work with the right team",
+      subtitle: "Kosovo's market is small but complex. Small details make the big difference.",
+      painLabel: "Traditional agency",
+      gainLabel: "With AS Capital",
+      pain: [
+        "No free consultation — you pay from step one",
+        "No property verification before listing",
+        "No legal support during the process",
+        "Transactional relationship — after the sale, you're alone",
+        "Commission charged without guarantee of closing",
+        "No communication in Albanian + English + German",
+      ],
+      gain: [
+        "First consultation always free, no commitment",
+        "Full legal verification before a property is even listed",
+        "We work with trusted notaries and lawyers",
+        "Post-handover support — for any question that comes up",
+        "Commission only after successful closing",
+        "Fluent communication in 3 languages with the diaspora",
+      ],
+    },
     values: {
       eyebrow: "Our values",
       title: "What guides us in every transaction",
       items: [
         { label: "Trust", title: "Our word counts", desc: "What we promise at the first meeting is what we deliver. No hidden conditions, no surprises on signing day." },
         { label: "Transparency", title: "Every number documented", desc: "All prices, taxes, commissions and costs are on paper before you start. You know exactly where your money is going." },
-        { label: "Expertise", title: "The local knowledge buying requires", desc: "Eight years of active Kosovo market knowledge. Real prices, proven builders, upcoming projects, infrastructure — the full context behind your decision." },
+        { label: "Expertise", title: "The local knowledge buying requires", desc: "Eight years of active Kosovo market knowledge. Real prices, proven builders, upcoming projects — the full context behind your decision." },
         { label: "Dedication", title: "A relationship that lasts", desc: "Our relationship doesn't end at handover. After the purchase, we remain available for any question, maintenance connections or further advice." },
       ],
     },
@@ -121,7 +199,7 @@ const COPY = {
       eyebrow: "Coverage",
       title: "Locations where we are active",
       subtitle:
-        "Our focus is Prishtina and its region — where we have 8+ years of deep market knowledge. For more distant locations, we work with trusted local partners.",
+        "Our focus is Prishtina and its region — where we have 8+ years of deep market knowledge.",
       items: [
         { title: "Prishtina", desc: "All neighbourhoods — Qendër, Arbëri, Dardania, Ulpianë, Veternik, Bregu i Diellit, Aktash, Lakrishte, Sofalia and the periphery." },
         { title: "Obiliq", desc: "Our head office. Deep expertise in the apartment and family-house markets in the municipality of Obiliq." },
@@ -143,6 +221,12 @@ const COPY = {
         { title: "Zero exclusivity obligation", desc: "You can work with us without any exclusive contract — our service stays the same." },
       ],
     },
+    quote: {
+      text: "What convinced me about AS Capital wasn't that they close transactions — it was that 6 months after the purchase, when I had a property tax question, the answer came in 30 minutes. That's a real relationship.",
+      author: "Blerim Hoxha",
+      role: "Shop owner, Prishtina",
+      avatar: "https://i.pravatar.cc/120?img=33",
+    },
     faq: {
       eyebrow: "About the agency",
       title: "What you should know about AS Capital",
@@ -153,12 +237,27 @@ const COPY = {
         { q: "What makes AS Capital different from other agencies?", a: "Three things: genuinely local expertise (we know neighbourhoods not as portal names but as communities with history and trends), our pre-listing verification process (which has prevented many issues for our clients), and post-handover availability (our relationship is not transactional)." },
       ],
     },
+    cta: {
+      eyebrow: "Let's meet",
+      title: "Let's talk about the property that fits you — no cost, no commitment",
+      desc: "Come into the office for a coffee, call, or message us on WhatsApp. The first consultation is always free and pressure-free.",
+      primary: "Free consultation",
+      reassurance: "Open Mon–Fri 09:00–18:00 and Sat 10:00–14:00 by appointment.",
+    },
   },
   de: {
     eyebrow: "Über uns",
-    title: "AS Capital Real Estate — 8+ Jahre auf dem Kosovo-Markt",
+    title: "8 Jahre, 500+ Immobilien, 1200+ Familien im richtigen Zuhause",
     subtitle:
-      "Ein engagiertes Team aus Maklern und Beratern mit tiefer lokaler Expertise, das Hunderte Transaktionen in Prishtina und der Region abgeschlossen hat. Unsere Mission: jeden Kauf, jede Miete und jede Investition sicher, transparent und langfristig wertschaffend zu gestalten.",
+      "AS Capital Real Estate wurde aus einer Überzeugung gegründet: Der Kosovo-Markt verdient Makler, die für den Kunden arbeiten — nicht nur für die Provision. Heute kommen 8 von 10 Kunden über Empfehlungen — unser wichtigster Erfolgsmaßstab.",
+    stats: {
+      items: [
+        { value: "500+", label: "Abgeschlossene Transaktionen" },
+        { value: "1200+", label: "Eingezogene Familien" },
+        { value: "8 Jahre", label: "Auf dem Kosovo-Markt" },
+        { value: "8/10", label: "Kunden über Empfehlung" },
+      ],
+    },
     story: {
       eyebrow: "Unsere Geschichte",
       title: "So begann AS Capital Real Estate",
@@ -168,13 +267,36 @@ const COPY = {
         "Heute kommen 8 von 10 Kunden über Empfehlungen — Familien, die bei uns gekauft haben, sprechen mit Nachbarn, Verwandten in der Diaspora und Kollegen über uns. Das ist unser wichtigster Erfolgsmaßstab.",
       ],
     },
+    pain: {
+      eyebrow: "Warum Kunden uns wieder wählen",
+      title: "Was sich ändert, wenn Sie mit dem richtigen Team arbeiten",
+      subtitle: "Der Kosovo-Markt ist klein, aber komplex. Kleine Details machen den großen Unterschied.",
+      painLabel: "Traditionelle Agentur",
+      gainLabel: "Mit AS Capital",
+      pain: [
+        "Keine kostenlose Beratung — Sie zahlen ab dem ersten Schritt",
+        "Keine Objekt-Prüfung vor der Listung",
+        "Keine rechtliche Begleitung während des Prozesses",
+        "Transaktionale Beziehung — nach dem Verkauf sind Sie allein",
+        "Provision ohne Garantie für den Abschluss",
+        "Keine Kommunikation auf Albanisch + Englisch + Deutsch",
+      ],
+      gain: [
+        "Erstberatung immer kostenlos, ohne Verpflichtung",
+        "Vollständige rechtliche Prüfung, bevor ein Objekt überhaupt gelistet wird",
+        "Wir arbeiten mit vertrauenswürdigen Notaren und Anwälten",
+        "Begleitung nach der Übergabe — für jede Frage, die auftaucht",
+        "Provision erst nach erfolgreichem Abschluss",
+        "Fließende Kommunikation in 3 Sprachen mit der Diaspora",
+      ],
+    },
     values: {
       eyebrow: "Unsere Werte",
       title: "Was uns bei jeder Transaktion leitet",
       items: [
         { label: "Vertrauen", title: "Unser Wort zählt", desc: "Was wir im ersten Gespräch versprechen, halten wir. Keine versteckten Bedingungen, keine Überraschungen am Unterschriftstag." },
         { label: "Transparenz", title: "Jede Zahl dokumentiert", desc: "Alle Preise, Steuern, Provisionen und Kosten liegen vor dem Start auf dem Tisch. Sie wissen genau, wohin Ihr Geld geht." },
-        { label: "Expertise", title: "Lokales Wissen, das der Kauf braucht", desc: "Acht Jahre aktive Marktkenntnis im Kosovo. Reale Preise, geprüfte Bauträger, kommende Projekte, Infrastruktur — der ganze Kontext hinter Ihrer Entscheidung." },
+        { label: "Expertise", title: "Lokales Wissen, das der Kauf braucht", desc: "Acht Jahre aktive Marktkenntnis im Kosovo. Reale Preise, geprüfte Bauträger, kommende Projekte — der ganze Kontext hinter Ihrer Entscheidung." },
         { label: "Engagement", title: "Eine Beziehung, die bleibt", desc: "Unsere Beziehung endet nicht mit der Übergabe. Nach dem Kauf bleiben wir für Fragen, Wartungskontakte und weitere Beratung erreichbar." },
       ],
     },
@@ -182,7 +304,7 @@ const COPY = {
       eyebrow: "Abdeckung",
       title: "Standorte, an denen wir aktiv sind",
       subtitle:
-        "Unser Fokus ist Prishtina und Umgebung — dort, wo wir über 8 Jahre tiefe Marktkenntnis haben. Für entferntere Lagen arbeiten wir mit vertrauenswürdigen lokalen Partnern.",
+        "Unser Fokus ist Prishtina und Umgebung — dort, wo wir über 8 Jahre tiefe Marktkenntnis haben.",
       items: [
         { title: "Prishtina", desc: "Alle Quartiere — Qendër, Arbëri, Dardania, Ulpianë, Veternik, Bregu i Diellit, Aktash, Lakrishte, Sofalia und Peripherie." },
         { title: "Obiliq", desc: "Unser Hauptbüro. Tiefe Expertise im Wohnungs- und Einfamilienhausmarkt in der Gemeinde Obiliq." },
@@ -204,6 +326,12 @@ const COPY = {
         { title: "Keine Exklusivitätspflicht", desc: "Sie können ohne Exklusivvertrag mit uns arbeiten — unser Service bleibt derselbe." },
       ],
     },
+    quote: {
+      text: "Was mich bei AS Capital überzeugt hat, war nicht der Abschluss — es war, dass 6 Monate nach dem Kauf, als ich eine Frage zur Grundsteuer hatte, die Antwort in 30 Minuten kam. Das ist eine echte Beziehung.",
+      author: "Blerim Hoxha",
+      role: "Ladenbesitzer, Prishtina",
+      avatar: "https://i.pravatar.cc/120?img=33",
+    },
     faq: {
       eyebrow: "Über die Agentur",
       title: "Was Sie über AS Capital wissen sollten",
@@ -213,6 +341,13 @@ const COPY = {
         { q: "Sind Sie lizenziert?", a: "Ja. AS Capital Real Estate erfüllt alle rechtlichen Anforderungen für Immobilienvermittlung im Kosovo. Lizenzunterlagen sind auf Anfrage einsehbar." },
         { q: "Was unterscheidet AS Capital von anderen Agenturen?", a: "Drei Dinge: echte lokale Expertise (wir kennen Quartiere nicht als Portal-Namen, sondern als Gemeinschaften mit Historie und Trends), unser Prüfprozess vor der Listung (der vielen Kunden Probleme erspart hat) und Erreichbarkeit nach der Übergabe (unsere Beziehung ist nicht transaktional)." },
       ],
+    },
+    cta: {
+      eyebrow: "Lass uns treffen",
+      title: "Sprechen wir über die passende Immobilie — kostenlos, unverbindlich",
+      desc: "Kommen Sie für einen Kaffee ins Büro, rufen Sie an oder schreiben Sie uns auf WhatsApp. Die Erstberatung ist immer kostenlos und ohne Druck.",
+      primary: "Kostenlose Beratung",
+      reassurance: "Geöffnet Mo–Fr 09:00–18:00 und Sa 10:00–14:00 nach Vereinbarung.",
     },
   },
 };
@@ -247,6 +382,7 @@ export default function AboutPage() {
         jsonLd={jsonLd}
       />
       <PageHeader eyebrow={c.eyebrow} title={c.title} subtitle={c.subtitle} />
+      <StatsBar items={c.stats.items} />
       <About />
       <section className="section bg-slate-50">
         <div className="container-x max-w-3xl">
@@ -259,11 +395,21 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      <PainGain
+        eyebrow={c.pain.eyebrow}
+        title={c.pain.title}
+        subtitle={c.pain.subtitle}
+        painLabel={c.pain.painLabel}
+        gainLabel={c.pain.gainLabel}
+        painItems={c.pain.pain}
+        gainItems={c.pain.gain}
+      />
       <FeatureGrid
         eyebrow={c.values.eyebrow}
         title={c.values.title}
         items={c.values.items}
         columns={2}
+        className="bg-slate-50"
       />
       <FeatureGrid
         eyebrow={c.coverage.eyebrow}
@@ -279,14 +425,21 @@ export default function AboutPage() {
         subtitle={c.promises.subtitle}
         items={c.promises.items}
       />
+      <PullQuote {...c.quote} />
+      <Testimonials />
       <FAQSection
         eyebrow={c.faq.eyebrow}
         title={c.faq.title}
         items={c.faq.items}
         className="bg-slate-50"
       />
-      <Testimonials />
-      <Contact />
+      <BigCta
+        eyebrow={c.cta.eyebrow}
+        title={c.cta.title}
+        description={c.cta.desc}
+        primaryLabel={c.cta.primary}
+        reassurance={c.cta.reassurance}
+      />
     </>
   );
 }

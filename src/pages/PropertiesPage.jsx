@@ -4,7 +4,10 @@ import Properties from "../components/Properties";
 import ProcessSection from "../components/ProcessSection";
 import FeatureGrid from "../components/FeatureGrid";
 import FAQSection from "../components/FAQSection";
-import Newsletter from "../components/Newsletter";
+import PainGain from "../components/PainGain";
+import StatsBar from "../components/StatsBar";
+import PullQuote from "../components/PullQuote";
+import BigCta from "../components/BigCta";
 import { useLang } from "../LanguageContext";
 import { breadcrumbJsonLd, faqPageJsonLd, webPageJsonLd } from "../seo/jsonLd";
 import { withLang } from "../seo/lang";
@@ -13,19 +16,19 @@ const SEO = {
   sq: {
     title: "Prona në Kosovë — Shitje, qira, investime",
     description:
-      "Listingje aktive në Prishtinë, Obiliq, Fushë Kosovë dhe rajon. Banesa, vila, zyre, lokale dhe tokë me fletë poseduese të verifikuar dhe çmime në EUR. Konsultim falas.",
+      "Listingje aktive në Prishtinë, Obiliq, Fushë Kosovë. Banesa, vila, zyre dhe tokë me fletë poseduese të verifikuar dhe çmime në EUR. Vlerësim falas i pronës që ju përshtatet.",
     breadcrumb: "Prona",
   },
   en: {
     title: "Properties in Kosovo — Sales, rentals, investments",
     description:
-      "Active listings in Prishtina, Obiliq, Fushë Kosovë and beyond. Apartments, villas, offices, retail and land with verified title and EUR pricing. Free consultation.",
+      "Active listings in Prishtina, Obiliq, Fushë Kosovë and beyond. Apartments, villas, offices, retail and land with verified title and EUR pricing. Free assessment of the property that fits you.",
     breadcrumb: "Properties",
   },
   de: {
     title: "Immobilien im Kosovo — Verkauf, Miete, Investment",
     description:
-      "Aktuelle Angebote in Prishtina, Obiliq, Fushë Kosovë und Umgebung. Wohnungen, Villen, Büros, Geschäfte und Bauland mit geprüftem Titel und EUR-Preisen. Kostenlose Beratung.",
+      "Aktuelle Angebote in Prishtina, Obiliq, Fushë Kosovë. Wohnungen, Villen, Büros und Bauland mit geprüftem Titel und EUR-Preisen. Kostenlose Bewertung der passenden Immobilie.",
     breadcrumb: "Immobilien",
   },
 };
@@ -33,34 +36,65 @@ const SEO = {
 const COPY = {
   sq: {
     eyebrow: "Prona aktive",
-    title: "Prona në Kosovë — shitje, qira dhe investime",
+    title: "Pronën e duhur, në çmim të drejtë, pa befasi",
     subtitle:
-      "Shfletoni listingjet aktive të AS Capital Real Estate në Prishtinë, Obiliq, Fushë Kosovë dhe lokacione të tjera të kërkuara — me çmime në EUR, m² të verifikuara dhe fletë poseduese të kontrolluara para se të hyjnë në listë.",
+      "Mbi 500 prona të shitura dhe 1200+ familje të vendosura në Prishtinë, Obiliq dhe rajon. Çdo listing kalon verifikim ligjor para se të arrijë te ju — fletë poseduese, leje ndërtimi, hipotekë dhe debitë komunale të kontrolluara.",
+    pain: {
+      eyebrow: "Si e gjeni pronën sot",
+      title: "Lëreni grupet e Facebook-ut. Le të punojë ekipi për ju.",
+      subtitle: "Shumica e blerësve në Kosovë humbin 3–6 muaj duke kërkuar vetë. Ja pse.",
+      painLabel: "Vetë në treg",
+      gainLabel: "Me AS Capital",
+      pain: [
+        "Postime pa filtër në Facebook me foto të dobëta dhe çmime të rrejshme",
+        "Vizita pa fund në prona që nuk përshtaten me buxhetin ose lagjen",
+        "Çmime të ekzagjeruara — pa njohje të kompeve reale të lagjes",
+        "Rrezik për fletë poseduese të paqarta, hipoteka të fshehura, debitë komunale",
+        "Negocim emocional që ju kushton mijëra euro mbi çmimin e drejtë",
+        "Procesi ligjor i panjohur — kontrata, noter, regjistrim, taksa",
+      ],
+      gain: [
+        "Vetëm prona që përshtaten me kriteret e juaja — dërguar drejtpërdrejt",
+        "Vizita të organizuara në një ditë, me agjent që ju shoqëron",
+        "Çmim i drejtë — verifikuar me 8 vite kompe lagjeje në dorë",
+        "Verifikim i plotë ligjor para se prona të hyjë në listën tonë",
+        "Negocim profesional — kursime mesatare 5–12% mbi çmimin e listuar",
+        "Të gjitha dokumentet, noteri dhe regjistrimi — koordinuar nga ne",
+      ],
+    },
+    stats: {
+      items: [
+        { value: "500+", label: "Prona të shitura" },
+        { value: "1200+", label: "Familje të vendosura" },
+        { value: "8 vite", label: "Përvojë në treg" },
+        { value: "98%", label: "Klientë rekomandues" },
+      ],
+    },
     process: {
       eyebrow: "Si funksionon",
-      title: "Kërkimi i pronës me AS Capital — hap pas hapi",
+      title: "Nga konsultimi i parë te çelësat — në 6 hapa të qarta",
       subtitle:
-        "Nuk humbni kohë duke shfletuar grupe Facebook ose duke kontrolluar një nga një ndërmjetësues. Ne dëgjojmë çfarë ju nevojitet dhe ju paraqesim vetëm prona që përshtaten.",
+        "Pa surpriza, pa kosto të fshehura. Konsultimi i parë është gjithmonë falas — nëse nuk vazhdoni, nuk paguani asgjë.",
       steps: [
         { title: "Konsultim falas", desc: "Dëgjojmë buxhetin, qëllimin (banim ose investim), preferencat e lagjes dhe afatin tuaj — pa asnjë angazhim." },
-        { title: "Filtrim i pronave", desc: "Nga databaza jonë e pronave aktive, përzgjedhim ato që përshtaten me kriteret tuaja realisht — jo të gjitha që afrohen." },
-        { title: "Vizita të organizuara", desc: "Caktojmë vizitat në një ditë të vetme kur është e mundur, duke kursyer kohën tuaj. Ju shoqërojmë në çdo vizitë." },
-        { title: "Verifikim ligjor", desc: "Para çfarëdo oferte, kontrollojmë fletë poseduese, hipotekat, lejet, debitë komunale dhe statusin e pronarit." },
-        { title: "Negocim i çmimit", desc: "Përdorim njohjen tonë të tregut dhe komp-eve të lagjes për t'ju siguruar çmimin më të mirë të mundshëm." },
-        { title: "Kontratë dhe dorëzim", desc: "Përgatisim ose rishikojmë kontratën, koordinojmë me noterin dhe ju shoqërojmë deri në marrjen e çelësave." },
+        { title: "Filtrim i pronave", desc: "Nga databaza jonë e pronave aktive, përzgjedhim ato që përshtaten realisht — jo të gjitha që afrohen." },
+        { title: "Vizita të organizuara", desc: "Caktojmë vizitat në një ditë të vetme kur është e mundur, me agjent që ju shoqëron." },
+        { title: "Verifikim ligjor", desc: "Para çdo oferte: fletë poseduese, hipotekat, lejet, debitë komunale dhe statusi i pronarit." },
+        { title: "Negocim i çmimit", desc: "Përdorim njohjen e tregut dhe kompet e lagjes për t'ju siguruar çmimin më të mirë të mundshëm." },
+        { title: "Kontratë dhe dorëzim", desc: "Përgatisim ose rishikojmë kontratën, koordinojmë me noterin dhe ju shoqërojmë deri te çelësat." },
       ],
     },
     locations: {
       eyebrow: "Mbulimi gjeografik",
-      title: "Lagjet dhe komunat ku jemi më aktivë",
+      title: "Lagjet ku njohim çmimet reale, jo ato të portaleve",
       subtitle:
-        "Ekspertiza jonë është e thellë dhe lokale. Njohim çmimet reale të çdo lagjeje, ndërtuesit kryesorë, projektet e ardhshme dhe ndryshimet e infrastrukturës që ndikojnë vlerat.",
+        "8 vite në çdo lagje të Prishtinës dhe rajonit. Njohim ndërtuesit, projektet që po ndryshojnë çmimet dhe kurthet që duhen shmangur.",
       items: [
-        { label: "Prishtinë qendrore", title: "Qendër, Arbëri, Dardania, Ulpianë", desc: "Lagjet më të kërkuara për banim dhe investim — banesa premium, çmime në rritje të qëndrueshme, kërkesë e lartë për qira." },
-        { label: "Prishtinë periferike", title: "Veternik, Bregu i Diellit, Aktash, Lakrishte", desc: "Vlera për para më e mirë për familje të reja, banesa moderne të ndërtuara në 5–10 vitet e fundit, akses i mirë në qendër." },
-        { label: "Zona biznesi", title: "Qendra e Re, New Born, Rruga B", desc: "Lokacione kryesore për zyre dhe lokale tregtare. Kërkesa e qiramarrësve mbetet e qëndrueshme nga kompani vendore dhe ndërkombëtare." },
-        { label: "Komunat fqinje", title: "Obiliq, Fushë Kosovë, Lipjan, Graçanicë", desc: "Çmime më të kapshme se Prishtina, potencial i mirë investimi për tokë ndërtimore, banesa të reja dhe shtëpi familjare." },
-        { label: "Investime", title: "Tokë ndërtimore me leje", desc: "Parcela me leje ndërtimi në Fushë Kosovë, Obiliq dhe periferi të Prishtinës — për ndërtim privat ose projekte më të mëdha." },
+        { label: "Prishtinë qendrore", title: "Qendër, Arbëri, Dardania, Ulpianë", desc: "Lagjet më të kërkuara — banesa premium, çmime në rritje të qëndrueshme, kërkesë e lartë qiraje." },
+        { label: "Prishtinë periferike", title: "Veternik, Bregu i Diellit, Aktash, Lakrishte", desc: "Vlera për para më e mirë për familje të reja, banesa moderne të ndërtuara në 5–10 vitet e fundit." },
+        { label: "Zona biznesi", title: "Qendra e Re, New Born, Rruga B", desc: "Lokacione kryesore për zyre dhe lokale tregtare. Kërkesa e qiramarrësve mbetet e qëndrueshme." },
+        { label: "Komunat fqinje", title: "Obiliq, Fushë Kosovë, Lipjan, Graçanicë", desc: "Çmime më të kapshme se Prishtina, potencial i mirë investimi për tokë dhe banesa të reja." },
+        { label: "Investime", title: "Tokë ndërtimore me leje", desc: "Parcela me leje ndërtimi në Fushë Kosovë, Obiliq dhe periferi të Prishtinës — për ndërtim privat ose projekte." },
         { label: "Prona luksoze", title: "Vila dhe penthouse", desc: "Prona ekskluzive me pamje, kopsht ose pishinë në lagjet premium dhe periferinë e qetë të Prishtinës." },
       ],
     },
@@ -74,9 +108,15 @@ const COPY = {
         { title: "Statusi i hipotekës", desc: "Kontrollojmë nëse prona është e hipotekuar dhe pozicionin ndaj bankave ose kreditorëve." },
         { title: "Lejet e ndërtimit", desc: "Sigurohemi që objekti është ndërtuar me leje, ka leje shfrytëzimi dhe është i regjistruar saktë." },
         { title: "Debitë komunale", desc: "Verifikojmë borxhet për tatim në pronë, ujë, mbeturina dhe shërbime të tjera para nënshkrimit." },
-        { title: "Identiteti i shitësit", desc: "Konfirmojmë identitetin dhe autorizimet e shitësit ose përfaqësuesit ligjor — sidomos në rastet e diasporës." },
-        { title: "Inspektim teknik", desc: "Për pronat më të vjetra, organizojmë vlerësim teknik për dëme strukturore, lagështi, instalime elektrike dhe ujësjellës." },
+        { title: "Identiteti i shitësit", desc: "Konfirmojmë identitetin dhe autorizimet e shitësit ose përfaqësuesit ligjor — sidomos te diaspora." },
+        { title: "Inspektim teknik", desc: "Për pronat më të vjetra, organizojmë vlerësim teknik për dëme strukturore, lagështi dhe instalime." },
       ],
+    },
+    quote: {
+      text: "Po kërkoja banesën e parë për familjen prej 4 muajsh në grupe Facebook. Me AS Capital e gjeta brenda 3 javësh — me kontratë të pastër dhe çmim 8% nën listim. Nuk do të kthehesha kurrë te metoda e vjetër.",
+      author: "Adelina Krasniqi",
+      role: "Bleresë e banesës së parë, Dardania",
+      avatar: "https://i.pravatar.cc/120?img=44",
     },
     faq: {
       eyebrow: "Pyetje të shpeshta",
@@ -91,21 +131,59 @@ const COPY = {
         { q: "Çka ndodh nëse pas blerjes shfaqet ndonjë problem ligjor?", a: "Procesi ynë i verifikimit synon të parandalojë çdo problem para nënshkrimit. Megjithatë, gjatë gjithë procesit ne ofrojmë mbështetje juridike dhe pas dorëzimit qëndrojmë në dispozicion për çdo pyetje që mund të lindë." },
       ],
     },
+    cta: {
+      eyebrow: "Hapi tjetër",
+      title: "Tregomëni ç'kërkoni — ne ju paraqesim 3 prona që përshtaten brenda 48 orëve",
+      desc: "Konsultimi i parë është gjithmonë falas. Ju zgjidhni nëse vazhdojmë — pa presion, pa angazhim.",
+      primary: "Konsultim falas",
+      reassurance: "Përgjigje në WhatsApp brenda 1–2 orësh në orarin e punës. Pa kosto, pa angazhim.",
+    },
   },
   en: {
     eyebrow: "Active listings",
-    title: "Properties in Kosovo — for sale, rent and investment",
+    title: "The right property, at the right price, with no surprises",
     subtitle:
-      "Browse active AS Capital Real Estate listings across Prishtina, Obiliq, Fushë Kosovë and other in-demand locations — with EUR pricing, verified m², and clean title checked before any property enters our list.",
+      "500+ properties sold and 1200+ families settled across Prishtina, Obiliq and the wider region. Every listing passes legal verification before it reaches you — title deed, building permits, mortgages and municipal debts all checked.",
+    pain: {
+      eyebrow: "How you find a property today",
+      title: "Drop the Facebook groups. Let our team work for you.",
+      subtitle: "Most buyers in Kosovo lose 3–6 months searching alone. Here's why.",
+      painLabel: "On your own",
+      gainLabel: "With AS Capital",
+      pain: [
+        "Unfiltered Facebook posts with weak photos and inflated prices",
+        "Endless viewings of properties that don't match your budget or area",
+        "Above-market prices — no real neighbourhood comps to anchor on",
+        "Risk of unclear title, hidden mortgages, unpaid municipal debts",
+        "Emotional negotiation that costs you thousands above fair value",
+        "Unfamiliar legal process — contract, notary, registration, taxes",
+      ],
+      gain: [
+        "Only properties that match your criteria — sent directly to you",
+        "Viewings organised in a single day, with an agent alongside you",
+        "Fair price — backed by 8 years of neighbourhood comps in hand",
+        "Full legal verification before a property even enters our list",
+        "Professional negotiation — average 5–12% off the listed price",
+        "All documents, notary and registration — coordinated by us",
+      ],
+    },
+    stats: {
+      items: [
+        { value: "500+", label: "Properties sold" },
+        { value: "1200+", label: "Families settled" },
+        { value: "8 years", label: "Market experience" },
+        { value: "98%", label: "Client referrals" },
+      ],
+    },
     process: {
       eyebrow: "How it works",
-      title: "Finding a property with AS Capital — step by step",
+      title: "From first consultation to keys — in 6 clear steps",
       subtitle:
-        "No more wasting time on Facebook groups or chasing brokers one by one. We listen to what you actually need and present only properties that fit.",
+        "No surprises, no hidden costs. The first consultation is always free — if you don't proceed, you pay nothing.",
       steps: [
         { title: "Free consultation", desc: "We discuss your budget, goal (living or investment), neighbourhood preferences and timeline — no commitment." },
-        { title: "Filtered shortlist", desc: "From our database of active listings, we hand-pick the ones that genuinely match your criteria — not just the close ones." },
-        { title: "Organised visits", desc: "We schedule viewings together where possible to save your time, and accompany you to every visit." },
+        { title: "Filtered shortlist", desc: "From our database of active listings, we hand-pick the ones that genuinely match your criteria." },
+        { title: "Organised visits", desc: "We schedule viewings together where possible to save your time, with an agent alongside you." },
         { title: "Legal verification", desc: "Before any offer, we verify title deed, mortgages, building permits, municipal debts and the seller's status." },
         { title: "Price negotiation", desc: "We use our market knowledge and neighbourhood comps to secure the best possible price for you." },
         { title: "Contract and handover", desc: "We prepare or review the contract, coordinate with the notary, and stay with you until you receive the keys." },
@@ -113,9 +191,9 @@ const COPY = {
     },
     locations: {
       eyebrow: "Coverage",
-      title: "Neighbourhoods and municipalities where we are most active",
+      title: "The neighbourhoods where we know real prices, not portal prices",
       subtitle:
-        "Our expertise is deep and local. We know real prices per neighbourhood, the major developers, upcoming projects, and infrastructure changes that affect value.",
+        "8 years across every neighbourhood in Prishtina and the region. We know the developers, the projects shifting prices, and the pitfalls to avoid.",
       items: [
         { label: "Central Prishtina", title: "Qendër, Arbëri, Dardania, Ulpianë", desc: "The most sought-after neighbourhoods for living and investing — premium apartments, steady price growth, strong rental demand." },
         { label: "Outer Prishtina", title: "Veternik, Bregu i Diellit, Aktash, Lakrishte", desc: "Best value-for-money for young families, modern apartments built in the last 5–10 years, easy access to the centre." },
@@ -139,6 +217,12 @@ const COPY = {
         { title: "Technical inspection", desc: "For older properties, we arrange a technical assessment for structural damage, damp, electrical and plumbing systems." },
       ],
     },
+    quote: {
+      text: "I'd been searching for our family's first apartment for 4 months in Facebook groups. With AS Capital we found it in 3 weeks — clean contract, 8% under list. I'd never go back to the old way.",
+      author: "Adelina Krasniqi",
+      role: "First-time buyer, Dardania",
+      avatar: "https://i.pravatar.cc/120?img=44",
+    },
     faq: {
       eyebrow: "Frequently asked",
       title: "What you should know before buying or renting",
@@ -152,17 +236,55 @@ const COPY = {
         { q: "What if a legal issue appears after the purchase?", a: "Our verification process aims to prevent issues before signing. Throughout the process we provide legal support and remain available afterwards for any question that may arise." },
       ],
     },
+    cta: {
+      eyebrow: "Next step",
+      title: "Tell us what you're looking for — we'll send 3 matching properties within 48 hours",
+      desc: "First consultation always free. You decide if we continue — no pressure, no commitment.",
+      primary: "Free consultation",
+      reassurance: "WhatsApp reply within 1–2 hours during business hours. No cost, no commitment.",
+    },
   },
   de: {
     eyebrow: "Aktuelle Angebote",
-    title: "Immobilien im Kosovo — Verkauf, Miete und Investment",
+    title: "Die richtige Immobilie, zum fairen Preis, ohne Überraschungen",
     subtitle:
-      "Durchsuchen Sie aktuelle Angebote von AS Capital Real Estate in Prishtina, Obiliq, Fushë Kosovë und weiteren gefragten Lagen — mit EUR-Preisen, verifizierten m² und sauberem Titel, der vor Aufnahme in die Liste geprüft wird.",
+      "500+ verkaufte Objekte und 1200+ Familien in Prishtina, Obiliq und Umgebung. Jedes Inserat durchläuft eine rechtliche Prüfung, bevor es Sie erreicht — Grundbuch, Baugenehmigungen, Hypotheken und kommunale Schulden alle geprüft.",
+    pain: {
+      eyebrow: "Wie Sie heute eine Immobilie finden",
+      title: "Lassen Sie die Facebook-Gruppen. Lassen Sie das Team für Sie arbeiten.",
+      subtitle: "Die meisten Käufer im Kosovo verlieren 3–6 Monate auf eigene Faust. Hier ist warum.",
+      painLabel: "Auf eigene Faust",
+      gainLabel: "Mit AS Capital",
+      pain: [
+        "Ungefilterte Facebook-Posts mit schlechten Fotos und überzogenen Preisen",
+        "Endlose Besichtigungen von Objekten, die nicht zum Budget oder zur Lage passen",
+        "Über-Markt-Preise — keine echten Vergleichswerte zur Orientierung",
+        "Risiko unklarer Titel, versteckter Hypotheken und kommunaler Schulden",
+        "Emotionale Verhandlung, die Sie tausende Euro über dem fairen Preis kostet",
+        "Unbekannter rechtlicher Ablauf — Vertrag, Notar, Eintragung, Steuern",
+      ],
+      gain: [
+        "Nur Objekte, die Ihren Kriterien entsprechen — direkt zugesandt",
+        "Besichtigungen an einem Tag organisiert, mit Makler an Ihrer Seite",
+        "Fairer Preis — gestützt auf 8 Jahre Quartiers-Vergleichswerte",
+        "Vollständige rechtliche Prüfung, bevor ein Objekt überhaupt gelistet wird",
+        "Professionelle Verhandlung — durchschnittlich 5–12% unter Listenpreis",
+        "Alle Dokumente, Notar und Eintragung — von uns koordiniert",
+      ],
+    },
+    stats: {
+      items: [
+        { value: "500+", label: "Verkaufte Immobilien" },
+        { value: "1200+", label: "Eingezogene Familien" },
+        { value: "8 Jahre", label: "Markterfahrung" },
+        { value: "98%", label: "Empfehlungsquote" },
+      ],
+    },
     process: {
       eyebrow: "So läuft es ab",
-      title: "Immobiliensuche mit AS Capital — Schritt für Schritt",
+      title: "Von der Erstberatung zum Schlüssel — in 6 klaren Schritten",
       subtitle:
-        "Keine Zeit mehr in Facebook-Gruppen oder bei Maklern verlieren. Wir hören zu, was Sie wirklich brauchen, und zeigen nur passende Objekte.",
+        "Keine Überraschungen, keine versteckten Kosten. Die Erstberatung ist immer kostenlos — wenn Sie nicht weitermachen, zahlen Sie nichts.",
       steps: [
         { title: "Kostenlose Erstberatung", desc: "Wir besprechen Budget, Ziel (Wohnen oder Investment), Lagepräferenzen und Zeitrahmen — ohne Verpflichtung." },
         { title: "Gefilterte Auswahl", desc: "Aus unserer Datenbank wählen wir die Objekte aus, die wirklich passen — nicht nur die nahekommenden." },
@@ -174,15 +296,15 @@ const COPY = {
     },
     locations: {
       eyebrow: "Abdeckung",
-      title: "Stadtteile und Gemeinden, in denen wir am aktivsten sind",
+      title: "Die Quartiere, in denen wir reale Preise kennen, nicht Portal-Preise",
       subtitle:
-        "Unsere Expertise ist tief und lokal. Wir kennen reale Preise je Quartier, die wichtigsten Bauträger, kommende Projekte und Infrastrukturänderungen, die den Wert beeinflussen.",
+        "8 Jahre in jedem Quartier von Prishtina und Umgebung. Wir kennen die Bauträger, kommende Projekte und die Fallstricke.",
       items: [
-        { label: "Zentrum Prishtina", title: "Qendër, Arbëri, Dardania, Ulpianë", desc: "Die gefragtesten Lagen zum Wohnen und Investieren — Premium-Wohnungen, stabiles Preiswachstum, hohe Mietnachfrage." },
-        { label: "Äußeres Prishtina", title: "Veternik, Bregu i Diellit, Aktash, Lakrishte", desc: "Bestes Preis-Leistungs-Verhältnis für junge Familien, moderne Wohnungen aus den letzten 5–10 Jahren, gute Anbindung." },
+        { label: "Zentrum Prishtina", title: "Qendër, Arbëri, Dardania, Ulpianë", desc: "Die gefragtesten Lagen — Premium-Wohnungen, stabiles Preiswachstum, hohe Mietnachfrage." },
+        { label: "Äußeres Prishtina", title: "Veternik, Bregu i Diellit, Aktash, Lakrishte", desc: "Bestes Preis-Leistungs-Verhältnis für junge Familien, moderne Wohnungen aus den letzten 5–10 Jahren." },
         { label: "Geschäftszonen", title: "Qendra e Re, New Born, Rruga B", desc: "Top-Lagen für Büros und Einzelhandel. Stabile Mieternachfrage von lokalen und internationalen Unternehmen." },
         { label: "Nachbargemeinden", title: "Obiliq, Fushë Kosovë, Lipjan, Graçanicë", desc: "Günstiger als Prishtina, starkes Investmentpotenzial für Bauland, neue Wohnungen und Einfamilienhäuser." },
-        { label: "Investment", title: "Bauland mit Genehmigung", desc: "Grundstücke mit Genehmigung in Fushë Kosovë, Obiliq und am Stadtrand von Prishtina — für privaten Bau oder größere Projekte." },
+        { label: "Investment", title: "Bauland mit Genehmigung", desc: "Grundstücke mit Genehmigung in Fushë Kosovë, Obiliq und am Stadtrand von Prishtina." },
         { label: "Luxus", title: "Villen und Penthouses", desc: "Exklusive Objekte mit Aussicht, Garten oder Pool in Premium-Lagen und der ruhigen Peripherie." },
       ],
     },
@@ -200,6 +322,12 @@ const COPY = {
         { title: "Technische Inspektion", desc: "Bei älteren Objekten organisieren wir eine Begutachtung für Statik, Feuchte, Elektrik und Sanitär." },
       ],
     },
+    quote: {
+      text: "Ich habe 4 Monate in Facebook-Gruppen nach der ersten Familienwohnung gesucht. Mit AS Capital fanden wir sie in 3 Wochen — sauberer Vertrag, 8% unter Listenpreis. Ich würde nie zurück zur alten Methode.",
+      author: "Adelina Krasniqi",
+      role: "Erstkäuferin, Dardania",
+      avatar: "https://i.pravatar.cc/120?img=44",
+    },
     faq: {
       eyebrow: "Häufige Fragen",
       title: "Was Sie vor Kauf oder Anmietung wissen sollten",
@@ -212,6 +340,13 @@ const COPY = {
         { q: "Machen Sie eine technische Inspektion vor dem Kauf?", a: "Ja, besonders bei älteren Objekten. Wir organisieren eine Ingenieur-Inspektion für Statik, Dämmung, Elektrik und Sanitär — separat zu zahlen, spart aber oft tausende Euro an Reparaturen." },
         { q: "Was, wenn nach dem Kauf ein rechtliches Problem auftaucht?", a: "Unser Prüfprozess soll Probleme vor der Unterschrift verhindern. Während des gesamten Ablaufs bieten wir rechtliche Unterstützung und bleiben auch nach der Übergabe verfügbar." },
       ],
+    },
+    cta: {
+      eyebrow: "Nächster Schritt",
+      title: "Sagen Sie uns, was Sie suchen — wir senden 3 passende Objekte in 48 Stunden",
+      desc: "Erstberatung immer kostenlos. Sie entscheiden, ob wir weitermachen — kein Druck, keine Verpflichtung.",
+      primary: "Kostenlose Beratung",
+      reassurance: "Antwort auf WhatsApp innerhalb von 1–2 Stunden zu Bürozeiten. Kostenlos, unverbindlich.",
     },
   },
 };
@@ -246,6 +381,16 @@ export default function PropertiesPage() {
       />
       <PageHeader eyebrow={c.eyebrow} title={c.title} subtitle={c.subtitle} />
       <Properties />
+      <PainGain
+        eyebrow={c.pain.eyebrow}
+        title={c.pain.title}
+        subtitle={c.pain.subtitle}
+        painLabel={c.pain.painLabel}
+        gainLabel={c.pain.gainLabel}
+        painItems={c.pain.pain}
+        gainItems={c.pain.gain}
+      />
+      <StatsBar items={c.stats.items} />
       <ProcessSection
         eyebrow={c.process.eyebrow}
         title={c.process.title}
@@ -267,12 +412,20 @@ export default function PropertiesPage() {
         columns={3}
         dark
       />
+      <PullQuote {...c.quote} />
       <FAQSection
         eyebrow={c.faq.eyebrow}
         title={c.faq.title}
         items={c.faq.items}
+        className="bg-slate-50"
       />
-      <Newsletter />
+      <BigCta
+        eyebrow={c.cta.eyebrow}
+        title={c.cta.title}
+        description={c.cta.desc}
+        primaryLabel={c.cta.primary}
+        reassurance={c.cta.reassurance}
+      />
     </>
   );
 }
