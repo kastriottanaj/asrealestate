@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Bed, Bath, Maximize2, MapPin, ArrowRight, Loader2, SlidersHorizontal, X } from "lucide-react";
+import { Link } from "react-router-dom";
 import { fetchProperties } from "../api";
-import { useLang } from "../LanguageContext";
+import { useLang, useLocalizedHref } from "../LanguageContext";
 
 const FALLBACK_PROPERTIES = [
   { id: 1, title: "Banesë moderne në Qendër", status: "shitje", type: "banese", formatted_price: "€120 000", neighborhood: "Qendër, Prishtinë", bedrooms: 2, bathrooms: 1, area: 75, image_src: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" },
@@ -33,6 +34,7 @@ const FURNISHING = ["Të gjitha", "Salloni", "Dhoma gjumi", "Kuzhina", "Banjo", 
 
 export default function Properties() {
   const { t, lang } = useLang();
+  const href = useLocalizedHref();
   const tabs = t.properties.tabs;
 
   const [tab, setTab] = useState(0);
@@ -253,9 +255,9 @@ export default function Properties() {
           </h3>
           <p className="mt-3 text-slate-600 max-w-xl mx-auto">{t.properties.notFoundSub}</p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <a href="#kontakti" className="btn-primary">
+            <Link to={href("/kontakti")} className="btn-primary">
               {t.properties.cta1} <ArrowRight className="h-4 w-4" />
-            </a>
+            </Link>
             <a href="https://wa.me/38349579992" target="_blank" rel="noreferrer" className="btn-outline">
               {t.properties.cta2}
             </a>

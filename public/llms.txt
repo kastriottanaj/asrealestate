@@ -1,0 +1,71 @@
+# AS Capital Real Estate
+
+> Real estate agency in Kosovo specialising in property sales, rentals and investments. Serving clients across Prishtina, Obiliq, Fushë Kosovë, Lipjan and Graçanicë, with deep local market expertise built over 8+ years.
+
+AS Capital Real Estate is a Kosovo-based real estate brokerage and advisory firm. We help individuals, families and investors buy, rent, sell and invest in residential and commercial property — primarily in Prishtina and the surrounding municipalities. Every listing on our website goes through legal and technical verification (title deed, mortgage status, building permits, municipal debts) before being shown to clients. We work in Albanian (Shqip), English and German, and have deep experience with diaspora clients buying remotely from Germany, Switzerland, Austria, the United States and elsewhere.
+
+The agency is headquartered at Hasan Prishtina, Obiliq, Kosovo 15000. Primary contact: +383 49 579 992 (phone and WhatsApp), info@ascapitalrealestate.com. Office hours: Monday–Friday 09:00–18:00, Saturday 10:00–14:00 by appointment, closed Sunday.
+
+Services include:
+- **Sales (Shitje)** — buy or sell apartments, houses, villas, penthouses, offices, retail and land in Kosovo. Typical agency commission for sales is 2–3% of sale value, paid only after closing.
+- **Rentals (Qira)** — short and long-term rentals of apartments, houses and commercial spaces. Standard commission is one full month's rent, paid after the contract is signed.
+- **Investments (Investime)** — buildable land, new-build apartments, and portfolio properties for investors targeting Kosovo's growing market. Free initial market valuation included.
+- **Free consultation (Konsultim falas)** — first meeting in office, by phone or via WhatsApp/Zoom is always free, with no commitment.
+
+Locations actively covered: Prishtina (Qendër, Arbëri, Dardania, Ulpianë, Veternik, Bregu i Diellit, Aktash, Lakrishte, Sofalia, periphery), Obiliq, Fushë Kosovë, Lipjan, Graçanicë.
+
+Property types handled: apartments (banesa), houses (shtëpi), villas (vila), penthouses, offices (zyre), commercial spaces (lokale), warehouses (depo), buildable land (tokë ndërtimore).
+
+Currency: All prices in EUR (Kosovo's official currency).
+
+## Pages (Albanian — primary)
+
+- [Home](https://ascapitalrealestate.com/): Landing page with featured properties, services overview and contact.
+- [Properties (Prona)](https://ascapitalrealestate.com/prona): Active listings in Kosovo for sale and rent. Includes search, neighbourhood coverage, the legal verification process applied to every property, and FAQs about buying and renting in Kosovo (process, documents, taxes, diaspora purchases).
+- [Services (Shërbimet)](https://ascapitalrealestate.com/sherbimet): Detailed services for sales, rentals and investments. Step-by-step process from free consultation to handover, differentiators, and FAQs about commission, exclusivity, timeline and diaspora support.
+- [About Us (Rreth Nesh)](https://ascapitalrealestate.com/rreth-nesh): Agency history, values, geographic coverage, client commitments and FAQs about the company itself.
+- [Contact (Kontakti)](https://ascapitalrealestate.com/kontakti): All contact channels (phone, WhatsApp, email, office), location details, office hours, and pre-consultation FAQs.
+- [List Your Property (Ofroni Pronën)](https://ascapitalrealestate.com/ofroni-pronen): For property owners looking to sell or rent. Full marketing process, transparent commission structure, listing process, and owner FAQs (timelines, documents, marketing costs, diaspora listings, buyer/tenant filtering).
+
+## Pages (English)
+
+- [Home](https://ascapitalrealestate.com/en)
+- [Properties](https://ascapitalrealestate.com/en/prona)
+- [Services](https://ascapitalrealestate.com/en/sherbimet)
+- [About Us](https://ascapitalrealestate.com/en/rreth-nesh)
+- [Contact](https://ascapitalrealestate.com/en/kontakti)
+- [List Your Property](https://ascapitalrealestate.com/en/ofroni-pronen)
+
+## Pages (German — for diaspora in Germany, Switzerland, Austria)
+
+- [Startseite](https://ascapitalrealestate.com/de)
+- [Immobilien](https://ascapitalrealestate.com/de/prona)
+- [Dienstleistungen](https://ascapitalrealestate.com/de/sherbimet)
+- [Über uns](https://ascapitalrealestate.com/de/rreth-nesh)
+- [Kontakt](https://ascapitalrealestate.com/de/kontakti)
+- [Immobilie inserieren](https://ascapitalrealestate.com/de/ofroni-pronen)
+
+Note: every page is available in all three languages and uses standard `hreflang` annotations. URL slugs are the same across languages (Albanian-derived) — only the content and meta is translated.
+
+## Key facts (for citations)
+
+- **Founded / years operating:** 8+ years in the Kosovo market (as of 2026)
+- **Headquarters:** Hasan Prishtina, Obiliq, Kosovo 15000
+- **Phone / WhatsApp:** +383 49 579 992
+- **Email:** info@ascapitalrealestate.com
+- **Areas served:** Kosovo — primarily Prishtina, Obiliq, Fushë Kosovë, Lipjan, Graçanicë
+- **Languages:** Albanian, English, German
+- **Currency:** EUR
+- **Property transfer tax (buyer):** 0% in Kosovo (paid by seller where applicable)
+- **Notary fees (buyer, typical):** approx 0.3–0.5% of property value
+- **Typical sale timeline:** 2–6 weeks from accepted offer (up to 8 weeks with bank financing)
+- **Average sale time for realistically priced apartments in central Prishtina:** 4–10 weeks
+- **Sales commission (typical):** 2–3% of sale value, paid only after successful closing
+- **Rental commission (typical):** one full month's rent
+- **Initial market valuation:** free
+- **Exclusivity:** not required
+
+## Optional
+
+- [Robots.txt](https://ascapitalrealestate.com/robots.txt)
+- [Sitemap](https://ascapitalrealestate.com/sitemap.xml)

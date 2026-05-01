@@ -1,6 +1,7 @@
 import { Phone, Mail, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 import Logo from "./Logo";
-import { useLang } from "../LanguageContext";
+import { useLang, useLocalizedHref } from "../LanguageContext";
 
 function FacebookIcon(props) {
   return (
@@ -22,6 +23,7 @@ function InstagramIcon(props) {
 
 export default function Footer() {
   const { t } = useLang();
+  const href = useLocalizedHref();
   return (
     <footer className="bg-slate-950 text-slate-300">
       <div className="container-x py-16 grid gap-10 md:grid-cols-4">
@@ -55,11 +57,12 @@ export default function Footer() {
         <div>
           <h4 className="text-white font-bold mb-4">{t.footer.nav}</h4>
           <ul className="space-y-2 text-sm">
-            <li><a href="#ballina" className="hover:text-white">Ballina</a></li>
-            <li><a href="#prona" className="hover:text-white">Prona</a></li>
-            <li><a href="#sherbimet" className="hover:text-white">Shërbimet</a></li>
-            <li><a href="#rreth" className="hover:text-white">Rreth Nesh</a></li>
-            <li><a href="#kontakti" className="hover:text-white">Kontakti</a></li>
+            <li><Link to={href("/")} className="hover:text-white">Ballina</Link></li>
+            <li><Link to={href("/prona")} className="hover:text-white">Prona</Link></li>
+            <li><Link to={href("/sherbimet")} className="hover:text-white">Shërbimet</Link></li>
+            <li><Link to={href("/rreth-nesh")} className="hover:text-white">Rreth Nesh</Link></li>
+            <li><Link to={href("/kontakti")} className="hover:text-white">Kontakti</Link></li>
+            <li><Link to={href("/ofroni-pronen")} className="hover:text-white">Ofroni Pronën</Link></li>
           </ul>
         </div>
 

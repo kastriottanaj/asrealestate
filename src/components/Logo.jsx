@@ -1,6 +1,10 @@
+import { Link } from "react-router-dom";
+import { useLocalizedHref } from "../LanguageContext";
+
 export default function Logo({ variant = "dark", className = "" }) {
+  const href = useLocalizedHref();
   return (
-    <a href="#top" className={`inline-flex items-center ${className}`} aria-label="AS Capital Real Estate">
+    <Link to={href("/")} className={`inline-flex items-center ${className}`} aria-label="AS Capital Real Estate">
       <img
         src="/logo.svg"
         alt="AS Capital Real Estate"
@@ -8,6 +12,6 @@ export default function Logo({ variant = "dark", className = "" }) {
           variant === "light" ? "brightness-0 invert" : ""
         }`}
       />
-    </a>
+    </Link>
   );
 }

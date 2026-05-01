@@ -1,10 +1,12 @@
 import { Home, Key, TrendingUp, ArrowRight } from "lucide-react";
-import { useLang } from "../LanguageContext";
+import { Link } from "react-router-dom";
+import { useLang, useLocalizedHref } from "../LanguageContext";
 
 const ICONS = [Home, Key, TrendingUp];
 
 export default function Services() {
   const { t } = useLang();
+  const href = useLocalizedHref();
   return (
     <section id="sherbimet" className="section bg-slate-50">
       <div className="container-x">
@@ -31,9 +33,9 @@ export default function Services() {
                     </li>
                   ))}
                 </ul>
-                <a href="#kontakti" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-700 hover:text-brand-800">
+                <Link to={href("/kontakti")} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-700 hover:text-brand-800">
                   {t.services.cta} <ArrowRight className="h-4 w-4" />
-                </a>
+                </Link>
               </div>
             );
           })}

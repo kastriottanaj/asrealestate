@@ -1,10 +1,12 @@
 import { ShieldCheck, Handshake, Sparkles, Users } from "lucide-react";
-import { useLang } from "../LanguageContext";
+import { Link } from "react-router-dom";
+import { useLang, useLocalizedHref } from "../LanguageContext";
 
 const ICONS = [ShieldCheck, Handshake, Sparkles, Users];
 
 export default function About() {
   const { t } = useLang();
+  const href = useLocalizedHref();
   return (
     <section id="rreth" className="section">
       <div className="container-x grid lg:grid-cols-2 gap-14 items-center">
@@ -43,7 +45,7 @@ export default function About() {
             })}
           </div>
           <div className="mt-10">
-            <a href="#kontakti" className="btn-primary">{t.about.cta}</a>
+            <Link to={href("/kontakti")} className="btn-primary">{t.about.cta}</Link>
           </div>
         </div>
       </div>

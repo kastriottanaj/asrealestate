@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X, Phone, Globe, ChevronDown } from "lucide-react";
 import Logo from "./Logo";
-import { useLang } from "../LanguageContext";
+import { useLang, useLocalizedHref } from "../LanguageContext";
+import { stripLang, DEFAULT_LANG } from "../seo/lang";
 
 const LANGS = [
   { code: "sq", label: "Shqip" },
@@ -11,23 +13,32 @@ const LANGS = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const { lang, setLang, t } = useLang();
+  const href = useLocalizedHref();
+  const { pathname } = useLocation();
+  const neutralPath = stripLang(pathname);
+  const isHome = neutralPath === "/";
+  // Start opaque on inner pages (no hero behind navbar) so SSR matches client
+  const [scrolled, setScrolled] = useState(!isHome);
 
   useEffect(() => {
+    if (!isHome) {
+      setScrolled(true);
+      return;
+    }
     const onScroll = () => setScrolled(window.scrollY > 20);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [isHome]);
 
   const links = [
-    { href: "#ballina", label: t.nav.home },
-    { href: "#prona", label: t.nav.properties },
-    { href: "#sherbimet", label: t.nav.services },
-    { href: "#rreth", label: t.nav.about },
-    { href: "#kontakti", label: t.nav.contact },
-    { href: "#ofroni", label: t.nav.offer, outline: true },
+    { to: href("/"), label: t.nav.home, end: true },
+    { to: href("/prona"), label: t.nav.properties },
+    { to: href("/sherbimet"), label: t.nav.services },
+    { to: href("/rreth-nesh"), label: t.nav.about },
+    { to: href("/kontakti"), label: t.nav.contact },
+    { to: href("/ofroni-pronen"), label: t.nav.offer, outline: true },
   ];
 
   return (
@@ -43,9 +54,9 @@ export default function Navbar() {
         <nav className="hidden lg:flex items-center gap-1">
           {links.map((l) =>
             l.outline ? (
-              <a
-                key={l.href}
-                href={l.href}
+              <NavLink
+                key={l.to}
+                to={l.to}
                 className={`ml-1 px-4 py-2 text-sm font-semibold rounded-lg border transition ${
                   scrolled
                     ? "border-brand-600 text-brand-600 hover:bg-brand-50"
@@ -53,17 +64,26 @@ export default function Navbar() {
                 }`}
               >
                 {l.label}
-              </a>
+              </NavLink>
             ) : (
-              <a
-                key={l.href}
-                href={l.href}
-                className={`px-4 py-2 text-sm font-semibold transition ${
-                  scrolled ? "text-slate-700 hover:text-brand-700" : "text-white/90 hover:text-white"
-                }`}
+              <NavLink
+                key={l.to}
+                to={l.to}
+                end={l.end}
+                className={({ isActive }) =>
+                  `px-4 py-2 text-sm font-semibold transition ${
+                    scrolled
+                      ? isActive
+                        ? "text-brand-700"
+                        : "text-slate-700 hover:text-brand-700"
+                      : isActive
+                      ? "text-white"
+                      : "text-white/90 hover:text-white"
+                  }`
+                }
               >
                 {l.label}
-              </a>
+              </NavLink>
             )
           )}
         </nav>
@@ -96,9 +116,9 @@ export default function Navbar() {
             <Phone className="h-4 w-4" />
             +383 49 579 992
           </a>
-          <a href="#kontakti" className="btn-primary">
+          <Link to={href("/kontakti")} className="btn-primary">
             {t.nav.cta}
-          </a>
+          </Link>
         </div>
 
         <button
@@ -114,14 +134,19 @@ export default function Navbar() {
         <div className="lg:hidden bg-white border-t border-slate-100 shadow-soft">
           <div className="container-x py-4 flex flex-col gap-1">
             {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
+              <NavLink
+                key={l.to}
+                to={l.to}
+                end={l.end}
                 onClick={() => setOpen(false)}
-                className="px-3 py-3 text-slate-700 font-semibold rounded-lg hover:bg-slate-50"
+                className={({ isActive }) =>
+                  `px-3 py-3 font-semibold rounded-lg ${
+                    isActive ? "bg-brand-50 text-brand-700" : "text-slate-700 hover:bg-slate-50"
+                  }`
+                }
               >
                 {l.label}
-              </a>
+              </NavLink>
             ))}
             {/* Mobile language switcher */}
             <div className="flex gap-2 px-3 py-2 border-t border-slate-100 mt-1">
@@ -137,9 +162,9 @@ export default function Navbar() {
                 </button>
               ))}
             </div>
-            <a href="#kontakti" onClick={() => setOpen(false)} className="btn-primary mt-1">
+            <Link to={href("/kontakti")} onClick={() => setOpen(false)} className="btn-primary mt-1">
               {t.nav.cta}
-            </a>
+            </Link>
           </div>
         </div>
       )}

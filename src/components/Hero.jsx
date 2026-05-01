@@ -1,5 +1,6 @@
 import { Search, MapPin, Home, Tag, Euro } from "lucide-react";
-import { useLang } from "../LanguageContext";
+import { Link } from "react-router-dom";
+import { useLang, useLocalizedHref } from "../LanguageContext";
 
 const STATS = {
   sq: [["500+", "Prona të shitura"], ["1200+", "Klientë të kënaqur"], ["8 vite", "Përvojë në treg"], ["50+", "Partnerë investitorë"]],
@@ -43,6 +44,7 @@ const FREE_LABEL = {
 
 export default function Hero() {
   const { lang, t } = useLang();
+  const href = useLocalizedHref();
 
   return (
     <section id="ballina" className="relative min-h-[92vh] flex items-center overflow-hidden">
@@ -73,10 +75,10 @@ export default function Hero() {
           </h1>
           <p className="mt-6 text-lg text-white/85 max-w-xl">{t.hero.subtitle}</p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#prona" className="btn-primary">{t.hero.cta1}</a>
-            <a href="#kontakti" className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/30 bg-white/10 backdrop-blur px-6 py-3 text-sm font-semibold text-white hover:bg-white/20 transition">
+            <Link to={href("/prona")} className="btn-primary">{t.hero.cta1}</Link>
+            <Link to={href("/kontakti")} className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/30 bg-white/10 backdrop-blur px-6 py-3 text-sm font-semibold text-white hover:bg-white/20 transition">
               {t.hero.cta2}
-            </a>
+            </Link>
           </div>
         </div>
 
