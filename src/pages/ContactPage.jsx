@@ -3,6 +3,8 @@ import Seo from "../components/Seo";
 import PageHeader from "../components/PageHeader";
 import Contact from "../components/Contact";
 import FAQSection from "../components/FAQSection";
+import StatsBar from "../components/StatsBar";
+import PullQuote from "../components/PullQuote";
 import { useLang } from "../LanguageContext";
 import { agencyJsonLd } from "../seo/agency";
 import { breadcrumbJsonLd, faqPageJsonLd, webPageJsonLd } from "../seo/jsonLd";
@@ -12,19 +14,19 @@ const SEO = {
   sq: {
     title: "Kontakti — Telefono, WhatsApp, zyra në Obiliq",
     description:
-      "AS Capital Real Estate — telefon +383 49 579 992, WhatsApp, email info@ascapitalrealestate.com, zyra në Hasan Prishtina, Obiliq. Konsultimi i parë gjithmonë falas.",
+      "Kontaktoni AS Capital Real Estate në Obiliq, Kosovë. Telefon +383 49 579 992, WhatsApp, email ose vizitë në zyrë. Konsultim falas, përgjigje brenda 1–2 orësh në orarin e punës.",
     breadcrumb: "Kontakti",
   },
   en: {
-    title: "Contact — Phone, WhatsApp, office in Obiliq",
+    title: "Contact — Call, WhatsApp, office in Obiliq",
     description:
-      "AS Capital Real Estate — phone +383 49 579 992, WhatsApp, email info@ascapitalrealestate.com, office at Hasan Prishtina, Obiliq. First consultation always free.",
+      "Contact AS Capital Real Estate in Obiliq, Kosovo. Phone +383 49 579 992, WhatsApp, email or in-office. Free consultation, replies within 1–2 hours during business hours.",
     breadcrumb: "Contact",
   },
   de: {
-    title: "Kontakt — Telefon, WhatsApp, Büro in Obiliq",
+    title: "Kontakt — Anruf, WhatsApp, Büro in Obiliq",
     description:
-      "AS Capital Real Estate — Telefon +383 49 579 992, WhatsApp, E-Mail info@ascapitalrealestate.com, Büro in Hasan Prishtina, Obiliq. Erstberatung immer kostenlos.",
+      "Kontaktieren Sie AS Capital Real Estate in Obiliq, Kosovo. Telefon +383 49 579 992, WhatsApp, E-Mail oder im Büro. Kostenlose Beratung, Antwort in 1–2 Stunden zu Bürozeiten.",
     breadcrumb: "Kontakt",
   },
 };
@@ -32,12 +34,21 @@ const SEO = {
 const COPY = {
   sq: {
     eyebrow: "Kontakti",
-    title: "Le të takohemi për një kafe",
+    title: "Le të takohemi për një kafe — konsultimi i parë është falas",
     subtitle:
-      "Telefononi, na shkruani në WhatsApp ose dërgoni mesazh përmes formës — konsultimi i parë është gjithmonë falas. Zyra jonë në Hasan Prishtina, Obiliq, është e hapur për takime gjatë gjithë javës së punës.",
+      "Telefononi, na shkruani në WhatsApp ose dërgoni mesazh përmes formës. Pa angazhim, pa kosto. Mesatarisht 30 minuta në takimin e parë janë mjaft për të kuptuar nëse jemi ekipi i duhur për ju.",
+    stats: {
+      items: [
+        { value: "1–2 orë", label: "Përgjigje në WhatsApp" },
+        { value: "Falas", label: "Konsultimi i parë" },
+        { value: "3 gjuhë", label: "Sq • En • De" },
+        { value: "8 vite", label: "Përvojë në treg" },
+      ],
+    },
     channelsEyebrow: "Kanalet e kontaktit",
     channelsTitle: "Si të na kontaktoni — zgjidhni mënyrën që ju përshtatet",
-    channelsSubtitle: "Kosova përdor WhatsApp për gjithçka — ne jemi gjithmonë në dispozicion atje. Por ju lutemi përdorni kanalin që ju përshtatet më shumë.",
+    channelsSubtitle:
+      "Kosova punon me WhatsApp për gjithçka — ne jemi gjithmonë në dispozicion atje. Por ju lutemi përdorni kanalin që ju përshtatet më shumë. Çdo mesazh kthehet në përgjigje, gjithmonë.",
     channels: [
       { icon: Phone, title: "Telefon", value: "+383 49 579 992", note: "Hapur ditët e punës 09:00–18:00. Lëreni një mesazh nëse nuk përgjigjemi — kthejmë thirrjen brenda të njëjtës ditë.", href: "tel:+38349579992" },
       { icon: MessageCircle, title: "WhatsApp", value: "+383 49 579 992", note: "Mënyra më e shpejtë për të dërguar pyetje, foto të pronës ose dokumente. Përgjigjemi zakonisht brenda 1–2 orësh në orarin e punës.", href: "https://wa.me/38349579992" },
@@ -59,6 +70,12 @@ const COPY = {
       { day: "E diel", time: "Mbyllur (WhatsApp në dispozicion për urgjenca)" },
     ],
     hoursNote: "Jashtë këtyre orëve, na shkruani në WhatsApp dhe ju kthejmë përgjigje në fillim të ditës së ardhshme të punës.",
+    quote: {
+      text: "Më pëlqeu që ata kishin kohë të dëgjonin para se të më ofronin diçka. Në 40 minuta në zyrë mësova më shumë për tregun e Prishtinës se në 6 muaj duke kërkuar vetë në Facebook. Konsultimi ishte falas — por më la ide të qarta për buxhetin tim real.",
+      author: "Edona Murati",
+      role: "Klient pas konsultimit të parë, Veternik",
+      avatar: "https://i.pravatar.cc/120?img=47",
+    },
     faq: {
       eyebrow: "Para konsultimit",
       title: "Çfarë duhet të dini para se të na kontaktoni",
@@ -73,12 +90,21 @@ const COPY = {
   },
   en: {
     eyebrow: "Contact",
-    title: "Let's meet for a coffee",
+    title: "Let's meet for a coffee — the first consultation is free",
     subtitle:
-      "Call us, send a WhatsApp message, or use the form — your first consultation is always free. Our office in Hasan Prishtina, Obiliq, is open for appointments all week.",
+      "Call us, send a WhatsApp message or use the form. No commitment, no cost. On average, 30 minutes in the first meeting are enough to know whether we're the right team for you.",
+    stats: {
+      items: [
+        { value: "1–2 hrs", label: "WhatsApp reply time" },
+        { value: "Free", label: "First consultation" },
+        { value: "3 langs", label: "Sq • En • De" },
+        { value: "8 years", label: "Market experience" },
+      ],
+    },
     channelsEyebrow: "Contact channels",
     channelsTitle: "How to reach us — pick the channel that suits you",
-    channelsSubtitle: "Kosovo runs on WhatsApp — we're always available there. But please use whichever channel works best for you.",
+    channelsSubtitle:
+      "Kosovo runs on WhatsApp — we're always available there. But please use whichever channel works best for you. Every message gets a reply, always.",
     channels: [
       { icon: Phone, title: "Phone", value: "+383 49 579 992", note: "Open weekdays 09:00–18:00. Leave a message if we don't pick up — we return calls within the same day.", href: "tel:+38349579992" },
       { icon: MessageCircle, title: "WhatsApp", value: "+383 49 579 992", note: "The fastest way to send questions, property photos or documents. Replies usually within 1–2 hours during business hours.", href: "https://wa.me/38349579992" },
@@ -100,6 +126,12 @@ const COPY = {
       { day: "Sunday", time: "Closed (WhatsApp available for emergencies)" },
     ],
     hoursNote: "Outside these hours, send a WhatsApp message and we will reply at the start of the next business day.",
+    quote: {
+      text: "I appreciated that they had time to listen before offering anything. In 40 minutes in their office I learned more about the Prishtina market than in 6 months searching alone on Facebook. The consultation was free — but it left me with clear ideas about my real budget.",
+      author: "Edona Murati",
+      role: "Client after first consultation, Veternik",
+      avatar: "https://i.pravatar.cc/120?img=47",
+    },
     faq: {
       eyebrow: "Before consulting",
       title: "What you should know before contacting us",
@@ -114,12 +146,21 @@ const COPY = {
   },
   de: {
     eyebrow: "Kontakt",
-    title: "Treffen wir uns auf einen Kaffee",
+    title: "Treffen wir uns auf einen Kaffee — die Erstberatung ist kostenfrei",
     subtitle:
-      "Rufen Sie uns an, schreiben Sie uns auf WhatsApp oder nutzen Sie das Formular — die Erstberatung ist immer kostenlos. Unser Büro in Hasan Prishtina, Obiliq, ist die ganze Woche für Termine geöffnet.",
+      "Rufen Sie uns an, schreiben Sie auf WhatsApp oder nutzen Sie das Formular. Keine Verpflichtung, keine Kosten. Im Schnitt reichen 30 Minuten im Erstgespräch, um zu wissen, ob wir das richtige Team für Sie sind.",
+    stats: {
+      items: [
+        { value: "1–2 Std.", label: "WhatsApp-Antwortzeit" },
+        { value: "Kostenfrei", label: "Erstberatung" },
+        { value: "3 Sprachen", label: "Sq • En • De" },
+        { value: "8 Jahre", label: "Markterfahrung" },
+      ],
+    },
     channelsEyebrow: "Kontaktkanäle",
     channelsTitle: "So erreichen Sie uns — wählen Sie den passenden Kanal",
-    channelsSubtitle: "Im Kosovo läuft alles über WhatsApp — wir sind dort immer erreichbar. Nutzen Sie aber gern den Kanal, der für Sie am besten passt.",
+    channelsSubtitle:
+      "Im Kosovo läuft alles über WhatsApp — wir sind dort immer erreichbar. Nutzen Sie aber gern den Kanal, der für Sie am besten passt. Jede Nachricht erhält eine Antwort, immer.",
     channels: [
       { icon: Phone, title: "Telefon", value: "+383 49 579 992", note: "Werktags 09:00–18:00 erreichbar. Hinterlassen Sie eine Nachricht, wenn wir nicht abnehmen — wir rufen am selben Tag zurück.", href: "tel:+38349579992" },
       { icon: MessageCircle, title: "WhatsApp", value: "+383 49 579 992", note: "Der schnellste Weg für Fragen, Fotos oder Dokumente. Antwort meist innerhalb von 1–2 Stunden zu Bürozeiten.", href: "https://wa.me/38349579992" },
@@ -141,6 +182,12 @@ const COPY = {
       { day: "Sonntag", time: "Geschlossen (WhatsApp für Notfälle verfügbar)" },
     ],
     hoursNote: "Außerhalb dieser Zeiten schreiben Sie uns auf WhatsApp — Antwort am nächsten Werktag.",
+    quote: {
+      text: "Mir gefiel, dass sie zugehört haben, bevor sie mir etwas anboten. In 40 Minuten in ihrem Büro habe ich mehr über den Prishtina-Markt gelernt als in 6 Monaten Suche auf Facebook. Die Beratung war kostenlos — aber sie hat mir klare Vorstellungen über mein reales Budget gegeben.",
+      author: "Edona Murati",
+      role: "Kundin nach Erstberatung, Veternik",
+      avatar: "https://i.pravatar.cc/120?img=47",
+    },
     faq: {
       eyebrow: "Vor der Beratung",
       title: "Was Sie vor der Kontaktaufnahme wissen sollten",
@@ -159,6 +206,7 @@ export default function ContactPage() {
   const { lang } = useLang();
   const c = COPY[lang] || COPY.sq;
   const seo = SEO[lang] || SEO.sq;
+
   const jsonLd = [
     webPageJsonLd({
       url: withLang("/kontakti", lang),
@@ -175,6 +223,7 @@ export default function ContactPage() {
     agencyJsonLd({ contactPage: true }),
     faqPageJsonLd(c.faq.items),
   ];
+
   return (
     <>
       <Seo
@@ -185,7 +234,7 @@ export default function ContactPage() {
         jsonLd={jsonLd}
       />
       <PageHeader eyebrow={c.eyebrow} title={c.title} subtitle={c.subtitle} />
-
+      <StatsBar items={c.stats.items} />
       <section className="section">
         <div className="container-x">
           <div className="max-w-2xl">
@@ -219,7 +268,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
       <section className="section bg-slate-50">
         <div className="container-x grid gap-12 lg:grid-cols-2">
           <div>
@@ -246,9 +294,8 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
       <Contact />
-
+      <PullQuote {...c.quote} />
       <FAQSection
         eyebrow={c.faq.eyebrow}
         title={c.faq.title}
