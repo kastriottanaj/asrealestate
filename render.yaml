@@ -43,64 +43,64 @@ services:
       - key: VITE_API_URL
         value: https://ascapital-api.onrender.com/api
     routes:
-      # Map clean URLs to their prerendered flat .html files.
+      # Map clean URLs to their prerendered flat /index.html files.
       # (Render's rewrites run BEFORE static file matching, so without
       # these rules every /path without an exact file match falls
       # through to the SPA fallback below and serves the home page.)
       # Albanian (default, no prefix)
       - type: rewrite
         source: /prona
-        destination: /prona.html
+        destination: /prona/index.html
       - type: rewrite
         source: /sherbimet
-        destination: /sherbimet.html
+        destination: /sherbimet/index.html
       - type: rewrite
         source: /rreth-nesh
-        destination: /rreth-nesh.html
+        destination: /rreth-nesh/index.html
       - type: rewrite
         source: /kontakti
-        destination: /kontakti.html
+        destination: /kontakti/index.html
       - type: rewrite
         source: /ofroni-pronen
-        destination: /ofroni-pronen.html
+        destination: /ofroni-pronen/index.html
       # English
       - type: rewrite
         source: /en
-        destination: /en.html
+        destination: /en/index.html
       - type: rewrite
         source: /en/prona
-        destination: /en/prona.html
+        destination: /en/prona/index.html
       - type: rewrite
         source: /en/sherbimet
-        destination: /en/sherbimet.html
+        destination: /en/sherbimet/index.html
       - type: rewrite
         source: /en/rreth-nesh
-        destination: /en/rreth-nesh.html
+        destination: /en/rreth-nesh/index.html
       - type: rewrite
         source: /en/kontakti
-        destination: /en/kontakti.html
+        destination: /en/kontakti/index.html
       - type: rewrite
         source: /en/ofroni-pronen
-        destination: /en/ofroni-pronen.html
+        destination: /en/ofroni-pronen/index.html
       # German
       - type: rewrite
         source: /de
-        destination: /de.html
+        destination: /de/index.html
       - type: rewrite
         source: /de/prona
-        destination: /de/prona.html
+        destination: /de/prona/index.html
       - type: rewrite
         source: /de/sherbimet
-        destination: /de/sherbimet.html
+        destination: /de/sherbimet/index.html
       - type: rewrite
         source: /de/rreth-nesh
-        destination: /de/rreth-nesh.html
+        destination: /de/rreth-nesh/index.html
       - type: rewrite
         source: /de/kontakti
-        destination: /de/kontakti.html
+        destination: /de/kontakti/index.html
       - type: rewrite
         source: /de/ofroni-pronen
-        destination: /de/ofroni-pronen.html
+        destination: /de/ofroni-pronen/index.html
       # SPA fallback for any other unmatched URL
       - type: rewrite
         source: /*

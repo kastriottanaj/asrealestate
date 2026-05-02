@@ -7,9 +7,10 @@ export default defineConfig({
   ssgOptions: {
     script: 'async',
     formatting: 'none',
-    // 'flat' produces dist/sherbimet.html etc. so Render's static
-    // file resolution serves the right page without depending on
-    // route rewrites. Render auto-resolves /sherbimet -> /sherbimet.html.
-    dirStyle: 'flat',
+    // 'nested' produces dist/sherbimet/index.html etc.
+    // Render serves these correctly when URLs end with a trailing
+    // slash (directory index). The SPA navigates with trailing
+    // slashes so client-side routing always lands on a real file.
+    dirStyle: 'nested',
   },
 })
