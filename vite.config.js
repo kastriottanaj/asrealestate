@@ -7,6 +7,9 @@ export default defineConfig({
   ssgOptions: {
     script: 'async',
     formatting: 'none',
-    dirStyle: 'nested',
+    // 'flat' produces dist/sherbimet.html etc. so Render's static
+    // file resolution serves the right page without depending on
+    // route rewrites. Render auto-resolves /sherbimet -> /sherbimet.html.
+    dirStyle: 'flat',
   },
 })
