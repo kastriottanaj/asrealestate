@@ -27,9 +27,18 @@ services:
       - key: DEBUG
         value: "False"
       - key: ALLOWED_HOSTS
-        value: ascapital-api.onrender.com
+        value: ascapital-api.onrender.com,ascapitalrealestate.com,www.ascapitalrealestate.com
       - key: CORS_ALLOWED_ORIGINS
-        value: https://ascapital-frontend.onrender.com
+        value: https://ascapital-frontend.onrender.com,https://ascapitalrealestate.com,https://www.ascapitalrealestate.com
+      - key: CSRF_TRUSTED_ORIGINS
+        value: https://ascapitalrealestate.com,https://www.ascapitalrealestate.com,https://ascapital-api.onrender.com
+      # Cloudinary credentials — set these in the Render dashboard, not in YAML
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
 
   - type: web
     name: ascapital-frontend
@@ -40,68 +49,25 @@ services:
     staticPublishPath: dist
     autoDeploy: true
     envVars:
+      # Same-origin: requests go to /api on ascapitalrealestate.com,
+      # which the routes below proxy to the ascapital-api service.
       - key: VITE_API_URL
-        value: https://ascapital-api.onrender.com/api
+        value: /api
     routes:
-      # Map clean URLs to their prerendered flat /index.html files.
-      # (Render's rewrites run BEFORE static file matching, so without
-      # these rules every /path without an exact file match falls
-      # through to the SPA fallback below and serves the home page.)
-      # Albanian (default, no prefix)
+      # Proxy backend paths to the Django service so the admin and API
+      # live on the public domain (ascapitalrealestate.com/admin, /api/...).
+      # /static/* covers Django admin's CSS/JS (Vite emits to /assets/*, no clash).
       - type: rewrite
-        source: /prona
-        destination: /prona/index.html
+        source: /admin/*
+        destination: https://ascapital-api.onrender.com/admin/:splat
       - type: rewrite
-        source: /sherbimet
-        destination: /sherbimet/index.html
+        source: /api/*
+        destination: https://ascapital-api.onrender.com/api/:splat
       - type: rewrite
-        source: /rreth-nesh
-        destination: /rreth-nesh/index.html
-      - type: rewrite
-        source: /kontakti
-        destination: /kontakti/index.html
-      - type: rewrite
-        source: /ofroni-pronen
-        destination: /ofroni-pronen/index.html
-      # English
-      - type: rewrite
-        source: /en
-        destination: /en/index.html
-      - type: rewrite
-        source: /en/prona
-        destination: /en/prona/index.html
-      - type: rewrite
-        source: /en/sherbimet
-        destination: /en/sherbimet/index.html
-      - type: rewrite
-        source: /en/rreth-nesh
-        destination: /en/rreth-nesh/index.html
-      - type: rewrite
-        source: /en/kontakti
-        destination: /en/kontakti/index.html
-      - type: rewrite
-        source: /en/ofroni-pronen
-        destination: /en/ofroni-pronen/index.html
-      # German
-      - type: rewrite
-        source: /de
-        destination: /de/index.html
-      - type: rewrite
-        source: /de/prona
-        destination: /de/prona/index.html
-      - type: rewrite
-        source: /de/sherbimet
-        destination: /de/sherbimet/index.html
-      - type: rewrite
-        source: /de/rreth-nesh
-        destination: /de/rreth-nesh/index.html
-      - type: rewrite
-        source: /de/kontakti
-        destination: /de/kontakti/index.html
-      - type: rewrite
-        source: /de/ofroni-pronen
-        destination: /de/ofroni-pronen/index.html
-      # SPA fallback for any other unmatched URL
+        source: /static/*
+        destination: https://ascapital-api.onrender.com/static/:splat
+      # SPA fallback — every non-asset URL serves index.html so the
+      # client-side router can render the right page.
       - type: rewrite
         source: /*
         destination: /index.html
