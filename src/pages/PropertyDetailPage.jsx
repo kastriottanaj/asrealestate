@@ -7,6 +7,10 @@ import {
 } from "lucide-react";
 import { fetchProperty, fetchSimilarProperties, submitContact } from "../api";
 import { useLang, useLocalizedHref } from "../LanguageContext";
+import Seo from "../components/Seo";
+import { breadcrumbJsonLd, propertyProductJsonLd } from "../seo/jsonLd";
+import { withLang } from "../seo/lang";
+import { lead, contact as trackContact, viewContent } from "../lib/pixel";
 
 const COPY = {
   sq: {
@@ -186,8 +190,44 @@ function DetailContent({ property, similar, c, lang }) {
   const whatsappHref = `https://wa.me/38349579992?text=${encodeURIComponent(prefilledMessage)}`;
   const interestForStatus = property.status === "qira" ? "qira-kerkoje" : "blej";
 
+  useEffect(() => {
+    viewContent({
+      content_ids: [property.slug],
+      content_name: property.title,
+      content_type: "product",
+      content_category: property.type,
+      value: parseFloat(property.price),
+      currency: "EUR",
+    });
+  }, [property.slug, property.title, property.type, property.price]);
+
+  const seoTitle = `${property.title} — ${property.formatted_price}`;
+  const seoDescription = (property.description?.trim().slice(0, 160))
+    || `${property.title} — ${property.neighborhood}, ${property.area} m². ${property.formatted_price}. Verifikim ligjor falas, kontratë e rishikuar nga ekipi ynë.`;
+  const ogImage = images[0] || undefined;
+  const jsonLd = [
+    breadcrumbJsonLd([
+      { name: c.home, url: withLang("/", lang) },
+      { name: c.properties, url: withLang("/prona", lang) },
+      { name: property.title, url: withLang(`/prona/${property.slug}`, lang) },
+    ]),
+    propertyProductJsonLd(property, lang),
+  ];
+
+  const trackPhone = (source) => trackContact({ method: "phone", source, content_ids: [property.slug] });
+  const trackWhatsapp = (source) => trackContact({ method: "whatsapp", source, content_ids: [property.slug] });
+
   return (
     <>
+      <Seo
+        title={seoTitle}
+        description={seoDescription}
+        path={`/prona/${property.slug}`}
+        image={ogImage}
+        lang={lang}
+        ogType="article"
+        jsonLd={jsonLd}
+      />
       <article className="pt-24 pb-32 md:pb-20">
         <div className="container-x">
           {/* Breadcrumb */}
@@ -267,6 +307,9 @@ function DetailContent({ property, similar, c, lang }) {
             c={c}
             interest={interestForStatus}
             prefilledMessage={prefilledMessage}
+            property={property}
+            onWhatsapp={() => trackWhatsapp("detail_form")}
+            onPhone={() => trackPhone("detail_form")}
           />
 
           {/* Similar properties */}
@@ -280,6 +323,7 @@ function DetailContent({ property, similar, c, lang }) {
           href={whatsappHref}
           target="_blank"
           rel="noreferrer"
+          onClick={() => trackWhatsapp("detail_sticky")}
           className="inline-flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-semibold text-white"
           style={{ backgroundColor: "#25D366" }}
         >
@@ -288,6 +332,7 @@ function DetailContent({ property, similar, c, lang }) {
         </a>
         <a
           href={`tel:${AGENT_PHONE}`}
+          onClick={() => trackPhone("detail_sticky")}
           className="btn-primary"
         >
           <Phone className="h-4 w-4" />
@@ -426,7 +471,7 @@ function Lightbox({ images, index, onClose, onChange }) {
   );
 }
 
-function LeadForm({ c, interest, prefilledMessage }) {
+function LeadForm({ c, interest, prefilledMessage, property, onWhatsapp, onPhone }) {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: prefilledMessage });
   const [status, setStatus] = useState("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -455,6 +500,13 @@ function LeadForm({ c, interest, prefilledMessage }) {
         phone: form.phone,
         interest,
         message: form.message,
+      });
+      lead({
+        content_name: "Property inquiry",
+        content_category: property?.type,
+        content_ids: property?.slug ? [property.slug] : undefined,
+        value: property?.price ? parseFloat(property.price) : undefined,
+        currency: "EUR",
       });
       setStatus("success");
     } catch (err) {
@@ -511,12 +563,13 @@ function LeadForm({ c, interest, prefilledMessage }) {
             href={`https://wa.me/38349579992?text=${encodeURIComponent(prefilledMessage)}`}
             target="_blank"
             rel="noreferrer"
+            onClick={onWhatsapp}
             className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 hover:border-brand-400 transition"
           >
             <MessageCircle className="h-4 w-4 text-emerald-500" />
             WhatsApp
           </a>
-          <a href={`tel:${AGENT_PHONE}`} className="text-sm text-slate-600 font-medium hover:text-brand-700 transition">
+          <a href={`tel:${AGENT_PHONE}`} onClick={onPhone} className="text-sm text-slate-600 font-medium hover:text-brand-700 transition">
             {AGENT_PHONE_DISPLAY}
           </a>
         </div>

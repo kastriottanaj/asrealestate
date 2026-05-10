@@ -67,6 +67,40 @@ export function webPageJsonLd({ url, name, description, type = "WebPage", lang =
   return node;
 }
 
+export function propertyProductJsonLd(p, lang = "sq") {
+  const url = `${SITE_URL}${lang === "sq" ? "" : `/${lang}`}/prona/${p.slug}`;
+  const images = (p.images && p.images.length > 0)
+    ? p.images.map((i) => i.url).filter(Boolean)
+    : [p.image_src || p.image_url].filter(Boolean);
+
+  const additionalProperty = [
+    { "@type": "PropertyValue", name: "area", value: p.area, unitCode: "MTK" },
+    { "@type": "PropertyValue", name: "neighborhood", value: p.neighborhood },
+  ];
+  if (p.bedrooms > 0) additionalProperty.unshift({ "@type": "PropertyValue", name: "bedrooms", value: p.bedrooms });
+  if (p.bathrooms > 0) additionalProperty.splice(1, 0, { "@type": "PropertyValue", name: "bathrooms", value: p.bathrooms });
+  if (p.has_ownership_doc) additionalProperty.push({ "@type": "PropertyValue", name: "titleDeed", value: "Verified" });
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: p.title,
+    description: p.description || `${p.title} — ${p.neighborhood}, ${p.area} m².`,
+    image: images,
+    sku: p.slug,
+    brand: ORGANIZATION_REF,
+    offers: {
+      "@type": "Offer",
+      price: p.price,
+      priceCurrency: "EUR",
+      availability: "https://schema.org/InStock",
+      url,
+      seller: ORGANIZATION_REF,
+    },
+    additionalProperty,
+  };
+}
+
 export function servicesGraphJsonLd(services) {
   return {
     "@context": "https://schema.org",

@@ -66,6 +66,11 @@ services:
       - type: rewrite
         source: /static/*
         destination: https://ascapital-api.onrender.com/static/:splat
+      # Sitemap is generated dynamically by Django so new properties appear
+      # without a frontend rebuild.
+      - type: rewrite
+        source: /sitemap.xml
+        destination: https://ascapital-api.onrender.com/sitemap.xml
       # SPA fallback — every non-asset URL serves index.html so the
       # client-side router can render the right page.
       - type: rewrite
