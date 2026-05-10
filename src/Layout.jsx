@@ -3,6 +3,7 @@ import { Outlet, ScrollRestoration, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
+import ConsentBanner from "./components/ConsentBanner";
 import { LanguageProvider } from "./LanguageContext";
 import { pageView } from "./lib/pixel";
 
@@ -29,6 +30,7 @@ export default function Layout() {
         </main>
         <Footer />
         <WhatsAppButton />
+        <ConsentBanner />
         <ScrollRestoration />
       </div>
     </LanguageProvider>
