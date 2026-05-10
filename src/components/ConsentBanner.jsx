@@ -1,6 +1,7 @@
 import { Cookie } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useConsent } from "../lib/consent";
-import { useLang } from "../LanguageContext";
+import { useLang, useLocalizedHref } from "../LanguageContext";
 
 const COPY = {
   sq: {
@@ -8,24 +9,28 @@ const COPY = {
     body: "Përdorim cookies për të kuptuar përdorimin e faqes dhe për reklamim të personalizuar (Google Analytics, Meta Pixel). Mund të refuzoni — kjo nuk ndikon në shërbimet thelbësore.",
     accept: "Pranoj",
     reject: "Refuzo",
+    learnMore: "Mëso më shumë",
   },
   en: {
     title: "Cookies and analytics",
     body: "We use cookies to understand site usage and for personalised advertising (Google Analytics, Meta Pixel). You can decline — this does not affect essential services.",
     accept: "Accept",
     reject: "Decline",
+    learnMore: "Learn more",
   },
   de: {
     title: "Cookies und Analyse",
     body: "Wir verwenden Cookies zur Nutzungsanalyse und für personalisierte Werbung (Google Analytics, Meta Pixel). Sie können ablehnen — wesentliche Dienste sind nicht betroffen.",
     accept: "Akzeptieren",
     reject: "Ablehnen",
+    learnMore: "Mehr erfahren",
   },
 };
 
 export default function ConsentBanner() {
   const [consent, setConsent] = useConsent();
   const { lang } = useLang();
+  const href = useLocalizedHref();
   const c = COPY[lang] || COPY.sq;
 
   if (consent !== null) return null;
@@ -45,7 +50,12 @@ export default function ConsentBanner() {
             </div>
             <div>
               <div id="consent-title" className="font-bold text-slate-900">{c.title}</div>
-              <p className="text-sm text-slate-600 mt-1 max-w-2xl">{c.body}</p>
+              <p className="text-sm text-slate-600 mt-1 max-w-2xl">
+                {c.body}{" "}
+                <Link to={href("/privatesia")} className="font-semibold text-brand-700 hover:underline whitespace-nowrap">
+                  {c.learnMore} →
+                </Link>
+              </p>
             </div>
           </div>
           <div className="flex gap-2 shrink-0">

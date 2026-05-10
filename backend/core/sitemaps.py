@@ -44,6 +44,7 @@ class StaticSitemap(Sitemap):
         ("rreth-nesh", 0.7, "monthly"),
         ("kontakti", 0.7, "monthly"),
         ("ofroni-pronen", 0.7, "monthly"),
+        ("privatesia", 0.3, "yearly"),
     ]
 
     def items(self):

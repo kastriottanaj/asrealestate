@@ -86,9 +86,15 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-x py-6 flex flex-col sm:flex-row gap-2 items-center justify-between text-xs text-slate-500">
+        <div className="container-x py-6 flex flex-col sm:flex-row gap-3 items-center justify-between text-xs text-slate-500">
           <p>© {new Date().getFullYear()} AS Capital Real Estate. {t.footer.copyright}</p>
-          <p>Pasuri të paluajtshme • Investime të sigurta • Besueshmëri</p>
+          <div className="flex items-center gap-4">
+            <Link to={href("/privatesia")} className="hover:text-white transition">
+              {t.footer.privacy || "Privatësia"}
+            </Link>
+            <span className="hidden sm:inline">•</span>
+            <p className="hidden sm:block">Pasuri të paluajtshme • Investime të sigurta • Besueshmëri</p>
+          </div>
         </div>
       </div>
     </footer>

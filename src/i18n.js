@@ -82,6 +82,7 @@ export const translations = {
       desc: "Partneri juaj i besueshëm për shitje, qira dhe investime në pasuri të paluajtshme në Kosovë.",
       nav: "Navigimi", contact: "Kontakti",
       copyright: "Të gjitha të drejtat e rezervuara.",
+      privacy: "Politika e Privatësisë",
     },
   },
 
@@ -168,6 +169,7 @@ export const translations = {
       desc: "Your trusted partner for sales, rentals and real estate investments in Kosovo.",
       nav: "Navigation", contact: "Contact",
       copyright: "All rights reserved.",
+      privacy: "Privacy Policy",
     },
   },
 
@@ -254,6 +256,7 @@ export const translations = {
       desc: "Ihr vertrauenswürdiger Partner für Kauf, Miete und Immobilieninvestitionen im Kosovo.",
       nav: "Navigation", contact: "Kontakt",
       copyright: "Alle Rechte vorbehalten.",
+      privacy: "Datenschutzerklärung",
     },
   },
 };

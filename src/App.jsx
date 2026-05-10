@@ -49,6 +49,13 @@ const childRoutes = [
       return { Component: OfferPropertyPage };
     },
   },
+  {
+    path: "privatesia",
+    lazy: async () => {
+      const { default: PrivacyPolicyPage } = await import("./pages/PrivacyPolicyPage");
+      return { Component: PrivacyPolicyPage };
+    },
+  },
 ];
 
 const routes = [
