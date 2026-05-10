@@ -49,25 +49,16 @@ services:
     staticPublishPath: dist
     autoDeploy: true
     envVars:
-      # Same-origin: requests go to /api on ascapitalrealestate.com,
-      # which the routes below proxy to the ascapital-api service.
+      # Frontend calls the backend directly (CORS handles it).
+      # Render's free static-site rewrites can proxy to external URLs for
+      # exact paths (see /sitemap.xml below) but NOT for wildcards with
+      # :splat — those silently 404. So /admin and /api stay on the
+      # backend's own URL until we put it on a custom subdomain.
       - key: VITE_API_URL
-        value: /api
+        value: https://ascapital-api.onrender.com/api
     routes:
-      # Proxy backend paths to the Django service so the admin and API
-      # live on the public domain (ascapitalrealestate.com/admin, /api/...).
-      # /static/* covers Django admin's CSS/JS (Vite emits to /assets/*, no clash).
-      - type: rewrite
-        source: /admin/*
-        destination: https://ascapital-api.onrender.com/admin/:splat
-      - type: rewrite
-        source: /api/*
-        destination: https://ascapital-api.onrender.com/api/:splat
-      - type: rewrite
-        source: /static/*
-        destination: https://ascapital-api.onrender.com/static/:splat
       # Sitemap is generated dynamically by Django so new properties appear
-      # without a frontend rebuild.
+      # without a frontend rebuild. Exact-path proxy — works.
       - type: rewrite
         source: /sitemap.xml
         destination: https://ascapital-api.onrender.com/sitemap.xml
