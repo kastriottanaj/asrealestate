@@ -1,3 +1,5 @@
+import { contact as trackContact } from "../lib/pixel";
+
 export default function WhatsAppButton() {
   return (
     <a
@@ -5,6 +7,7 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noreferrer"
       aria-label="Na kontaktoni në WhatsApp"
+      onClick={() => trackContact({ method: "whatsapp", source: "floating_button" })}
       className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full shadow-lg hover:scale-110 transition-transform"
       style={{ backgroundColor: '#25D366' }}
     >

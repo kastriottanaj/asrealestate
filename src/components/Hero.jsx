@@ -1,6 +1,7 @@
 import { Search, MapPin, Home, Tag, Euro } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLang, useLocalizedHref } from "../LanguageContext";
+import { search as trackSearch } from "../lib/pixel";
 
 const STATS = {
   sq: [["500+", "Prona të shitura"], ["1200+", "Klientë të kënaqur"], ["8 vite", "Përvojë në treg"], ["50+", "Partnerë investitorë"]],
@@ -92,7 +93,7 @@ export default function Hero() {
             <Field icon={<Home className="h-4 w-4" />} label={t.hero.search.type} options={PROPERTY_TYPES[lang]} />
             <Field icon={<MapPin className="h-4 w-4" />} label={t.hero.search.location} options={LOCATIONS} />
             <Field icon={<Euro className="h-4 w-4" />} label={PRICE_LABEL[lang]} options={PRICE_RANGES[lang]} placeholder=" " />
-            <button className="btn-primary h-full w-full md:w-auto md:px-8">
+            <button onClick={() => trackSearch()} className="btn-primary h-full w-full md:w-auto md:px-8">
               <Search className="h-4 w-4" />
               {t.hero.search.btn}
             </button>

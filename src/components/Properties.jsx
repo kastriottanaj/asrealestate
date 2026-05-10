@@ -270,11 +270,16 @@ export default function Properties() {
 
 function PropertyCard({ p }) {
   const { lang } = useLang();
+  const href = useLocalizedHref();
   const imageSrc = p.image_src || p.image_url || '';
   const statusLabel = STATUS_LABEL[lang]?.[p.status] ?? p.status_display;
   const typeLabel = TYPE_LABEL[lang]?.[p.type] ?? p.type_display;
+  const Wrapper = p.slug ? Link : 'article';
+  const wrapperProps = p.slug
+    ? { to: href(`/prona/${p.slug}`), className: "group rounded-2xl overflow-hidden bg-white border border-slate-100 shadow-soft hover:shadow-card transition block" }
+    : { className: "group rounded-2xl overflow-hidden bg-white border border-slate-100 shadow-soft hover:shadow-card transition" };
   return (
-    <article className="group rounded-2xl overflow-hidden bg-white border border-slate-100 shadow-soft hover:shadow-card transition">
+    <Wrapper {...wrapperProps}>
       <div className="relative aspect-[4/3] overflow-hidden">
         <img src={imageSrc} alt={p.title} loading="lazy" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
         <div className="absolute top-4 left-4 flex gap-2">
@@ -297,6 +302,6 @@ function PropertyCard({ p }) {
           <span className="flex items-center gap-1.5"><Maximize2 className="h-4 w-4 text-brand-600" /> {p.area} m²</span>
         </div>
       </div>
-    </article>
+    </Wrapper>
   );
 }

@@ -1,20 +1,33 @@
 from rest_framework import serializers
 
-from .models import Property, Testimonial, ListingRequest, Subscriber, ContactMessage
+from .models import Property, PropertyImage, Testimonial, ListingRequest, Subscriber, ContactMessage
+
+
+class PropertyImageSerializer(serializers.ModelSerializer):
+    url = serializers.SerializerMethodField()
+
+    class Meta:
+        model = PropertyImage
+        fields = ["id", "url", "is_cover", "order"]
+
+    def get_url(self, obj):
+        return obj.image.url if obj.image else None
 
 
 class PropertySerializer(serializers.ModelSerializer):
     formatted_price = serializers.ReadOnlyField()
-    image_src = serializers.URLField(source="image_url", read_only=True)
+    image_src = serializers.ReadOnlyField(source="cover_image_url")
+    images = PropertyImageSerializer(many=True, read_only=True)
     status_display = serializers.CharField(source="get_status_display", read_only=True)
     type_display = serializers.CharField(source="get_type_display", read_only=True)
 
     class Meta:
         model = Property
         fields = [
-            "id", "title", "status", "status_display", "type", "type_display",
+            "id", "slug", "title", "status", "status_display", "type", "type_display",
             "price", "formatted_price", "neighborhood", "bedrooms", "bathrooms",
-            "area", "image_url", "image_src", "featured", "has_ownership_doc",
+            "area", "description", "image_url", "image_src", "images", "featured",
+            "has_ownership_doc",
         ]
 
 

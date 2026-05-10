@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Home, Loader2, Send, CheckCircle } from "lucide-react";
 import { submitListingRequest } from "../api";
 import { useLang } from "../LanguageContext";
+import { lead } from "../lib/pixel";
 
 const PROPERTY_TYPES = {
   sq: [{ value: "banese", label: "Banesë" }, { value: "shtepi", label: "Shtëpi" }, { value: "penthouse", label: "Penthouse" }, { value: "vile", label: "Vilë" }, { value: "zyre", label: "Zyre" }, { value: "objekt", label: "Objekt" }, { value: "lokal", label: "Lokal" }, { value: "biznes", label: "Biznes" }, { value: "depo", label: "Depo" }, { value: "toke", label: "Tokë" }],
@@ -62,6 +63,13 @@ export default function OfferProperty() {
     setErrorMsg("");
     try {
       await submitListingRequest({ ...form, area: form.area ? parseInt(form.area) : null, price: form.price ? parseFloat(form.price) : null });
+      lead({
+        content_name: "List property request",
+        content_category: form.property_status,
+        content_type: form.property_type,
+        value: form.price ? parseFloat(form.price) : undefined,
+        currency: "EUR",
+      });
       setStatus("success");
     } catch (err) {
       setStatus("error");

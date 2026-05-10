@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Phone, Mail, MapPin, MessageCircle, Send, Loader2 } from "lucide-react";
 import { submitContact } from "../api";
 import { useLang } from "../LanguageContext";
+import { lead, contact as trackContact } from "../lib/pixel";
 
 export default function Contact() {
   const { t } = useLang();
@@ -20,6 +21,7 @@ export default function Contact() {
     setErrorMsg("");
     try {
       await submitContact(form);
+      lead({ content_name: "Contact form", content_category: form.interest });
       setStatus("success");
       setForm({ first_name: "", last_name: "", email: "", phone: "", interest: "blej", message: "" });
     } catch (err) {
@@ -44,9 +46,9 @@ export default function Contact() {
 
         <div className="mt-12 grid lg:grid-cols-5 gap-8">
           <div className="lg:col-span-2 space-y-4">
-            <InfoCard icon={Phone} title={t.contact.cards.phone} value="+383 49 579 992" href="tel:+38349579992" />
-            <InfoCard icon={MessageCircle} title={t.contact.cards.whatsapp} value={t.contact.cards.whatsappVal} href="https://wa.me/38349579992" />
-            <InfoCard icon={Mail} title={t.contact.cards.email} value="info@ascapitalrealestate.com" href="mailto:info@ascapitalrealestate.com" />
+            <InfoCard icon={Phone} title={t.contact.cards.phone} value="+383 49 579 992" href="tel:+38349579992" onClick={() => trackContact({ method: "phone" })} />
+            <InfoCard icon={MessageCircle} title={t.contact.cards.whatsapp} value={t.contact.cards.whatsappVal} href="https://wa.me/38349579992" onClick={() => trackContact({ method: "whatsapp" })} />
+            <InfoCard icon={Mail} title={t.contact.cards.email} value="info@ascapitalrealestate.com" href="mailto:info@ascapitalrealestate.com" onClick={() => trackContact({ method: "email" })} />
             <InfoCard icon={MapPin} title={t.contact.cards.office} value="Hasan Prishtina, Obiliq, Kosovë 15000" />
           </div>
 
@@ -112,11 +114,12 @@ export default function Contact() {
   );
 }
 
-function InfoCard({ icon: Icon, title, value, href }) {
+function InfoCard({ icon: Icon, title, value, href, onClick }) {
   const Tag = href ? "a" : "div";
   return (
     <Tag
       href={href}
+      onClick={onClick}
       target={href?.startsWith("http") ? "_blank" : undefined}
       rel={href?.startsWith("http") ? "noreferrer" : undefined}
       className="flex items-start gap-4 rounded-2xl bg-white p-5 border border-slate-100 shadow-soft hover:shadow-card transition"

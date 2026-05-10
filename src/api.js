@@ -13,6 +13,23 @@ export async function fetchProperties(filters = {}) {
   return data.results ?? data;
 }
 
+export async function fetchProperty(slug) {
+  const res = await fetch(`${BASE_URL}/properties/${slug}/`);
+  if (res.status === 404) {
+    const err = new Error('Property not found');
+    err.notFound = true;
+    throw err;
+  }
+  if (!res.ok) throw new Error('Gabim gjatë marrjes së pronës.');
+  return res.json();
+}
+
+export async function fetchSimilarProperties(slug) {
+  const res = await fetch(`${BASE_URL}/properties/${slug}/similar/`);
+  if (!res.ok) return [];
+  return res.json();
+}
+
 export async function fetchTestimonials() {
   const res = await fetch(`${BASE_URL}/testimonials/`);
   if (!res.ok) throw new Error('Gabim gjatë marrjes së dëshmive.');

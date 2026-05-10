@@ -1,15 +1,30 @@
 from django.contrib import admin
+from django.utils.html import format_html
 
-from .models import Property, Testimonial, ListingRequest, Subscriber, ContactMessage
+from .models import Property, PropertyImage, Testimonial, ListingRequest, Subscriber, ContactMessage
+
+
+class PropertyImageInline(admin.TabularInline):
+    model = PropertyImage
+    extra = 1
+    fields = ("image", "is_cover", "order", "preview")
+    readonly_fields = ("preview",)
+
+    def preview(self, obj):
+        if obj.image:
+            return format_html('<img src="{}" style="max-height: 80px; border-radius: 6px;" />', obj.image.url)
+        return ""
 
 
 @admin.register(Property)
 class PropertyAdmin(admin.ModelAdmin):
-    list_display = ("title", "status", "type", "neighborhood", "price", "featured", "created_at")
-    list_filter = ("status", "type", "featured", "has_ownership_doc")
-    search_fields = ("title", "neighborhood")
-    list_editable = ("featured",)
+    list_display = ("title", "status", "type", "neighborhood", "price", "featured", "is_published", "created_at")
+    list_filter = ("is_published", "status", "type", "featured", "has_ownership_doc")
+    search_fields = ("title", "neighborhood", "slug")
+    list_editable = ("featured", "is_published")
     ordering = ("-featured", "-created_at")
+    readonly_fields = ("slug",)
+    inlines = [PropertyImageInline]
 
 
 @admin.register(Testimonial)

@@ -15,6 +15,13 @@ const childRoutes = [
     },
   },
   {
+    path: "prona/:slug",
+    lazy: async () => {
+      const { default: PropertyDetailPage } = await import("./pages/PropertyDetailPage");
+      return { Component: PropertyDetailPage };
+    },
+  },
+  {
     path: "sherbimet",
     lazy: async () => {
       const { default: ServicesPage } = await import("./pages/ServicesPage");
