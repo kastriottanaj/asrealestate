@@ -8,7 +8,7 @@ export default function PageHeader({ eyebrow, title, subtitle }) {
             {eyebrow}
           </span>
         )}
-        <h1 className="mt-5 font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05]">
+        <h1 className="mt-5 font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05] text-white">
           {title}
         </h1>
         {subtitle && <p className="mt-5 text-lg text-white/80 max-w-2xl">{subtitle}</p>}
