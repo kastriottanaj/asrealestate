@@ -70,6 +70,12 @@ REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 50,
+    # Public form endpoints (contacts, listings, subscribers) must accept
+    # anonymous POSTs from the frontend. SessionAuthentication is excluded
+    # so that an admin session cookie on the same domain does not trigger
+    # DRF's CSRF enforcement on these public endpoints. Django admin keeps
+    # its own session+CSRF flow independent of DRF.
+    'DEFAULT_AUTHENTICATION_CLASSES': [],
 }
 
 CORS_ALLOWED_ORIGINS = os.environ.get('CORS_ALLOWED_ORIGINS', 'http://localhost:5173,http://127.0.0.1:5173,http://localhost:4173').split(',')
