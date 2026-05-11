@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { Search, MapPin, Home, Tag, Euro } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useLang, useLocalizedHref } from "../LanguageContext";
 import { search as trackSearch } from "../lib/pixel";
 
@@ -21,13 +22,30 @@ const PROPERTY_TYPES = {
   de: ["Wohnung", "Haus", "Penthouse", "Villa", "Büro", "Gebäude", "Laden", "Geschäft", "Lager", "Grundstück"],
 };
 
+// Canonical backend codes per index — must stay aligned with PROPERTY_TYPES above.
+const TYPE_CODES = ["banese", "shtepi", "penthouse", "vile", "zyre", "objekt", "lokal", "biznes", "depo", "toke"];
+
+// Index-aligned with t.hero.purposes (Shitje/Qira/Investim).
+// Investim has no backend status — leave empty so the listing shows all.
+const STATUS_CODES = ["shitje", "qira", ""];
+
 const LOCATIONS = ["Prishtinë", "Obiliq", "Fushë Kosovë", "Lipjan", "Graçanicë"];
 
-const PRICE_RANGES = {
-  sq: ["0 – 50,000 €", "50,000 – 100,000 €", "100,000 – 150,000 €", "150,000 – 250,000 €", "250,000 – 500,000 €", "500,000+ €"],
-  en: ["0 – 50,000 €", "50,000 – 100,000 €", "100,000 – 150,000 €", "150,000 – 250,000 €", "250,000 – 500,000 €", "500,000+ €"],
-  de: ["0 – 50,000 €", "50,000 – 100,000 €", "100,000 – 150,000 €", "150,000 – 250,000 €", "250,000 – 500,000 €", "500,000+ €"],
+// "Any" labels per field per language — selecting these submits with no filter.
+const ANY = {
+  sq: { purpose: "Të gjitha", type: "Të gjitha tipet", location: "Të gjitha lokacionet", price: "Çdo çmim" },
+  en: { purpose: "All",       type: "All types",       location: "All locations",         price: "Any price" },
+  de: { purpose: "Alle",      type: "Alle Typen",      location: "Alle Standorte",        price: "Jeder Preis" },
 };
+
+const PRICE_RANGES = [
+  { label: "0 – 50,000 €", min: 0, max: 50000 },
+  { label: "50,000 – 100,000 €", min: 50000, max: 100000 },
+  { label: "100,000 – 150,000 €", min: 100000, max: 150000 },
+  { label: "150,000 – 250,000 €", min: 150000, max: 250000 },
+  { label: "250,000 – 500,000 €", min: 250000, max: 500000 },
+  { label: "500,000+ €", min: 500000, max: null },
+];
 
 const PRICE_LABEL = { sq: "Diapazoni i çmimeve", en: "Price range", de: "Preisbereich" };
 
@@ -46,6 +64,32 @@ const FREE_LABEL = {
 export default function Hero() {
   const { lang, t } = useLang();
   const href = useLocalizedHref();
+  const navigate = useNavigate();
+
+  // -1 = "Any/All" — selecting this submits with no filter on that field.
+  const [purposeIdx, setPurposeIdx] = useState(-1);
+  const [typeIdx, setTypeIdx] = useState(-1);
+  const [locationIdx, setLocationIdx] = useState(-1);
+  const [priceIdx, setPriceIdx] = useState(-1);
+
+  const handleSearch = () => {
+    trackSearch();
+    const params = new URLSearchParams();
+    if (purposeIdx >= 0) {
+      const status = STATUS_CODES[purposeIdx];
+      if (status) params.set("status", status);
+      if (purposeIdx === 2) params.set("purpose", "investim");
+    }
+    if (typeIdx >= 0) params.set("type", TYPE_CODES[typeIdx]);
+    if (locationIdx >= 0) params.set("location", LOCATIONS[locationIdx]);
+    if (priceIdx >= 0) {
+      const r = PRICE_RANGES[priceIdx];
+      params.set("priceMin", String(r.min));
+      if (r.max !== null) params.set("priceMax", String(r.max));
+    }
+    const qs = params.toString();
+    navigate(qs ? `${href("/prona")}?${qs}` : href("/prona"));
+  };
 
   return (
     <section id="ballina" className="relative min-h-[92vh] flex items-center overflow-hidden">
@@ -89,11 +133,47 @@ export default function Hero() {
             <span className="text-[11px] font-semibold text-slate-500">{FREE_LABEL[lang]}</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-5 gap-2">
-            <Field icon={<Tag className="h-4 w-4" />} label={t.hero.search.purpose} options={t.hero.purposes} />
-            <Field icon={<Home className="h-4 w-4" />} label={t.hero.search.type} options={PROPERTY_TYPES[lang]} />
-            <Field icon={<MapPin className="h-4 w-4" />} label={t.hero.search.location} options={LOCATIONS} />
-            <Field icon={<Euro className="h-4 w-4" />} label={PRICE_LABEL[lang]} options={PRICE_RANGES[lang]} placeholder=" " />
-            <button onClick={() => trackSearch()} className="btn-primary h-full w-full md:w-auto md:px-8">
+            <Field icon={<Tag className="h-4 w-4" />} label={t.hero.search.purpose}>
+              <select
+                value={purposeIdx}
+                onChange={(e) => setPurposeIdx(Number(e.target.value))}
+                className="w-full bg-transparent text-sm font-semibold text-slate-900 focus:outline-none cursor-pointer"
+              >
+                <option value={-1}>{ANY[lang].purpose}</option>
+                {t.hero.purposes.map((p, i) => <option key={p} value={i}>{p}</option>)}
+              </select>
+            </Field>
+            <Field icon={<Home className="h-4 w-4" />} label={t.hero.search.type}>
+              <select
+                value={typeIdx}
+                onChange={(e) => setTypeIdx(Number(e.target.value))}
+                className="w-full bg-transparent text-sm font-semibold text-slate-900 focus:outline-none cursor-pointer"
+              >
+                <option value={-1}>{ANY[lang].type}</option>
+                {PROPERTY_TYPES[lang].map((p, i) => <option key={p} value={i}>{p}</option>)}
+              </select>
+            </Field>
+            <Field icon={<MapPin className="h-4 w-4" />} label={t.hero.search.location}>
+              <select
+                value={locationIdx}
+                onChange={(e) => setLocationIdx(Number(e.target.value))}
+                className="w-full bg-transparent text-sm font-semibold text-slate-900 focus:outline-none cursor-pointer"
+              >
+                <option value={-1}>{ANY[lang].location}</option>
+                {LOCATIONS.map((l, i) => <option key={l} value={i}>{l}</option>)}
+              </select>
+            </Field>
+            <Field icon={<Euro className="h-4 w-4" />} label={PRICE_LABEL[lang]}>
+              <select
+                value={priceIdx}
+                onChange={(e) => setPriceIdx(Number(e.target.value))}
+                className="w-full bg-transparent text-sm font-semibold text-slate-900 focus:outline-none cursor-pointer"
+              >
+                <option value={-1}>{ANY[lang].price}</option>
+                {PRICE_RANGES.map((r, i) => <option key={r.label} value={i}>{r.label}</option>)}
+              </select>
+            </Field>
+            <button onClick={handleSearch} className="btn-primary h-full w-full md:w-auto md:px-8">
               <Search className="h-4 w-4" />
               {t.hero.search.btn}
             </button>
@@ -113,16 +193,13 @@ export default function Hero() {
   );
 }
 
-function Field({ icon, label, options, placeholder }) {
+function Field({ icon, label, children }) {
   return (
     <label className="flex items-center gap-3 rounded-xl bg-slate-50 px-4 py-3 cursor-pointer hover:bg-slate-100 transition">
       <span className="text-brand-600">{icon}</span>
       <div className="flex-1 min-w-0">
         <div className="text-[10px] font-bold uppercase tracking-wider text-slate-500">{label}</div>
-        <select className="w-full bg-transparent text-sm font-semibold text-slate-900 focus:outline-none cursor-pointer">
-          {placeholder && <option value="" disabled selected>{placeholder}</option>}
-          {options.map((o) => <option key={o}>{o}</option>)}
-        </select>
+        {children}
       </div>
     </label>
   );

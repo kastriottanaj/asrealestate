@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Bed, Bath, Maximize2, MapPin, ArrowRight, Loader2, SlidersHorizontal, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { fetchProperties } from "../api";
 import { useLang, useLocalizedHref } from "../LanguageContext";
 
@@ -17,6 +17,36 @@ const FALLBACK_PROPERTIES = [
 
 const STATUS_MAP = { 0: "", 1: "shitje", 2: "qira" };
 const STATUS_LABEL_MAP = { 0: "", 1: "Shitje", 2: "Qira" };
+const STATUS_TAB_INDEX = { shitje: 1, qira: 2 };
+
+// Parse the formatted_price string from the fallback ("€120 000", "€800/muaj") to a number.
+function parsePrice(str) {
+  if (!str) return null;
+  const digits = String(str).replace(/[^\d]/g, "");
+  return digits ? parseInt(digits, 10) : null;
+}
+
+// Filter a property list against the hero-search criteria. Used to filter the local
+// FALLBACK_PROPERTIES (the API already filters server-side, but running this on real
+// results too is safe and lets price/location filtering work even if the backend
+// doesn't honour every param yet).
+function applyClientFilters(list, { status, type, location, priceMin, priceMax }) {
+  return list.filter((p) => {
+    if (status && p.status && p.status !== status) return false;
+    if (type && p.type && p.type !== type) return false;
+    if (location) {
+      const hay = `${p.neighborhood || ""} ${p.location_display || ""}`.toLowerCase();
+      if (!hay.includes(location.toLowerCase())) return false;
+    }
+    if (priceMin || priceMax) {
+      const num = typeof p.price === "number" ? p.price : parsePrice(p.formatted_price);
+      if (num == null) return true; // can't tell — don't drop it
+      if (priceMin && num < Number(priceMin)) return false;
+      if (priceMax && num > Number(priceMax)) return false;
+    }
+    return true;
+  });
+}
 
 const STATUS_LABEL = {
   sq: { shitje: "Shitje", qira: "Qira" },
@@ -37,7 +67,14 @@ export default function Properties() {
   const href = useLocalizedHref();
   const tabs = t.properties.tabs;
 
-  const [tab, setTab] = useState(0);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const urlStatus = searchParams.get("status") || "";
+  const urlType = searchParams.get("type") || "";
+  const urlLocation = searchParams.get("location") || "";
+  const urlPriceMin = searchParams.get("priceMin") || "";
+  const urlPriceMax = searchParams.get("priceMax") || "";
+
+  const [tab, setTab] = useState(STATUS_TAB_INDEX[urlStatus] ?? 0);
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -47,28 +84,61 @@ export default function Properties() {
   const [ownership, setOwnership] = useState(null);
   const [bedrooms, setBedrooms] = useState("Të gjitha");
   const [furnishing, setFurnishing] = useState("Të gjitha");
-  const [priceMin, setPriceMin] = useState("");
-  const [priceMax, setPriceMax] = useState("");
+  const [priceMin, setPriceMin] = useState(urlPriceMin);
+  const [priceMax, setPriceMax] = useState(urlPriceMax);
+
+  // Keep tab + price in sync if the URL params change (e.g. user re-submits the hero search).
+  useEffect(() => {
+    setTab(STATUS_TAB_INDEX[urlStatus] ?? 0);
+    setPriceMin(urlPriceMin);
+    setPriceMax(urlPriceMax);
+  }, [urlStatus, urlPriceMin, urlPriceMax]);
+
+  // When the user clicks a status tab, mirror it into the URL so refresh/back works.
+  const handleTabClick = (i) => {
+    setTab(i);
+    const next = new URLSearchParams(searchParams);
+    const code = STATUS_MAP[i];
+    if (code) next.set("status", code);
+    else next.delete("status");
+    setSearchParams(next, { replace: true });
+  };
 
   useEffect(() => {
     setLoading(true);
     setError(null);
     const filters = { status: STATUS_MAP[tab] };
+    if (urlType) filters.type = urlType;
+    if (urlLocation) filters.location = urlLocation;
+    if (priceMin) filters.price_min = priceMin;
+    if (priceMax) filters.price_max = priceMax;
     if (bedrooms !== "Të gjitha") {
       if (bedrooms === "5+") filters.bedrooms_min = 5;
       else filters.bedrooms = bedrooms;
     }
     fetchProperties(filters)
-      .then(setProperties)
+      .then((data) => setProperties(applyClientFilters(data, { status: filters.status, type: urlType, location: urlLocation, priceMin, priceMax })))
       .catch(() => {
-        const label = STATUS_LABEL_MAP[tab];
-        const filtered = label
-          ? FALLBACK_PROPERTIES.filter((p) => p.status_display === label)
-          : FALLBACK_PROPERTIES;
-        setProperties(filtered);
+        setProperties(applyClientFilters(FALLBACK_PROPERTIES, { status: filters.status, type: urlType, location: urlLocation, priceMin, priceMax }));
       })
       .finally(() => setLoading(false));
-  }, [tab, bedrooms]);
+  }, [tab, bedrooms, urlType, urlLocation, priceMin, priceMax]);
+
+  const activeUrlFilters = useMemo(() => {
+    const out = [];
+    if (urlType) out.push(urlType);
+    if (urlLocation) out.push(urlLocation);
+    if (priceMin || priceMax) {
+      const min = priceMin ? `€${Number(priceMin).toLocaleString("en-US")}` : "0";
+      const max = priceMax ? `€${Number(priceMax).toLocaleString("en-US")}` : "∞";
+      out.push(`${min} – ${max}`);
+    }
+    return out;
+  }, [urlType, urlLocation, priceMin, priceMax]);
+
+  const clearUrlFilters = () => {
+    setSearchParams(new URLSearchParams(), { replace: true });
+  };
 
   const resetFilters = () => {
     setOwnership(null);
@@ -104,7 +174,7 @@ export default function Properties() {
               {tabs.map((tabLabel, i) => (
                 <button
                   key={i}
-                  onClick={() => setTab(i)}
+                  onClick={() => handleTabClick(i)}
                   className={`px-5 py-2 text-sm font-semibold rounded-lg transition ${
                     tab === i ? "bg-white text-brand-700 shadow-soft" : "text-slate-600 hover:text-slate-900"
                   }`}
@@ -133,6 +203,26 @@ export default function Properties() {
             </button>
           </div>
         </div>
+
+        {/* Hero-search filter chips (from URL) */}
+        {activeUrlFilters.length > 0 && (
+          <div className="mt-6 flex flex-wrap items-center gap-2">
+            <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+              Filtra aktivë:
+            </span>
+            {activeUrlFilters.map((f) => (
+              <span key={f} className="inline-flex items-center gap-1.5 rounded-full bg-brand-50 border border-brand-100 px-3 py-1 text-xs font-semibold text-brand-700">
+                {f}
+              </span>
+            ))}
+            <button
+              onClick={clearUrlFilters}
+              className="ml-1 inline-flex items-center gap-1 text-xs font-semibold text-slate-500 hover:text-red-500 transition"
+            >
+              <X className="h-3.5 w-3.5" /> Pastro
+            </button>
+          </div>
+        )}
 
         {/* Filter panel */}
         {showFilters && (
