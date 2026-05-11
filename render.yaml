@@ -39,6 +39,23 @@ services:
         sync: false
       - key: CLOUDINARY_API_SECRET
         sync: false
+      # Email (Gmail SMTP) — used to notify the agency about new leads.
+      # EMAIL_HOST_PASSWORD is a Google "App password"; set it in the
+      # Render dashboard (sync: false), never commit it here.
+      - key: EMAIL_HOST
+        value: smtp.gmail.com
+      - key: EMAIL_PORT
+        value: "587"
+      - key: EMAIL_USE_TLS
+        value: "True"
+      - key: EMAIL_HOST_USER
+        value: ascapitalrealestate@gmail.com
+      - key: EMAIL_HOST_PASSWORD
+        sync: false
+      - key: DEFAULT_FROM_EMAIL
+        value: ascapitalrealestate@gmail.com
+      - key: LEADS_NOTIFY_EMAIL
+        value: ascapitalrealestate@gmail.com
 
   - type: web
     name: ascapital-frontend
