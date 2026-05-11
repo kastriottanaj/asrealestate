@@ -12,9 +12,14 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const BACKEND_URL = process.env.BACKEND_URL || 'https://ascapital-api.onrender.com';
 
+// Render's edge sets X-Forwarded-* headers; trust them so req.hostname is the
+// public hostname (e.g. ascapitalrealestate.com), not the internal one.
+app.set('trust proxy', true);
+
 // /static covers Django admin's CSS/JS (Vite emits frontend assets under /assets,
-// so no clash). xfwd preserves the original host/proto for Django's CSRF check.
-// pathFilter (not app.use mount path) so the prefix isn't stripped before forwarding.
+// so no clash). pathFilter (not app.use mount path) so the prefix isn't stripped
+// before forwarding. We set X-Forwarded-* manually so Django (with
+// USE_X_FORWARDED_HOST=True) sees the public hostname and ALLOWED_HOSTS matches.
 app.use(createProxyMiddleware({
   pathFilter: (pathname) =>
     pathname.startsWith('/admin') ||
@@ -22,7 +27,16 @@ app.use(createProxyMiddleware({
     pathname.startsWith('/static'),
   target: BACKEND_URL,
   changeOrigin: true,
-  xfwd: true,
+  on: {
+    proxyReq: (proxyReq, req) => {
+      const fwdHost = req.headers['x-forwarded-host'] || req.headers.host;
+      const fwdProto = req.headers['x-forwarded-proto'] || (req.socket?.encrypted ? 'https' : 'http');
+      const fwdFor = req.headers['x-forwarded-for'] || req.socket?.remoteAddress || '';
+      if (fwdHost) proxyReq.setHeader('X-Forwarded-Host', fwdHost);
+      proxyReq.setHeader('X-Forwarded-Proto', fwdProto);
+      if (fwdFor) proxyReq.setHeader('X-Forwarded-For', fwdFor);
+    },
+  },
 }));
 
 app.use(express.static(path.join(__dirname, 'dist')));
