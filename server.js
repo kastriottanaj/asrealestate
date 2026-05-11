@@ -39,6 +39,19 @@ app.use(createProxyMiddleware({
   },
 }));
 
+// TEMP: debug endpoint — reveals what Render's edge actually passes to us.
+// Remove once /admin is verified working through the public domain.
+app.get('/__debug_headers', (req, res) => {
+  res.json({
+    hostname: req.hostname,
+    protocol: req.protocol,
+    secure: req.secure,
+    ip: req.ip,
+    ips: req.ips,
+    headers: req.headers,
+  });
+});
+
 app.use(express.static(path.join(__dirname, 'dist')));
 
 app.get('*', (_req, res) => {
