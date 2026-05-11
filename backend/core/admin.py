@@ -3,6 +3,9 @@ from django.utils.html import format_html
 
 from .models import Property, PropertyImage, Testimonial, ListingRequest, Subscriber, ContactMessage
 
+admin.site.site_header = "AS Capital Real Estate Administration"
+admin.site.site_title = "AS Capital Real Estate Admin"
+admin.site.index_title = "Welcome to AS Capital Real Estate Admin Panel"
 
 class PropertyImageInline(admin.TabularInline):
     model = PropertyImage

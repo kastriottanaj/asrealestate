@@ -1,3 +1,7 @@
+import logging
+
+from django.conf import settings
+from django.core.mail import EmailMessage
 from rest_framework import viewsets, mixins
 from rest_framework.decorators import action
 from rest_framework.response import Response
@@ -8,6 +12,30 @@ from .serializers import (
     SubscriberSerializer, ContactMessageSerializer,
 )
 from .filters import PropertyFilter
+
+
+logger = logging.getLogger(__name__)
+
+
+def _send_lead_email(subject, body, reply_to=None):
+    """Notify the agency about a new lead. Best-effort — never break the
+    form submission if SMTP fails, because the lead is already in the DB."""
+    recipient = getattr(settings, 'LEADS_NOTIFY_EMAIL', '') or getattr(settings, 'EMAIL_HOST_USER', '')
+    from_email = getattr(settings, 'DEFAULT_FROM_EMAIL', '') or recipient
+    if not recipient or not from_email:
+        logger.warning("Lead email not sent: recipient/from not configured")
+        return
+    try:
+        msg = EmailMessage(
+            subject=subject,
+            body=body,
+            from_email=from_email,
+            to=[recipient],
+            reply_to=[reply_to] if reply_to else None,
+        )
+        msg.send(fail_silently=False)
+    except Exception:
+        logger.exception("Failed to send lead notification email")
 
 
 class PropertyViewSet(viewsets.ReadOnlyModelViewSet):
@@ -40,6 +68,30 @@ class ListingRequestViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
     queryset = ListingRequest.objects.all()
     serializer_class = ListingRequestSerializer
 
+    def perform_create(self, serializer):
+        obj = serializer.save()
+        price = f"€{obj.price:,.0f}".replace(",", " ") if obj.price else "—"
+        area = f"{obj.area} m²" if obj.area else "—"
+        body = (
+            f"Ofertë e re prone në AS Capital\n"
+            f"-----------------------------------\n"
+            f"Emri:           {obj.first_name} {obj.last_name}\n"
+            f"Email:          {obj.email}\n"
+            f"Telefon:        {obj.phone}\n"
+            f"Tipi i pronës:  {obj.get_property_type_display()}\n"
+            f"Statusi:        {obj.get_property_status_display()}\n"
+            f"Lokacioni:      {obj.location}\n"
+            f"Sipërfaqja:     {area}\n"
+            f"Çmimi:          {price}\n"
+            f"\nPërshkrimi:\n{obj.description or '—'}\n"
+            f"\nMarrë më: {obj.created_at:%Y-%m-%d %H:%M}\n"
+        )
+        _send_lead_email(
+            subject=f"[AS Capital] Ofertë e re prone — {obj.first_name} {obj.last_name}",
+            body=body,
+            reply_to=obj.email,
+        )
+
 
 class SubscriberViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
     queryset = Subscriber.objects.all()
@@ -49,3 +101,21 @@ class SubscriberViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
 class ContactMessageViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
     queryset = ContactMessage.objects.all()
     serializer_class = ContactMessageSerializer
+
+    def perform_create(self, serializer):
+        obj = serializer.save()
+        body = (
+            f"Mesazh i ri kontakti në AS Capital\n"
+            f"-----------------------------------\n"
+            f"Emri:      {obj.first_name} {obj.last_name}\n"
+            f"Email:     {obj.email}\n"
+            f"Telefon:   {obj.phone or '—'}\n"
+            f"Interesi:  {obj.get_interest_display()}\n"
+            f"\nMesazhi:\n{obj.message}\n"
+            f"\nMarrë më: {obj.created_at:%Y-%m-%d %H:%M}\n"
+        )
+        _send_lead_email(
+            subject=f"[AS Capital] Mesazh i ri — {obj.first_name} {obj.last_name}",
+            body=body,
+            reply_to=obj.email,
+        )

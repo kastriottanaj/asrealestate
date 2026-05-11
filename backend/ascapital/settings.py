@@ -167,3 +167,16 @@ cloudinary.config(
     api_secret=os.environ.get('CLOUDINARY_API_SECRET', ''),
     secure=True,
 )
+
+
+# Email — Gmail SMTP. Used to notify the agency when a new contact message
+# or listing request is submitted. App password (not the account password)
+# must be configured via EMAIL_HOST_PASSWORD env var.
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = os.environ.get('EMAIL_HOST', 'smtp.gmail.com')
+EMAIL_PORT = int(os.environ.get('EMAIL_PORT', '587'))
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', 'True') == 'True'
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', '')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '').replace(' ', '')
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', EMAIL_HOST_USER)
+LEADS_NOTIFY_EMAIL = os.environ.get('LEADS_NOTIFY_EMAIL', EMAIL_HOST_USER)
