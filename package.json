@@ -7,10 +7,13 @@
     "dev": "vite",
     "build": "vite build",
     "build:ssg": "vite-react-ssg build",
+    "start": "node server.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "express": "^4.21.2",
+    "http-proxy-middleware": "^3.0.5",
     "lucide-react": "^1.8.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",

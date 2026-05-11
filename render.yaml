@@ -42,28 +42,17 @@ services:
 
   - type: web
     name: ascapital-frontend
-    runtime: static
+    runtime: node
+    plan: starter
     region: oregon
     rootDir: .
     buildCommand: npm install && npm run build
-    staticPublishPath: dist
+    startCommand: node server.js
     autoDeploy: true
     envVars:
-      # Frontend calls the backend directly (CORS handles it).
-      # Render's free static-site rewrites can proxy to external URLs for
-      # exact paths (see /sitemap.xml below) but NOT for wildcards with
-      # :splat — those silently 404. So /admin and /api stay on the
-      # backend's own URL until we put it on a custom subdomain.
+      # Same-origin: requests hit /api on ascapitalrealestate.com, server.js
+      # proxies them (and /admin, /static) to the Django backend.
       - key: VITE_API_URL
-        value: https://ascapital-api.onrender.com/api
-    routes:
-      # Sitemap is generated dynamically by Django so new properties appear
-      # without a frontend rebuild. Exact-path proxy — works.
-      - type: rewrite
-        source: /sitemap.xml
-        destination: https://ascapital-api.onrender.com/sitemap.xml
-      # SPA fallback — every non-asset URL serves index.html so the
-      # client-side router can render the right page.
-      - type: rewrite
-        source: /*
-        destination: /index.html
+        value: /api
+      - key: BACKEND_URL
+        value: https://ascapital-api.onrender.com
