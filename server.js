@@ -39,50 +39,6 @@ app.use(createProxyMiddleware({
   },
 }));
 
-// TEMP: debug endpoint — reveals what Render's edge actually passes to us.
-// Remove once /admin is verified working through the public domain.
-app.get('/__debug_headers', (req, res) => {
-  res.json({
-    hostname: req.hostname,
-    protocol: req.protocol,
-    secure: req.secure,
-    ip: req.ip,
-    ips: req.ips,
-    headers: req.headers,
-  });
-});
-
-// TEMP: hit the backend with explicit forwarded headers and report response.
-// Lets us isolate whether the proxy middleware is the problem.
-app.get('/__debug_backend', async (req, res) => {
-  const target = `${BACKEND_URL}/admin/login/`;
-  const hostFromRender = req.headers.host;
-  try {
-    const r = await fetch(target, {
-      headers: {
-        'x-forwarded-host': hostFromRender,
-        'x-forwarded-proto': 'https',
-        'x-forwarded-for': req.ip || '',
-        'user-agent': req.headers['user-agent'] || 'debug',
-      },
-      redirect: 'manual',
-    });
-    const text = await r.text();
-    res.json({
-      target,
-      sentHeaders: {
-        'x-forwarded-host': hostFromRender,
-        'x-forwarded-proto': 'https',
-      },
-      status: r.status,
-      respHeaders: Object.fromEntries(r.headers),
-      bodyPreview: text.slice(0, 400),
-    });
-  } catch (e) {
-    res.status(500).json({ error: e.message });
-  }
-});
-
 app.use(express.static(path.join(__dirname, 'dist')));
 
 app.get('*', (_req, res) => {
