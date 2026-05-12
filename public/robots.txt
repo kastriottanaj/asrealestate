@@ -17,4 +17,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://ascapitalrealestate.com/sitemap.xml
+Sitemap: https://asrealestate-rks.com/sitemap.xml

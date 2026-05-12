@@ -28,7 +28,7 @@ DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
 
 # When the admin is served through a proxy on the public domain
-# (ascapitalrealestate.com/admin → ascapital-api.onrender.com/admin),
+# (asrealestate-rks.com/admin → ascapital-api.onrender.com/admin),
 # Django's CSRF middleware needs to trust the public origin.
 CSRF_TRUSTED_ORIGINS = [
     o.strip() for o in os.environ.get('CSRF_TRUSTED_ORIGINS', '').split(',') if o.strip()

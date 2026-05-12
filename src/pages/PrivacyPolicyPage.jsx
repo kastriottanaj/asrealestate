@@ -33,7 +33,7 @@ const COPY = {
   sq: {
     eyebrow: "Politikat tona",
     title: "Politika e Privatësisë",
-    subtitle: "Si i mbledhim, përdorim dhe mbrojmë të dhënat tuaja personale kur vizitoni ascapitalrealestate.com.",
+    subtitle: "Si i mbledhim, përdorim dhe mbrojmë të dhënat tuaja personale kur vizitoni asrealestate-rks.com.",
     lastUpdated: "E përditësuar më 10 maj 2026",
     intro: "Kjo politikë shpjegon çfarë të dhënash mbledhim, pse i mbledhim dhe çfarë të drejtash keni mbi to. E kemi shkruar në gjuhë të qartë — pa zhargon ligjor.",
     seoTitle: "Politika e Privatësisë",
@@ -43,7 +43,7 @@ const COPY = {
       {
         title: "1. Kush jemi",
         paragraphs: [
-          "AS Capital Real Estate (më tej \"ne\" ose \"agjencia\") është një agjenci e pasurive të paluajtshme me seli në Hasan Prishtina, Obiliq, Kosovë 15000. Jemi përgjegjësi i kontrollit për të dhënat personale të mbledhura përmes ascapitalrealestate.com.",
+          "AS Capital Real Estate (më tej \"ne\" ose \"agjencia\") është një agjenci e pasurive të paluajtshme me seli në Hasan Prishtina, Obiliq, Kosovë 15000. Jemi përgjegjësi i kontrollit për të dhënat personale të mbledhura përmes asrealestate-rks.com.",
         ],
       },
       {
@@ -114,7 +114,7 @@ const COPY = {
           "Ankesë: te Agjencia për Informim dhe Privatësi (AIP), aip.rks-gov.net",
         ],
         afterListParagraphs: [
-          "Për të ushtruar këto të drejta, na shkruani në info@ascapitalrealestate.com. Ju përgjigjemi brenda 30 ditësh.",
+          "Për të ushtruar këto të drejta, na shkruani në info@asrealestate-rks.com. Ju përgjigjemi brenda 30 ditësh.",
         ],
       },
       {
@@ -153,7 +153,7 @@ const COPY = {
       name: "AS Capital Real Estate",
       address: "Hasan Prishtina, Obiliq, Kosovë 15000",
       emailLabel: "Email",
-      email: "info@ascapitalrealestate.com",
+      email: "info@asrealestate-rks.com",
       phoneLabel: "Telefon",
       phone: "+383 49 579 992",
     },
@@ -163,7 +163,7 @@ const COPY = {
   en: {
     eyebrow: "Our policies",
     title: "Privacy Policy",
-    subtitle: "How we collect, use and protect your personal data when you visit ascapitalrealestate.com.",
+    subtitle: "How we collect, use and protect your personal data when you visit asrealestate-rks.com.",
     lastUpdated: "Last updated 10 May 2026",
     intro: "This policy explains what data we collect, why we collect it, and what rights you have. Written in plain language — no legal jargon.",
     seoTitle: "Privacy Policy",
@@ -173,7 +173,7 @@ const COPY = {
       {
         title: "1. Who we are",
         paragraphs: [
-          "AS Capital Real Estate (\"we\", \"the agency\") is a real estate agency based in Hasan Prishtina, Obiliq, Kosovo 15000. We are the data controller for personal data collected through ascapitalrealestate.com.",
+          "AS Capital Real Estate (\"we\", \"the agency\") is a real estate agency based in Hasan Prishtina, Obiliq, Kosovo 15000. We are the data controller for personal data collected through asrealestate-rks.com.",
         ],
       },
       {
@@ -244,7 +244,7 @@ const COPY = {
           "Complaint: to the Agency for Information and Privacy (AIP), aip.rks-gov.net",
         ],
         afterListParagraphs: [
-          "To exercise these rights, write to info@ascapitalrealestate.com. We respond within 30 days.",
+          "To exercise these rights, write to info@asrealestate-rks.com. We respond within 30 days.",
         ],
       },
       {
@@ -283,7 +283,7 @@ const COPY = {
       name: "AS Capital Real Estate",
       address: "Hasan Prishtina, Obiliq, Kosovo 15000",
       emailLabel: "Email",
-      email: "info@ascapitalrealestate.com",
+      email: "info@asrealestate-rks.com",
       phoneLabel: "Phone",
       phone: "+383 49 579 992",
     },
@@ -293,7 +293,7 @@ const COPY = {
   de: {
     eyebrow: "Unsere Richtlinien",
     title: "Datenschutzerklärung",
-    subtitle: "Wie wir Ihre personenbezogenen Daten erfassen, verwenden und schützen, wenn Sie ascapitalrealestate.com besuchen.",
+    subtitle: "Wie wir Ihre personenbezogenen Daten erfassen, verwenden und schützen, wenn Sie asrealestate-rks.com besuchen.",
     lastUpdated: "Zuletzt aktualisiert am 10. Mai 2026",
     intro: "Diese Erklärung beschreibt, welche Daten wir erfassen, warum wir sie erfassen und welche Rechte Sie haben. In klarer Sprache — ohne juristisches Fachjargon.",
     seoTitle: "Datenschutzerklärung",
@@ -303,7 +303,7 @@ const COPY = {
       {
         title: "1. Wer wir sind",
         paragraphs: [
-          "AS Capital Real Estate (\"wir\", \"die Agentur\") ist eine Immobilienagentur mit Sitz in Hasan Prishtina, Obiliq, Kosovo 15000. Wir sind der Verantwortliche für die über ascapitalrealestate.com erhobenen personenbezogenen Daten.",
+          "AS Capital Real Estate (\"wir\", \"die Agentur\") ist eine Immobilienagentur mit Sitz in Hasan Prishtina, Obiliq, Kosovo 15000. Wir sind der Verantwortliche für die über asrealestate-rks.com erhobenen personenbezogenen Daten.",
         ],
       },
       {
@@ -374,7 +374,7 @@ const COPY = {
           "Beschwerde: bei der Agentur für Information und Datenschutz (AIP), aip.rks-gov.net",
         ],
         afterListParagraphs: [
-          "Zur Wahrnehmung dieser Rechte schreiben Sie an info@ascapitalrealestate.com. Wir antworten innerhalb von 30 Tagen.",
+          "Zur Wahrnehmung dieser Rechte schreiben Sie an info@asrealestate-rks.com. Wir antworten innerhalb von 30 Tagen.",
         ],
       },
       {
@@ -413,7 +413,7 @@ const COPY = {
       name: "AS Capital Real Estate",
       address: "Hasan Prishtina, Obiliq, Kosovo 15000",
       emailLabel: "E-Mail",
-      email: "info@ascapitalrealestate.com",
+      email: "info@asrealestate-rks.com",
       phoneLabel: "Telefon",
       phone: "+383 49 579 992",
     },

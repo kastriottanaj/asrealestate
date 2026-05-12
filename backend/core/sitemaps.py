@@ -3,7 +3,7 @@ from django.contrib.sitemaps import Sitemap
 from .models import Property
 
 
-PUBLIC_DOMAIN = "ascapitalrealestate.com"
+PUBLIC_DOMAIN = "asrealestate-rks.com"
 
 
 class PropertySitemap(Sitemap):

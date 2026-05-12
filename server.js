@@ -1,6 +1,6 @@
 // Tiny Express server: proxies /admin, /api, /static to the Django backend
 // and serves the Vite-built React SPA for everything else. Lets the admin
-// live at ascapitalrealestate.com/admin under a single domain.
+// live at asrealestate-rks.com/admin under a single domain.
 
 import express from 'express';
 import { createProxyMiddleware } from 'http-proxy-middleware';
@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3000;
 const BACKEND_URL = process.env.BACKEND_URL || 'https://ascapital-api.onrender.com';
 
 // Render's edge sets X-Forwarded-* headers; trust them so req.hostname is the
-// public hostname (e.g. ascapitalrealestate.com), not the internal one.
+// public hostname (e.g. asrealestate-rks.com), not the internal one.
 app.set('trust proxy', true);
 
 // /static covers Django admin's CSS/JS (Vite emits frontend assets under /assets,

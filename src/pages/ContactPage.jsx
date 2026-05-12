@@ -43,7 +43,7 @@ const COPY = {
     channels: [
       { icon: Phone, title: "Telefon", value: "+383 49 579 992", note: "Hapur ditët e punës 09:00–18:00. Lëreni një mesazh nëse nuk përgjigjemi — kthejmë thirrjen brenda të njëjtës ditë.", href: "tel:+38349579992" },
       { icon: MessageCircle, title: "WhatsApp", value: "+383 49 579 992", note: "Mënyra më e shpejtë për të dërguar pyetje, foto të pronës ose dokumente. Përgjigjemi zakonisht brenda 1–2 orësh në orarin e punës.", href: "https://wa.me/38349579992" },
-      { icon: Mail, title: "Email", value: "info@ascapitalrealestate.com", note: "Idealit për kërkesa të detajuara, dokumente formale ose tema që kanë nevojë për përgjigje me shkrim. Përgjigjemi brenda të njëjtës ditë pune.", href: "mailto:info@ascapitalrealestate.com" },
+      { icon: Mail, title: "Email", value: "info@asrealestate-rks.com", note: "Idealit për kërkesa të detajuara, dokumente formale ose tema që kanë nevojë për përgjigje me shkrim. Përgjigjemi brenda të njëjtës ditë pune.", href: "mailto:info@asrealestate-rks.com" },
       { icon: MapPin, title: "Zyra", value: "Hasan Prishtina, Obiliq, Kosovë 15000", note: "Vini në zyrë për takim personal — ju lutemi caktoni një orar paraprak që të sigurohemi se jemi në dispozicion për ju pa pritje." },
     ],
     pain: {
@@ -111,7 +111,7 @@ const COPY = {
     channels: [
       { icon: Phone, title: "Phone", value: "+383 49 579 992", note: "Open weekdays 09:00–18:00. Leave a message if we don't pick up — we return calls within the same day.", href: "tel:+38349579992" },
       { icon: MessageCircle, title: "WhatsApp", value: "+383 49 579 992", note: "The fastest way to send questions, property photos or documents. Replies usually within 1–2 hours during business hours.", href: "https://wa.me/38349579992" },
-      { icon: Mail, title: "Email", value: "info@ascapitalrealestate.com", note: "Ideal for detailed inquiries, formal documents or topics that need a written response. Replies within the same business day.", href: "mailto:info@ascapitalrealestate.com" },
+      { icon: Mail, title: "Email", value: "info@asrealestate-rks.com", note: "Ideal for detailed inquiries, formal documents or topics that need a written response. Replies within the same business day.", href: "mailto:info@asrealestate-rks.com" },
       { icon: MapPin, title: "Office", value: "Hasan Prishtina, Obiliq, Kosovo 15000", note: "Come in for an in-person meeting — please book ahead so we can make sure we're available for you without delay." },
     ],
     pain: {
@@ -179,7 +179,7 @@ const COPY = {
     channels: [
       { icon: Phone, title: "Telefon", value: "+383 49 579 992", note: "Werktags 09:00–18:00 erreichbar. Hinterlassen Sie eine Nachricht, wenn wir nicht abnehmen — wir rufen am selben Tag zurück.", href: "tel:+38349579992" },
       { icon: MessageCircle, title: "WhatsApp", value: "+383 49 579 992", note: "Der schnellste Weg für Fragen, Fotos oder Dokumente. Antwort meist innerhalb von 1–2 Stunden zu Bürozeiten.", href: "https://wa.me/38349579992" },
-      { icon: Mail, title: "E-Mail", value: "info@ascapitalrealestate.com", note: "Ideal für ausführliche Anfragen, formelle Unterlagen oder Themen, die eine schriftliche Antwort brauchen. Antwort am selben Werktag.", href: "mailto:info@ascapitalrealestate.com" },
+      { icon: Mail, title: "E-Mail", value: "info@asrealestate-rks.com", note: "Ideal für ausführliche Anfragen, formelle Unterlagen oder Themen, die eine schriftliche Antwort brauchen. Antwort am selben Werktag.", href: "mailto:info@asrealestate-rks.com" },
       { icon: MapPin, title: "Büro", value: "Hasan Prishtina, Obiliq, Kosovo 15000", note: "Kommen Sie für ein persönliches Gespräch ins Büro — bitte vorab Termin vereinbaren, damit wir ohne Wartezeit für Sie da sind." },
     ],
     pain: {
