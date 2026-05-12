@@ -2,7 +2,7 @@ export const SITE_URL = "https://asrealestate-rks.com";
 export const SITE_NAME = "AS Capital Real Estate";
 export const PHONE = "+38349579992";
 export const PHONE_DISPLAY = "+383 49 579 992";
-export const EMAIL = "info@asrealestate-rks.com";
+export const EMAIL = "asrealestaterks@gmail.com";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-default.jpg`;
 
 const OPENING_HOURS = [

@@ -114,7 +114,7 @@ const COPY = {
           "Ankesë: te Agjencia për Informim dhe Privatësi (AIP), aip.rks-gov.net",
         ],
         afterListParagraphs: [
-          "Për të ushtruar këto të drejta, na shkruani në info@asrealestate-rks.com. Ju përgjigjemi brenda 30 ditësh.",
+          "Për të ushtruar këto të drejta, na shkruani në asrealestaterks@gmail.com. Ju përgjigjemi brenda 30 ditësh.",
         ],
       },
       {
@@ -153,7 +153,7 @@ const COPY = {
       name: "AS Capital Real Estate",
       address: "Hasan Prishtina, Obiliq, Kosovë 15000",
       emailLabel: "Email",
-      email: "info@asrealestate-rks.com",
+      email: "asrealestaterks@gmail.com",
       phoneLabel: "Telefon",
       phone: "+383 49 579 992",
     },
@@ -244,7 +244,7 @@ const COPY = {
           "Complaint: to the Agency for Information and Privacy (AIP), aip.rks-gov.net",
         ],
         afterListParagraphs: [
-          "To exercise these rights, write to info@asrealestate-rks.com. We respond within 30 days.",
+          "To exercise these rights, write to asrealestaterks@gmail.com. We respond within 30 days.",
         ],
       },
       {
@@ -283,7 +283,7 @@ const COPY = {
       name: "AS Capital Real Estate",
       address: "Hasan Prishtina, Obiliq, Kosovo 15000",
       emailLabel: "Email",
-      email: "info@asrealestate-rks.com",
+      email: "asrealestaterks@gmail.com",
       phoneLabel: "Phone",
       phone: "+383 49 579 992",
     },
@@ -374,7 +374,7 @@ const COPY = {
           "Beschwerde: bei der Agentur für Information und Datenschutz (AIP), aip.rks-gov.net",
         ],
         afterListParagraphs: [
-          "Zur Wahrnehmung dieser Rechte schreiben Sie an info@asrealestate-rks.com. Wir antworten innerhalb von 30 Tagen.",
+          "Zur Wahrnehmung dieser Rechte schreiben Sie an asrealestaterks@gmail.com. Wir antworten innerhalb von 30 Tagen.",
         ],
       },
       {
@@ -413,7 +413,7 @@ const COPY = {
       name: "AS Capital Real Estate",
       address: "Hasan Prishtina, Obiliq, Kosovo 15000",
       emailLabel: "E-Mail",
-      email: "info@asrealestate-rks.com",
+      email: "asrealestaterks@gmail.com",
       phoneLabel: "Telefon",
       phone: "+383 49 579 992",
     },

@@ -49,13 +49,13 @@ services:
       - key: EMAIL_USE_TLS
         value: "True"
       - key: EMAIL_HOST_USER
-        value: ascapitalrealestate@gmail.com
+        value: asrealestaterks@gmail.com
       - key: EMAIL_HOST_PASSWORD
         sync: false
       - key: DEFAULT_FROM_EMAIL
-        value: ascapitalrealestate@gmail.com
+        value: asrealestaterks@gmail.com
       - key: LEADS_NOTIFY_EMAIL
-        value: ascapitalrealestate@gmail.com
+        value: asrealestaterks@gmail.com
 
   - type: web
     name: ascapital-frontend
