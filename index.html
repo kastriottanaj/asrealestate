@@ -1,21 +1,23 @@
 <!doctype html>
-<html>
+<html lang="sq">
   <head>
-    <!-- Google Analytics + Meta Pixel are loaded by src/lib/consent.js
-         once the visitor accepts the cookie banner. Until then, fbq/gtag
-         are undefined and all tracking calls no-op. -->
-    <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=2119003922011848&ev=PageView&noscript=1"
-    /></noscript>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#1e88e5" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="google-site-verification" content="XElK7L8ibsngZioIAIgaZxBs8QfeigEJh2xFBlSMTFk" />
-    <!-- title + description provided per-page via react-helmet-async -->
+    <!-- Title, description, canonical, OG and JSON-LD are injected
+         per-route by react-helmet-async via the Seo component, during
+         SSG (vite-react-ssg) and at runtime. Do not add defaults here
+         or they will duplicate the Helmet output. -->
   </head>
   <body>
     <div id="root"></div>
+    <!-- Meta Pixel <noscript> fallback. Lives in <body> because parse5
+         rejects <img> inside <noscript> in <head>. -->
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=2119003922011848&ev=PageView&noscript=1"
+    /></noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

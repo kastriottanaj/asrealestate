@@ -20,6 +20,9 @@ function MetaPixelRouteTracker() {
 }
 
 export default function Layout() {
+  // HelmetProvider is supplied by vite-react-ssg (and used as the SSG
+  // head-extraction context). Don't wrap a second one here — it would
+  // shadow the outer context and swallow per-page <Helmet> output.
   return (
     <LanguageProvider>
       <div className="min-h-screen bg-white flex flex-col">

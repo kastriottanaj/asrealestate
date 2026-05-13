@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://asrealestate-rks.com/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://asrealestate-rks.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://asrealestate-rks.com/en" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://asrealestate-rks.com/de" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asrealestate-rks.com/" />
+  </url>
+  <url>
+    <loc>https://asrealestate-rks.com/prona</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://asrealestate-rks.com/prona" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://asrealestate-rks.com/en/prona" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://asrealestate-rks.com/de/prona" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asrealestate-rks.com/prona" />
+  </url>
+  <url>
+    <loc>https://asrealestate-rks.com/sherbimet</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://asrealestate-rks.com/sherbimet" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://asrealestate-rks.com/en/sherbimet" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://asrealestate-rks.com/de/sherbimet" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asrealestate-rks.com/sherbimet" />
+  </url>
+  <url>
+    <loc>https://asrealestate-rks.com/rreth-nesh</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://asrealestate-rks.com/rreth-nesh" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://asrealestate-rks.com/en/rreth-nesh" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://asrealestate-rks.com/de/rreth-nesh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asrealestate-rks.com/rreth-nesh" />
+  </url>
+  <url>
+    <loc>https://asrealestate-rks.com/kontakti</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://asrealestate-rks.com/kontakti" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://asrealestate-rks.com/en/kontakti" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://asrealestate-rks.com/de/kontakti" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asrealestate-rks.com/kontakti" />
+  </url>
+  <url>
+    <loc>https://asrealestate-rks.com/ofroni-pronen</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://asrealestate-rks.com/ofroni-pronen" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://asrealestate-rks.com/en/ofroni-pronen" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://asrealestate-rks.com/de/ofroni-pronen" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asrealestate-rks.com/ofroni-pronen" />
+  </url>
+  <url>
+    <loc>https://asrealestate-rks.com/privatesia</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://asrealestate-rks.com/privatesia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://asrealestate-rks.com/en/privatesia" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://asrealestate-rks.com/de/privatesia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asrealestate-rks.com/privatesia" />
+  </url>
+</urlset>

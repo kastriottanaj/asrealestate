@@ -61,19 +61,19 @@ const childRoutes = [
 const routes = [
   {
     path: "/",
-    element: <Layout />,
+    Component: Layout,
     entry: "src/Layout.jsx",
     children: childRoutes,
   },
   {
     path: "/en",
-    element: <Layout />,
+    Component: Layout,
     entry: "src/Layout.jsx",
     children: childRoutes,
   },
   {
     path: "/de",
-    element: <Layout />,
+    Component: Layout,
     entry: "src/Layout.jsx",
     children: childRoutes,
   },

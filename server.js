@@ -5,12 +5,14 @@
 import express from 'express';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 import path from 'path';
+import fs from 'fs';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
 const PORT = process.env.PORT || 3000;
 const BACKEND_URL = process.env.BACKEND_URL || 'https://ascapital-api.onrender.com';
+const DIST = path.join(__dirname, 'dist');
 
 // Render's edge sets X-Forwarded-* headers; trust them so req.hostname is the
 // public hostname (e.g. asrealestate-rks.com), not the internal one.
@@ -39,10 +41,25 @@ app.use(createProxyMiddleware({
   },
 }));
 
-app.use(express.static(path.join(__dirname, 'dist')));
+// redirect: false → don't auto-redirect /sherbimet → /sherbimet/. Our
+// canonical URLs are slash-less; the catch-all below serves the right
+// nested HTML for either form.
+app.use(express.static(DIST, { redirect: false }));
 
-app.get('*', (_req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+// vite-react-ssg emits dist/<route>/index.html for every static route. When
+// the URL has no trailing slash (e.g. /sherbimet), express.static doesn't
+// serve the directory index — handle that explicitly so the pre-rendered
+// HTML (with proper <title>/<h1>/JSON-LD) is delivered to crawlers.
+app.get('*', (req, res) => {
+  if (!path.extname(req.path)) {
+    const nested = path.join(DIST, req.path, 'index.html');
+    if (nested.startsWith(DIST) && fs.existsSync(nested)) {
+      return res.sendFile(nested);
+    }
+  }
+  // SPA fallback: dynamic routes (e.g. /prona/:slug) and unknown paths
+  // get the home shell; client-side React Router resolves the actual route.
+  res.sendFile(path.join(DIST, 'index.html'));
 });
 
 app.listen(PORT, () => {
