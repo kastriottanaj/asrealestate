@@ -6,7 +6,11 @@ export default defineConfig({
   plugins: [react()],
   ssgOptions: {
     entry: 'src/main.jsx',
-    script: 'async',
+    // 'defer' (or omitting) keeps the module bundle from racing against the
+    // inline <script> that sets window.__VITE_REACT_SSG_HASH__. With 'async'
+    // the bundle would sometimes execute first and fetch
+    // /static-loader-data-manifest-undefined.json → 400 → hydration aborts.
+    script: 'defer',
     formatting: 'none',
     // 'nested' produces dist/sherbimet/index.html etc. server.js serves
     // these via express.static; the SPA fallback handles dynamic routes

@@ -2,7 +2,13 @@ import Layout from "./Layout";
 import HomePage from "./pages/HomePage";
 import "./App.css";
 
-const childRoutes = [
+// Returns a fresh array of child-route objects each call. React Router's
+// Data Router assigns an `id` to every route from its position in the tree;
+// if the same route object is referenced under multiple parents (here: /, /en,
+// /de) the IDs collide ("Found a route id collision on id '0-0'") and the
+// entire client-side router aborts hydration — buttons, fetches, state
+// updates all stop working. Cloning per-parent keeps each route object unique.
+const makeChildRoutes = () => [
   {
     index: true,
     Component: HomePage,
@@ -63,19 +69,19 @@ const routes = [
     path: "/",
     Component: Layout,
     entry: "src/Layout.jsx",
-    children: childRoutes,
+    children: makeChildRoutes(),
   },
   {
     path: "/en",
     Component: Layout,
     entry: "src/Layout.jsx",
-    children: childRoutes,
+    children: makeChildRoutes(),
   },
   {
     path: "/de",
     Component: Layout,
     entry: "src/Layout.jsx",
-    children: childRoutes,
+    children: makeChildRoutes(),
   },
 ];
 
