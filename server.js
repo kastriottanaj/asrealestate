@@ -22,11 +22,17 @@ app.set('trust proxy', true);
 // so no clash). pathFilter (not app.use mount path) so the prefix isn't stripped
 // before forwarding. We set X-Forwarded-* manually so Django (with
 // USE_X_FORWARDED_HOST=True) sees the public hostname and ALLOWED_HOSTS matches.
+// Filters use trailing slashes so we don't grab unrelated paths that just
+// share a prefix — e.g. vite-react-ssg emits /static-loader-data-manifest-
+// <hash>.json at the site root, and it must be served by express.static, not
+// proxied to Django. Without the slash, every navigation that fetches that
+// manifest hit Django, returned 404 HTML, and the data router crashed with
+// "Unexpected token '<' ... is not valid JSON" mid-navigation.
 app.use(createProxyMiddleware({
   pathFilter: (pathname) =>
-    pathname.startsWith('/admin') ||
-    pathname.startsWith('/api') ||
-    pathname.startsWith('/static'),
+    pathname === '/admin' || pathname.startsWith('/admin/') ||
+    pathname === '/api' || pathname.startsWith('/api/') ||
+    pathname.startsWith('/static/'),
   target: BACKEND_URL,
   changeOrigin: true,
   on: {
