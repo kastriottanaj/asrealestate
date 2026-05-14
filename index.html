@@ -10,6 +10,16 @@
          per-route by react-helmet-async via the Seo component, during
          SSG (vite-react-ssg) and at runtime. Do not add defaults here
          or they will duplicate the Helmet output. -->
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NPJ715GZCV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NPJ715GZCV');
+</script>
   </head>
   <body>
     <div id="root"></div>
