@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 const STORAGE_KEY = "ascap.consent.v1";
 const META_PIXEL_ID = "2119003922011848";
+const META_PIXEL_ID_2 = "1484328702669095";
 const GA_ID = "G-YCY72601HB";
 
 let analyticsLoaded = false;
@@ -47,6 +48,7 @@ function loadMetaPixel() {
   'https://connect.facebook.net/en_US/fbevents.js');
   /* eslint-enable */
   window.fbq("init", META_PIXEL_ID);
+  window.fbq("init", META_PIXEL_ID_2);
   window.fbq("track", "PageView");
 }
 
