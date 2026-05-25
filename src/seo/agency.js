@@ -61,7 +61,11 @@ export function agencyJsonLd({ contactPage = false } = {}) {
     priceRange: "€€",
     currenciesAccepted: "EUR",
     paymentAccepted: ["Bank transfer", "Cash", "Bank loan"],
-    sameAs: ["https://www.facebook.com/ascapitalre"],
+    sameAs: [
+      "https://www.facebook.com/profile.php?id=100069607270512",
+      "https://www.instagram.com/asrealestate.rks/",
+      "https://www.linkedin.com/company/as-real-estate-rks/",
+    ],
     contactPoint: [
       {
         "@type": "ContactPoint",
