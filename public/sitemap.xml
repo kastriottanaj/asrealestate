@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- 1. Home — primary entry point, conversion hub -->
   <url>
     <loc>https://asrealestate-rks.com/</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="sq" href="https://asrealestate-rks.com/" />
@@ -11,9 +13,11 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://asrealestate-rks.com/de" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://asrealestate-rks.com/" />
   </url>
+
+  <!-- 2. Properties — main inventory page, updated most often -->
   <url>
     <loc>https://asrealestate-rks.com/prona</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="sq" href="https://asrealestate-rks.com/prona" />
@@ -21,9 +25,11 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://asrealestate-rks.com/de/prona" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://asrealestate-rks.com/prona" />
   </url>
+
+  <!-- 3. Services — Shitje / Qira / Investime offering -->
   <url>
     <loc>https://asrealestate-rks.com/sherbimet</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="sq" href="https://asrealestate-rks.com/sherbimet" />
@@ -31,19 +37,11 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://asrealestate-rks.com/de/sherbimet" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://asrealestate-rks.com/sherbimet" />
   </url>
-  <url>
-    <loc>https://asrealestate-rks.com/rreth-nesh</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://asrealestate-rks.com/rreth-nesh" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://asrealestate-rks.com/en/rreth-nesh" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://asrealestate-rks.com/de/rreth-nesh" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://asrealestate-rks.com/rreth-nesh" />
-  </url>
+
+  <!-- 4. Contact — lead capture (form, WhatsApp, phone, zyra) -->
   <url>
     <loc>https://asrealestate-rks.com/kontakti</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="sq" href="https://asrealestate-rks.com/kontakti" />
@@ -51,9 +49,23 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://asrealestate-rks.com/de/kontakti" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://asrealestate-rks.com/kontakti" />
   </url>
+
+  <!-- 5. About — trust building (8+ vite, team, story) -->
+  <url>
+    <loc>https://asrealestate-rks.com/rreth-nesh</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://asrealestate-rks.com/rreth-nesh" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://asrealestate-rks.com/en/rreth-nesh" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://asrealestate-rks.com/de/rreth-nesh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asrealestate-rks.com/rreth-nesh" />
+  </url>
+
+  <!-- 6. Offer your property — seller-side lead capture -->
   <url>
     <loc>https://asrealestate-rks.com/ofroni-pronen</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="sq" href="https://asrealestate-rks.com/ofroni-pronen" />
@@ -61,9 +73,11 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://asrealestate-rks.com/de/ofroni-pronen" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://asrealestate-rks.com/ofroni-pronen" />
   </url>
+
+  <!-- 7. Privacy policy — legal, lowest priority -->
   <url>
     <loc>https://asrealestate-rks.com/privatesia</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="sq" href="https://asrealestate-rks.com/privatesia" />
@@ -71,4 +85,5 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://asrealestate-rks.com/de/privatesia" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://asrealestate-rks.com/privatesia" />
   </url>
+
 </urlset>
