@@ -120,8 +120,8 @@ const COPY = {
   },
 };
 
-const AGENT_PHONE = "+38349579992";
-const AGENT_PHONE_DISPLAY = "+383 49 579 992";
+const AGENT_PHONE = "+38349942941";
+const AGENT_PHONE_DISPLAY = "+383 49 942 941";
 
 function cloudinaryTransform(url, transforms) {
   if (!url || typeof url !== "string") return url;
@@ -187,7 +187,7 @@ function DetailContent({ property, similar, c, lang }) {
     ? `${window.location.origin}${href(`/prona/${property.slug}`)}`
     : "";
   const prefilledMessage = c.prefill(property.title, detailUrl);
-  const whatsappHref = `https://wa.me/38349579992?text=${encodeURIComponent(prefilledMessage)}`;
+  const whatsappHref = `https://wa.me/38349942941?text=${encodeURIComponent(prefilledMessage)}`;
   const interestForStatus = property.status === "qira" ? "qira-kerkoje" : "blej";
 
   useEffect(() => {
@@ -560,7 +560,7 @@ function LeadForm({ c, interest, prefilledMessage, property, onWhatsapp, onPhone
             {status === "loading" ? <><Loader2 className="h-4 w-4 animate-spin" /> {c.sending}</> : <><Send className="h-4 w-4" /> {c.submit}</>}
           </button>
           <a
-            href={`https://wa.me/38349579992?text=${encodeURIComponent(prefilledMessage)}`}
+            href={`https://wa.me/38349942941?text=${encodeURIComponent(prefilledMessage)}`}
             target="_blank"
             rel="noreferrer"
             onClick={onWhatsapp}

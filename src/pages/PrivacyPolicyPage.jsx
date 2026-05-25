@@ -43,7 +43,7 @@ const COPY = {
       {
         title: "1. Kush jemi",
         paragraphs: [
-          "AS Capital Real Estate (më tej \"ne\" ose \"agjencia\") është një agjenci e pasurive të paluajtshme me seli në Hasan Prishtina, Obiliq, Kosovë 15000. Jemi përgjegjësi i kontrollit për të dhënat personale të mbledhura përmes asrealestate-rks.com.",
+          "AS Capital Real Estate (më tej \"ne\" ose \"agjencia\") është një agjenci e pasurive të paluajtshme me seli në Rruga "Ahmet Krasniqi" Nr. 15, Prishtinë, Kosovë 10000. Jemi përgjegjësi i kontrollit për të dhënat personale të mbledhura përmes asrealestate-rks.com.",
         ],
       },
       {
@@ -151,11 +151,11 @@ const COPY = {
     },
     contact: {
       name: "AS Capital Real Estate",
-      address: "Hasan Prishtina, Obiliq, Kosovë 15000",
+      address: "Rruga "Ahmet Krasniqi" Nr. 15, Prishtinë, Kosovë 10000",
       emailLabel: "Email",
       email: "asrealestaterks@gmail.com",
       phoneLabel: "Telefon",
-      phone: "+383 49 579 992",
+      phone: "+383 49 942 941",
     },
     tableHeaders: { service: "Shërbimi", purpose: "Qëllimi", policy: "Politika" },
     viewPolicy: "Shih",
@@ -173,7 +173,7 @@ const COPY = {
       {
         title: "1. Who we are",
         paragraphs: [
-          "AS Capital Real Estate (\"we\", \"the agency\") is a real estate agency based in Hasan Prishtina, Obiliq, Kosovo 15000. We are the data controller for personal data collected through asrealestate-rks.com.",
+          "AS Capital Real Estate (\"we\", \"the agency\") is a real estate agency based in Rruga "Ahmet Krasniqi" Nr. 15, Prishtinë, Kosovo 10000. We are the data controller for personal data collected through asrealestate-rks.com.",
         ],
       },
       {
@@ -281,11 +281,11 @@ const COPY = {
     },
     contact: {
       name: "AS Capital Real Estate",
-      address: "Hasan Prishtina, Obiliq, Kosovo 15000",
+      address: "Rruga "Ahmet Krasniqi" Nr. 15, Prishtinë, Kosovo 10000",
       emailLabel: "Email",
       email: "asrealestaterks@gmail.com",
       phoneLabel: "Phone",
-      phone: "+383 49 579 992",
+      phone: "+383 49 942 941",
     },
     tableHeaders: { service: "Service", purpose: "Purpose", policy: "Policy" },
     viewPolicy: "View",
@@ -303,7 +303,7 @@ const COPY = {
       {
         title: "1. Wer wir sind",
         paragraphs: [
-          "AS Capital Real Estate (\"wir\", \"die Agentur\") ist eine Immobilienagentur mit Sitz in Hasan Prishtina, Obiliq, Kosovo 15000. Wir sind der Verantwortliche für die über asrealestate-rks.com erhobenen personenbezogenen Daten.",
+          "AS Capital Real Estate (\"wir\", \"die Agentur\") ist eine Immobilienagentur mit Sitz in Rruga "Ahmet Krasniqi" Nr. 15, Prishtinë, Kosovo 10000. Wir sind der Verantwortliche für die über asrealestate-rks.com erhobenen personenbezogenen Daten.",
         ],
       },
       {
@@ -411,11 +411,11 @@ const COPY = {
     },
     contact: {
       name: "AS Capital Real Estate",
-      address: "Hasan Prishtina, Obiliq, Kosovo 15000",
+      address: "Rruga "Ahmet Krasniqi" Nr. 15, Prishtinë, Kosovo 10000",
       emailLabel: "E-Mail",
       email: "asrealestaterks@gmail.com",
       phoneLabel: "Telefon",
-      phone: "+383 49 579 992",
+      phone: "+383 49 942 941",
     },
     tableHeaders: { service: "Dienst", purpose: "Zweck", policy: "Richtlinie" },
     viewPolicy: "Ansehen",

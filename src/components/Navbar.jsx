@@ -136,11 +136,11 @@ export default function Navbar() {
           </div>
 
           <a
-            href="tel:+38349579992"
+            href="tel:+38349942941"
             className={`flex items-center gap-2 text-sm font-semibold ${scrolled ? "text-slate-900" : "text-white"}`}
           >
             <Phone className="h-4 w-4" />
-            +383 49 579 992
+            +383 49 942 941
           </a>
           <Link to={href("/kontakti")} className="btn-primary">
             {t.nav.cta}

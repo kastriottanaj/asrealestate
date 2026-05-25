@@ -46,10 +46,10 @@ export default function Contact() {
 
         <div className="mt-12 grid lg:grid-cols-5 gap-8">
           <div className="lg:col-span-2 space-y-4">
-            <InfoCard icon={Phone} title={t.contact.cards.phone} value="+383 49 579 992" href="tel:+38349579992" onClick={() => trackContact({ method: "phone" })} />
-            <InfoCard icon={MessageCircle} title={t.contact.cards.whatsapp} value={t.contact.cards.whatsappVal} href="https://wa.me/38349579992" onClick={() => trackContact({ method: "whatsapp" })} />
+            <InfoCard icon={Phone} title={t.contact.cards.phone} value="+383 49 942 941" href="tel:+38349942941" onClick={() => trackContact({ method: "phone" })} />
+            <InfoCard icon={MessageCircle} title={t.contact.cards.whatsapp} value={t.contact.cards.whatsappVal} href="https://wa.me/38349942941" onClick={() => trackContact({ method: "whatsapp" })} />
             <InfoCard icon={Mail} title={t.contact.cards.email} value="asrealestaterks@gmail.com" href="mailto:asrealestaterks@gmail.com" onClick={() => trackContact({ method: "email" })} />
-            <InfoCard icon={MapPin} title={t.contact.cards.office} value="Hasan Prishtina, Obiliq, Kosovë 15000" />
+            <InfoCard icon={MapPin} title={t.contact.cards.office} value={'Rruga "Ahmet Krasniqi" Nr. 15, Prishtinë, Kosovë 10000'} />
           </div>
 
           <form

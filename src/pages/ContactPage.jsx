@@ -14,19 +14,19 @@ const SEO = {
   sq: {
     title: "Kontakti — Konsultim falas, pa angazhim",
     description:
-      "Telefononi +383 49 579 992, na shkruani në WhatsApp, ose vizitoni zyrën tonë në Hasan Prishtina, Obiliq. Konsultimi i parë gjithmonë falas — përgjigje brenda 1–2 orësh.",
+      "Telefononi +383 49 942 941, na shkruani në WhatsApp, ose vizitoni zyrën tonë në Rrugën "Ahmet Krasniqi" Nr. 15, Prishtinë. Konsultimi i parë gjithmonë falas — përgjigje brenda 1–2 orësh.",
     breadcrumb: "Kontakti",
   },
   en: {
     title: "Contact — Free consultation, no commitment",
     description:
-      "Call +383 49 579 992, message us on WhatsApp, or visit our office at Hasan Prishtina, Obiliq. First consultation always free — replies within 1–2 hours.",
+      "Call +383 49 942 941, message us on WhatsApp, or visit our office at Rruga "Ahmet Krasniqi" Nr. 15, Prishtinë. First consultation always free — replies within 1–2 hours.",
     breadcrumb: "Contact",
   },
   de: {
     title: "Kontakt — Kostenlose Beratung, unverbindlich",
     description:
-      "Rufen Sie +383 49 579 992 an, schreiben Sie uns auf WhatsApp, oder besuchen Sie unser Büro in Hasan Prishtina, Obiliq. Erstberatung immer kostenlos — Antwort innerhalb 1–2 Stunden.",
+      "Rufen Sie +383 49 942 941 an, schreiben Sie uns auf WhatsApp, oder besuchen Sie unser Büro in der Rruga "Ahmet Krasniqi" Nr. 15, Prishtinë. Erstberatung immer kostenlos — Antwort innerhalb 1–2 Stunden.",
     breadcrumb: "Kontakt",
   },
 };
@@ -36,15 +36,15 @@ const COPY = {
     eyebrow: "Kontakti",
     title: "Le të takohemi për një kafe — pa presion, pa angazhim",
     subtitle:
-      "Konsultimi i parë është gjithmonë falas. Telefononi, na shkruani në WhatsApp, ose ardhni në zyrë në Hasan Prishtina, Obiliq. Përgjigje brenda 1–2 orësh në orarin e punës — pa formularë të gjatë, pa presion shitje.",
+      "Konsultimi i parë është gjithmonë falas. Telefononi, na shkruani në WhatsApp, ose ardhni në zyrë në Rrugën "Ahmet Krasniqi" Nr. 15, Prishtinë. Përgjigje brenda 1–2 orësh në orarin e punës — pa formularë të gjatë, pa presion shitje.",
     channelsEyebrow: "Kanalet e kontaktit",
     channelsTitle: "Si të na kontaktoni — zgjidhni mënyrën që ju përshtatet",
     channelsSubtitle: "Kosova përdor WhatsApp për gjithçka — ne jemi gjithmonë në dispozicion atje. Por ju lutemi përdorni kanalin që ju përshtatet më shumë.",
     channels: [
-      { icon: Phone, title: "Telefon", value: "+383 49 579 992", note: "Hapur ditët e punës 09:00–18:00. Lëreni një mesazh nëse nuk përgjigjemi — kthejmë thirrjen brenda të njëjtës ditë.", href: "tel:+38349579992" },
-      { icon: MessageCircle, title: "WhatsApp", value: "+383 49 579 992", note: "Mënyra më e shpejtë për të dërguar pyetje, foto të pronës ose dokumente. Përgjigjemi zakonisht brenda 1–2 orësh në orarin e punës.", href: "https://wa.me/38349579992" },
+      { icon: Phone, title: "Telefon", value: "+383 49 942 941", note: "Hapur ditët e punës 09:00–18:00. Lëreni një mesazh nëse nuk përgjigjemi — kthejmë thirrjen brenda të njëjtës ditë.", href: "tel:+38349942941" },
+      { icon: MessageCircle, title: "WhatsApp", value: "+383 49 942 941", note: "Mënyra më e shpejtë për të dërguar pyetje, foto të pronës ose dokumente. Përgjigjemi zakonisht brenda 1–2 orësh në orarin e punës.", href: "https://wa.me/38349942941" },
       { icon: Mail, title: "Email", value: "asrealestaterks@gmail.com", note: "Idealit për kërkesa të detajuara, dokumente formale ose tema që kanë nevojë për përgjigje me shkrim. Përgjigjemi brenda të njëjtës ditë pune.", href: "mailto:asrealestaterks@gmail.com" },
-      { icon: MapPin, title: "Zyra", value: "Hasan Prishtina, Obiliq, Kosovë 15000", note: "Vini në zyrë për takim personal — ju lutemi caktoni një orar paraprak që të sigurohemi se jemi në dispozicion për ju pa pritje." },
+      { icon: MapPin, title: "Zyra", value: "Rruga "Ahmet Krasniqi" Nr. 15, Prishtinë, Kosovë 10000", note: "Vini në zyrë për takim personal — ju lutemi caktoni një orar paraprak që të sigurohemi se jemi në dispozicion për ju pa pritje." },
     ],
     pain: {
       eyebrow: "Çfarë të prisni",
@@ -70,8 +70,8 @@ const COPY = {
     locationEyebrow: "Vendndodhja",
     locationTitle: "Si të na gjeni",
     locationParagraphs: [
-      "Zyra jonë qendrore ndodhet në rrugën Hasan Prishtina në Obiliq, vetëm 10 minuta me makinë nga qendra e Prishtinës.",
-      "Parking i lirë është i disponueshëm pranë zyrës. Nëse vini me transport publik, mund të arrini me autobus të rregullt nga stacioni qendror i Prishtinës.",
+      "Zyra jonë qendrore ndodhet në Rrugën \"Ahmet Krasniqi\" Nr. 15, në Prishtinë — lehtësisht e arritshme nga çdo lagje qendrore.",
+      "Parking i lirë është i disponueshëm pranë zyrës. Me transport publik, ndodhemi vetëm disa minuta nga stacionet kryesore të autobusit në qendër të Prishtinës.",
       "Për takime gjatë vikendit ose jashtë orarit standard, na kontaktoni paraprakisht — gjejmë gjithmonë një mënyrë.",
     ],
     hoursEyebrow: "Orari i punës",
@@ -104,15 +104,15 @@ const COPY = {
     eyebrow: "Contact",
     title: "Let's meet for a coffee — no pressure, no commitment",
     subtitle:
-      "First consultation is always free. Call, WhatsApp, or visit our office at Hasan Prishtina, Obiliq. Replies within 1–2 hours during business hours — no long forms, no sales pressure.",
+      "First consultation is always free. Call, WhatsApp, or visit our office at Rruga "Ahmet Krasniqi" Nr. 15, Prishtinë. Replies within 1–2 hours during business hours — no long forms, no sales pressure.",
     channelsEyebrow: "Contact channels",
     channelsTitle: "How to reach us — pick the channel that suits you",
     channelsSubtitle: "Kosovo runs on WhatsApp — we're always available there. But please use whichever channel works best for you.",
     channels: [
-      { icon: Phone, title: "Phone", value: "+383 49 579 992", note: "Open weekdays 09:00–18:00. Leave a message if we don't pick up — we return calls within the same day.", href: "tel:+38349579992" },
-      { icon: MessageCircle, title: "WhatsApp", value: "+383 49 579 992", note: "The fastest way to send questions, property photos or documents. Replies usually within 1–2 hours during business hours.", href: "https://wa.me/38349579992" },
+      { icon: Phone, title: "Phone", value: "+383 49 942 941", note: "Open weekdays 09:00–18:00. Leave a message if we don't pick up — we return calls within the same day.", href: "tel:+38349942941" },
+      { icon: MessageCircle, title: "WhatsApp", value: "+383 49 942 941", note: "The fastest way to send questions, property photos or documents. Replies usually within 1–2 hours during business hours.", href: "https://wa.me/38349942941" },
       { icon: Mail, title: "Email", value: "asrealestaterks@gmail.com", note: "Ideal for detailed inquiries, formal documents or topics that need a written response. Replies within the same business day.", href: "mailto:asrealestaterks@gmail.com" },
-      { icon: MapPin, title: "Office", value: "Hasan Prishtina, Obiliq, Kosovo 15000", note: "Come in for an in-person meeting — please book ahead so we can make sure we're available for you without delay." },
+      { icon: MapPin, title: "Office", value: "Rruga "Ahmet Krasniqi" Nr. 15, Prishtinë, Kosovo 10000", note: "Come in for an in-person meeting — please book ahead so we can make sure we're available for you without delay." },
     ],
     pain: {
       eyebrow: "What to expect",
@@ -138,8 +138,8 @@ const COPY = {
     locationEyebrow: "Location",
     locationTitle: "How to find us",
     locationParagraphs: [
-      "Our head office is on Hasan Prishtina street in Obiliq, just 10 minutes by car from central Prishtina.",
-      "Free parking is available near the office. By public transport, regular buses run from Prishtina's central station.",
+      "Our head office is at Rruga \"Ahmet Krasniqi\" Nr. 15, in Prishtinë — easily reachable from any central neighbourhood.",
+      "Free parking is available near the office. By public transport, we're just a few minutes from the main bus stops in central Prishtina.",
       "For weekend or out-of-hours meetings, contact us in advance — we always find a way.",
     ],
     hoursEyebrow: "Office hours",
@@ -172,15 +172,15 @@ const COPY = {
     eyebrow: "Kontakt",
     title: "Treffen wir uns auf einen Kaffee — kein Druck, unverbindlich",
     subtitle:
-      "Die Erstberatung ist immer kostenlos. Anrufen, WhatsApp, oder Büro besuchen in Hasan Prishtina, Obiliq. Antwort innerhalb 1–2 Stunden zu Bürozeiten — keine langen Formulare, kein Verkaufsdruck.",
+      "Die Erstberatung ist immer kostenlos. Anrufen, WhatsApp, oder Büro besuchen in der Rruga "Ahmet Krasniqi" Nr. 15, Prishtinë. Antwort innerhalb 1–2 Stunden zu Bürozeiten — keine langen Formulare, kein Verkaufsdruck.",
     channelsEyebrow: "Kontaktkanäle",
     channelsTitle: "So erreichen Sie uns — wählen Sie den passenden Kanal",
     channelsSubtitle: "Im Kosovo läuft alles über WhatsApp — wir sind dort immer erreichbar. Nutzen Sie aber gern den Kanal, der für Sie am besten passt.",
     channels: [
-      { icon: Phone, title: "Telefon", value: "+383 49 579 992", note: "Werktags 09:00–18:00 erreichbar. Hinterlassen Sie eine Nachricht, wenn wir nicht abnehmen — wir rufen am selben Tag zurück.", href: "tel:+38349579992" },
-      { icon: MessageCircle, title: "WhatsApp", value: "+383 49 579 992", note: "Der schnellste Weg für Fragen, Fotos oder Dokumente. Antwort meist innerhalb von 1–2 Stunden zu Bürozeiten.", href: "https://wa.me/38349579992" },
+      { icon: Phone, title: "Telefon", value: "+383 49 942 941", note: "Werktags 09:00–18:00 erreichbar. Hinterlassen Sie eine Nachricht, wenn wir nicht abnehmen — wir rufen am selben Tag zurück.", href: "tel:+38349942941" },
+      { icon: MessageCircle, title: "WhatsApp", value: "+383 49 942 941", note: "Der schnellste Weg für Fragen, Fotos oder Dokumente. Antwort meist innerhalb von 1–2 Stunden zu Bürozeiten.", href: "https://wa.me/38349942941" },
       { icon: Mail, title: "E-Mail", value: "asrealestaterks@gmail.com", note: "Ideal für ausführliche Anfragen, formelle Unterlagen oder Themen, die eine schriftliche Antwort brauchen. Antwort am selben Werktag.", href: "mailto:asrealestaterks@gmail.com" },
-      { icon: MapPin, title: "Büro", value: "Hasan Prishtina, Obiliq, Kosovo 15000", note: "Kommen Sie für ein persönliches Gespräch ins Büro — bitte vorab Termin vereinbaren, damit wir ohne Wartezeit für Sie da sind." },
+      { icon: MapPin, title: "Büro", value: "Rruga "Ahmet Krasniqi" Nr. 15, Prishtinë, Kosovo 10000", note: "Kommen Sie für ein persönliches Gespräch ins Büro — bitte vorab Termin vereinbaren, damit wir ohne Wartezeit für Sie da sind." },
     ],
     pain: {
       eyebrow: "Was Sie erwartet",
@@ -206,8 +206,8 @@ const COPY = {
     locationEyebrow: "Lage",
     locationTitle: "So finden Sie uns",
     locationParagraphs: [
-      "Unser Hauptbüro liegt in der Hasan Prishtina-Straße in Obiliq, nur 10 Minuten mit dem Auto vom Zentrum Prishtinas.",
-      "Kostenlose Parkplätze gibt es in der Nähe des Büros. Mit dem ÖPNV erreichbar über reguläre Busse vom Hauptbahnhof Prishtina.",
+      "Unser Hauptbüro liegt in der Rruga \"Ahmet Krasniqi\" Nr. 15 in Prishtinë — von jedem zentralen Stadtviertel gut erreichbar.",
+      "Kostenlose Parkplätze gibt es in der Nähe des Büros. Mit dem ÖPNV sind wir nur wenige Minuten von den wichtigsten Bushaltestellen im Zentrum von Prishtinë entfernt.",
       "Für Termine am Wochenende oder außerhalb der Öffnungszeiten kontaktieren Sie uns bitte vorab — wir finden immer einen Weg.",
     ],
     hoursEyebrow: "Öffnungszeiten",

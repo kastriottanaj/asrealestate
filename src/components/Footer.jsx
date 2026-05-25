@@ -71,7 +71,7 @@ export default function Footer() {
           <ul className="space-y-3 text-sm">
             <li className="flex items-start gap-2">
               <Phone className="h-4 w-4 mt-0.5 text-brand-400 shrink-0" />
-              <a href="tel:+38349579992" className="hover:text-white">+383 49 579 992</a>
+              <a href="tel:+38349942941" className="hover:text-white">+383 49 942 941</a>
             </li>
             <li className="flex items-start gap-2">
               <Mail className="h-4 w-4 mt-0.5 text-brand-400 shrink-0" />
@@ -79,7 +79,7 @@ export default function Footer() {
             </li>
             <li className="flex items-start gap-2">
               <MapPin className="h-4 w-4 mt-0.5 text-brand-400 shrink-0" />
-              <span>Hasan Prishtina, Obiliq, Kosovë 15000</span>
+              <span>Rruga "Ahmet Krasniqi" Nr. 15, Prishtinë, Kosovë 10000</span>
             </li>
           </ul>
         </div>

@@ -348,7 +348,7 @@ export default function Properties() {
             <Link to={href("/kontakti")} className="btn-primary">
               {t.properties.cta1} <ArrowRight className="h-4 w-4" />
             </Link>
-            <a href="https://wa.me/38349579992" target="_blank" rel="noreferrer" className="btn-outline">
+            <a href="https://wa.me/38349942941" target="_blank" rel="noreferrer" className="btn-outline">
               {t.properties.cta2}
             </a>
           </div>

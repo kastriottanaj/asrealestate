@@ -96,8 +96,8 @@ const COPY = {
       subtitle:
         "Fokusi ynë është Prishtina dhe rajoni i saj — aty ku kemi më shumë se 8 vite njohje të thellë të tregut.",
       items: [
-        { title: "Prishtinë", desc: "Të gjitha lagjet — Qendër, Arbëri, Dardania, Ulpianë, Veternik, Bregu i Diellit, Aktash, Lakrishte, Sofalia dhe periferia." },
-        { title: "Obiliq", desc: "Zyra jonë qendrore. Ekspertizë e thellë në tregun e banesave dhe shtëpive familjare në komunën e Obiliqit." },
+        { title: "Prishtinë", desc: "Zyra jonë qendrore. Të gjitha lagjet — Qendër, Arbëri, Dardania, Ulpianë, Veternik, Bregu i Diellit, Aktash, Lakrishte, Sofalia dhe periferia." },
+        { title: "Obiliq", desc: "Ekspertizë e thellë në tregun e banesave dhe shtëpive familjare në komunën e Obiliqit." },
         { title: "Fushë Kosovë", desc: "Tregu i tokës ndërtimore dhe i banesave të reja — çmime më të kapshme se Prishtina, potencial i mirë investimi." },
         { title: "Lipjan dhe Graçanicë", desc: "Komuna fqinje me kërkesë në rritje për banesa familjare, shtëpi dhe tokë ndërtimore." },
       ],
@@ -127,7 +127,7 @@ const COPY = {
       title: "Çka duhet të dini për AS Capital",
       items: [
         { q: "Sa kohë ka që operon AS Capital Real Estate?", a: "Mbi 8 vite në tregun e pasurive të paluajtshme në Kosovë. Gjatë kësaj kohe kemi mbyllur me sukses qindra transaksione — shitje, qira, investime — kryesisht në Prishtinë dhe komunat fqinje." },
-        { q: "Ku ndodhet zyra juaj?", a: "Zyra jonë qendrore ndodhet në Hasan Prishtina, Obiliq, Kosovë 15000. Jeni të mirëpritur për takim ditët e javës — ju lutemi caktoni një orar nëpërmjet telefonit ose WhatsApp për të siguruar disponueshmërinë." },
+        { q: "Ku ndodhet zyra juaj?", a: "Zyra jonë qendrore ndodhet në Rrugën \"Ahmet Krasniqi\" Nr. 15, Prishtinë, Kosovë 10000. Jeni të mirëpritur për takim ditët e javës — ju lutemi caktoni një orar nëpërmjet telefonit ose WhatsApp për të siguruar disponueshmërinë." },
         { q: "A jeni të licencuar?", a: "Po. AS Capital Real Estate operon në përputhje me të gjitha kërkesat ligjore për ndërmjetësim të pasurive të paluajtshme në Kosovë. Dokumentet e licencimit janë në dispozicion për shqyrtim me kërkesë." },
         { q: "Çfarë e bën AS Capital të ndryshëm nga agjencitë e tjera?", a: "Tre gjëra: ekspertizë vërtet lokale (njohim lagjet jo si emra në një portal, por si komunitete me histori dhe trende), procesi ynë i verifikimit para listimit (që ka shmangur shumë probleme për klientët tanë), dhe disponueshmëria pas dorëzimit (marrëdhënia jonë nuk është transaksionale)." },
       ],
@@ -201,8 +201,8 @@ const COPY = {
       subtitle:
         "Our focus is Prishtina and its region — where we have 8+ years of deep market knowledge.",
       items: [
-        { title: "Prishtina", desc: "All neighbourhoods — Qendër, Arbëri, Dardania, Ulpianë, Veternik, Bregu i Diellit, Aktash, Lakrishte, Sofalia and the periphery." },
-        { title: "Obiliq", desc: "Our head office. Deep expertise in the apartment and family-house markets in the municipality of Obiliq." },
+        { title: "Prishtina", desc: "Our head office. All neighbourhoods — Qendër, Arbëri, Dardania, Ulpianë, Veternik, Bregu i Diellit, Aktash, Lakrishte, Sofalia and the periphery." },
+        { title: "Obiliq", desc: "Deep expertise in the apartment and family-house markets in the municipality of Obiliq." },
         { title: "Fushë Kosovë", desc: "Buildable land and new-build apartment market — more affordable than Prishtina, strong investment potential." },
         { title: "Lipjan and Graçanicë", desc: "Neighbouring municipalities with rising demand for family apartments, houses and buildable land." },
       ],
@@ -232,7 +232,7 @@ const COPY = {
       title: "What you should know about AS Capital",
       items: [
         { q: "How long has AS Capital Real Estate been operating?", a: "Over 8 years in the Kosovo real estate market. We have successfully closed hundreds of transactions in that time — sales, rentals, investments — mainly in Prishtina and neighbouring municipalities." },
-        { q: "Where is your office?", a: "Our head office is at Hasan Prishtina, Obiliq, Kosovo 15000. You're welcome to come in for a meeting on weekdays — please schedule via phone or WhatsApp to ensure availability." },
+        { q: "Where is your office?", a: "Our head office is at Rruga \"Ahmet Krasniqi\" Nr. 15, Prishtinë, Kosovo 10000. You're welcome to come in for a meeting on weekdays — please schedule via phone or WhatsApp to ensure availability." },
         { q: "Are you licensed?", a: "Yes. AS Capital Real Estate operates in compliance with all legal requirements for real estate brokerage in Kosovo. Licensing documents are available for review on request." },
         { q: "What makes AS Capital different from other agencies?", a: "Three things: genuinely local expertise (we know neighbourhoods not as portal names but as communities with history and trends), our pre-listing verification process (which has prevented many issues for our clients), and post-handover availability (our relationship is not transactional)." },
       ],
@@ -306,8 +306,8 @@ const COPY = {
       subtitle:
         "Unser Fokus ist Prishtina und Umgebung — dort, wo wir über 8 Jahre tiefe Marktkenntnis haben.",
       items: [
-        { title: "Prishtina", desc: "Alle Quartiere — Qendër, Arbëri, Dardania, Ulpianë, Veternik, Bregu i Diellit, Aktash, Lakrishte, Sofalia und Peripherie." },
-        { title: "Obiliq", desc: "Unser Hauptbüro. Tiefe Expertise im Wohnungs- und Einfamilienhausmarkt in der Gemeinde Obiliq." },
+        { title: "Prishtina", desc: "Unser Hauptbüro. Alle Quartiere — Qendër, Arbëri, Dardania, Ulpianë, Veternik, Bregu i Diellit, Aktash, Lakrishte, Sofalia und Peripherie." },
+        { title: "Obiliq", desc: "Tiefe Expertise im Wohnungs- und Einfamilienhausmarkt in der Gemeinde Obiliq." },
         { title: "Fushë Kosovë", desc: "Markt für Bauland und Neubauwohnungen — günstiger als Prishtina, starkes Investmentpotenzial." },
         { title: "Lipjan und Graçanicë", desc: "Nachbargemeinden mit steigender Nachfrage nach Familienwohnungen, Häusern und Bauland." },
       ],
@@ -337,7 +337,7 @@ const COPY = {
       title: "Was Sie über AS Capital wissen sollten",
       items: [
         { q: "Wie lange ist AS Capital Real Estate tätig?", a: "Über 8 Jahre auf dem Kosovo-Immobilienmarkt. In dieser Zeit haben wir Hunderte Transaktionen erfolgreich abgeschlossen — Verkäufe, Vermietungen, Investments — vor allem in Prishtina und Nachbargemeinden." },
-        { q: "Wo befindet sich Ihr Büro?", a: "Unser Hauptbüro ist in Hasan Prishtina, Obiliq, Kosovo 15000. Wir freuen uns auf Termine an Werktagen — bitte vereinbaren Sie diese telefonisch oder per WhatsApp." },
+        { q: "Wo befindet sich Ihr Büro?", a: "Unser Hauptbüro ist in der Rruga \"Ahmet Krasniqi\" Nr. 15, Prishtinë, Kosovo 10000. Wir freuen uns auf Termine an Werktagen — bitte vereinbaren Sie diese telefonisch oder per WhatsApp." },
         { q: "Sind Sie lizenziert?", a: "Ja. AS Capital Real Estate erfüllt alle rechtlichen Anforderungen für Immobilienvermittlung im Kosovo. Lizenzunterlagen sind auf Anfrage einsehbar." },
         { q: "Was unterscheidet AS Capital von anderen Agenturen?", a: "Drei Dinge: echte lokale Expertise (wir kennen Quartiere nicht als Portal-Namen, sondern als Gemeinschaften mit Historie und Trends), unser Prüfprozess vor der Listung (der vielen Kunden Probleme erspart hat) und Erreichbarkeit nach der Übergabe (unsere Beziehung ist nicht transaktional)." },
       ],

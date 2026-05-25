@@ -3,7 +3,7 @@ import { contact as trackContact } from "../lib/pixel";
 export default function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/38349579992"
+      href="https://wa.me/38349942941"
       target="_blank"
       rel="noreferrer"
       aria-label="Na kontaktoni në WhatsApp"
