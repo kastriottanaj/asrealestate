@@ -43,7 +43,7 @@ const COPY = {
       {
         title: "1. Kush jemi",
         paragraphs: [
-          "AS Capital Real Estate (më tej \"ne\" ose \"agjencia\") është një agjenci e pasurive të paluajtshme me seli në Rruga "Ahmet Krasniqi" Nr. 15, Prishtinë, Kosovë 10000. Jemi përgjegjësi i kontrollit për të dhënat personale të mbledhura përmes asrealestate-rks.com.",
+          "AS Capital Real Estate (më tej \"ne\" ose \"agjencia\") është një agjenci e pasurive të paluajtshme me seli në Rruga \"Ahmet Krasniqi\" Nr. 15, Prishtinë, Kosovë 10000. Jemi përgjegjësi i kontrollit për të dhënat personale të mbledhura përmes asrealestate-rks.com.",
         ],
       },
       {
@@ -151,7 +151,7 @@ const COPY = {
     },
     contact: {
       name: "AS Capital Real Estate",
-      address: "Rruga "Ahmet Krasniqi" Nr. 15, Prishtinë, Kosovë 10000",
+      address: "Rruga \"Ahmet Krasniqi\" Nr. 15, Prishtinë, Kosovë 10000",
       emailLabel: "Email",
       email: "asrealestaterks@gmail.com",
       phoneLabel: "Telefon",
@@ -173,7 +173,7 @@ const COPY = {
       {
         title: "1. Who we are",
         paragraphs: [
-          "AS Capital Real Estate (\"we\", \"the agency\") is a real estate agency based in Rruga "Ahmet Krasniqi" Nr. 15, Prishtinë, Kosovo 10000. We are the data controller for personal data collected through asrealestate-rks.com.",
+          "AS Capital Real Estate (\"we\", \"the agency\") is a real estate agency based in Rruga \"Ahmet Krasniqi\" Nr. 15, Prishtinë, Kosovo 10000. We are the data controller for personal data collected through asrealestate-rks.com.",
         ],
       },
       {
@@ -281,7 +281,7 @@ const COPY = {
     },
     contact: {
       name: "AS Capital Real Estate",
-      address: "Rruga "Ahmet Krasniqi" Nr. 15, Prishtinë, Kosovo 10000",
+      address: "Rruga \"Ahmet Krasniqi\" Nr. 15, Prishtinë, Kosovo 10000",
       emailLabel: "Email",
       email: "asrealestaterks@gmail.com",
       phoneLabel: "Phone",
@@ -303,7 +303,7 @@ const COPY = {
       {
         title: "1. Wer wir sind",
         paragraphs: [
-          "AS Capital Real Estate (\"wir\", \"die Agentur\") ist eine Immobilienagentur mit Sitz in Rruga "Ahmet Krasniqi" Nr. 15, Prishtinë, Kosovo 10000. Wir sind der Verantwortliche für die über asrealestate-rks.com erhobenen personenbezogenen Daten.",
+          "AS Capital Real Estate (\"wir\", \"die Agentur\") ist eine Immobilienagentur mit Sitz in Rruga \"Ahmet Krasniqi\" Nr. 15, Prishtinë, Kosovo 10000. Wir sind der Verantwortliche für die über asrealestate-rks.com erhobenen personenbezogenen Daten.",
         ],
       },
       {
@@ -411,7 +411,7 @@ const COPY = {
     },
     contact: {
       name: "AS Capital Real Estate",
-      address: "Rruga "Ahmet Krasniqi" Nr. 15, Prishtinë, Kosovo 10000",
+      address: "Rruga \"Ahmet Krasniqi\" Nr. 15, Prishtinë, Kosovo 10000",
       emailLabel: "E-Mail",
       email: "asrealestaterks@gmail.com",
       phoneLabel: "Telefon",
