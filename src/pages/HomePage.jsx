@@ -7,6 +7,7 @@ import Testimonials from "../components/Testimonials";
 import Contact from "../components/Contact";
 import OfferProperty from "../components/OfferProperty";
 import Newsletter from "../components/Newsletter";
+import LocationMap from "../components/LocationMap";
 import { useLang } from "../LanguageContext";
 import { agencyJsonLd } from "../seo/agency";
 import { webSiteJsonLd, webPageJsonLd } from "../seo/jsonLd";
@@ -60,6 +61,7 @@ export default function HomePage() {
       <Contact />
       <OfferProperty />
       <Newsletter />
+      <LocationMap />
     </>
   );
 }

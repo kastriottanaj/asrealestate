@@ -5,6 +5,7 @@ import Contact from "../components/Contact";
 import FAQSection from "../components/FAQSection";
 import PainGain from "../components/PainGain";
 import PullQuote from "../components/PullQuote";
+import LocationMap from "../components/LocationMap";
 import { useLang } from "../LanguageContext";
 import { agencyJsonLd } from "../seo/agency";
 import { breadcrumbJsonLd, faqPageJsonLd, webPageJsonLd } from "../seo/jsonLd";
@@ -351,6 +352,8 @@ export default function ContactPage() {
         items={c.faq.items}
         className="bg-slate-50"
       />
+
+      <LocationMap />
     </>
   );
 }
