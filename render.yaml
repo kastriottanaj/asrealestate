@@ -13,7 +13,7 @@ services:
     plan: free
     rootDir: backend
     buildCommand: ./build.sh
-    startCommand: gunicorn ascapital.wsgi:application
+    startCommand: python manage.py migrate --no-input && gunicorn ascapital.wsgi:application
     autoDeploy: true
     envVars:
       - key: PYTHON_VERSION
