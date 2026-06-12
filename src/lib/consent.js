@@ -37,7 +37,6 @@ function loadGoogleAnalytics() {
 }
 
 function loadMetaPixel() {
-  /* eslint-disable */
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -46,7 +45,6 @@ function loadMetaPixel() {
   t.src=v;s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)}(window,document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
-  /* eslint-enable */
   window.fbq("init", META_PIXEL_ID);
   window.fbq("init", META_PIXEL_ID_2);
   window.fbq("track", "PageView");

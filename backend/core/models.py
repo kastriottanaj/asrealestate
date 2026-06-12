@@ -10,10 +10,14 @@ PROPERTY_STATUS_CHOICES = [
 
 PROPERTY_TYPE_CHOICES = [
     ("banese", "Banesë"),
+    ("shtepi", "Shtëpi"),
     ("penthouse", "Penthouse"),
     ("vile", "Vilë"),
     ("zyre", "Zyre"),
+    ("objekt", "Objekt"),
     ("lokal", "Lokal"),
+    ("biznes", "Biznes"),
+    ("depo", "Depo"),
     ("toke", "Tokë"),
 ]
 

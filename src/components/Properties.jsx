@@ -60,10 +60,9 @@ const TYPE_LABEL = {
 };
 
 const BEDROOMS = ["Të gjitha", "1", "2", "3", "4", "5+"];
-const FURNISHING = ["Të gjitha", "Salloni", "Dhoma gjumi", "Kuzhina", "Banjo", "Pa mobilim"];
 
 export default function Properties() {
-  const { t, lang } = useLang();
+  const { t } = useLang();
   const href = useLocalizedHref();
   const tabs = t.properties.tabs;
 
@@ -83,7 +82,6 @@ export default function Properties() {
   // Detailed filters
   const [ownership, setOwnership] = useState(null);
   const [bedrooms, setBedrooms] = useState("Të gjitha");
-  const [furnishing, setFurnishing] = useState("Të gjitha");
   const [priceMin, setPriceMin] = useState(urlPriceMin);
   const [priceMax, setPriceMax] = useState(urlPriceMax);
 
@@ -112,6 +110,7 @@ export default function Properties() {
     if (urlLocation) filters.location = urlLocation;
     if (priceMin) filters.price_min = priceMin;
     if (priceMax) filters.price_max = priceMax;
+    if (ownership !== null) filters.has_ownership_doc = ownership;
     if (bedrooms !== "Të gjitha") {
       if (bedrooms === "5+") filters.bedrooms_min = 5;
       else filters.bedrooms = bedrooms;
@@ -122,7 +121,7 @@ export default function Properties() {
         setProperties(applyClientFilters(FALLBACK_PROPERTIES, { status: filters.status, type: urlType, location: urlLocation, priceMin, priceMax }));
       })
       .finally(() => setLoading(false));
-  }, [tab, bedrooms, urlType, urlLocation, priceMin, priceMax]);
+  }, [tab, bedrooms, ownership, urlType, urlLocation, priceMin, priceMax]);
 
   const activeUrlFilters = useMemo(() => {
     const out = [];
@@ -143,7 +142,6 @@ export default function Properties() {
   const resetFilters = () => {
     setOwnership(null);
     setBedrooms("Të gjitha");
-    setFurnishing("Të gjitha");
     setPriceMin("");
     setPriceMax("");
   };
@@ -151,7 +149,6 @@ export default function Properties() {
   const activeFiltersCount = [
     ownership !== null,
     bedrooms !== "Të gjitha",
-    furnishing !== "Të gjitha",
     priceMin !== "",
     priceMax !== "",
   ].filter(Boolean).length;
@@ -273,24 +270,6 @@ export default function Properties() {
                       }`}
                     >
                       {b}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Mobilimi */}
-              <div>
-                <p className="text-sm font-semibold text-slate-700 mb-2">Mobilimi</p>
-                <div className="flex flex-wrap gap-2">
-                  {FURNISHING.map((f) => (
-                    <button
-                      key={f}
-                      onClick={() => setFurnishing(f)}
-                      className={`px-3 py-2 rounded-lg text-sm font-semibold border transition ${
-                        furnishing === f ? "bg-slate-900 text-white border-slate-900" : "border-slate-200 text-slate-600 hover:border-slate-400"
-                      }`}
-                    >
-                      {f}
                     </button>
                   ))}
                 </div>

@@ -10,6 +10,9 @@ export async function fetchProperties(filters = {}) {
   if (filters.bedrooms_min) params.set('bedrooms_min', filters.bedrooms_min);
   if (filters.price_min) params.set('price_min', filters.price_min);
   if (filters.price_max) params.set('price_max', filters.price_max);
+  if (filters.has_ownership_doc !== undefined) {
+    params.set('has_ownership_doc', String(filters.has_ownership_doc));
+  }
 
   const res = await fetch(`${BASE_URL}/properties/?${params}`);
   if (!res.ok) throw new Error('Gabim gjatë marrjes së pronave.');
