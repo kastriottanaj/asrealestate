@@ -5,6 +5,7 @@ from django.core.mail import EmailMessage
 from rest_framework import viewsets, mixins
 from rest_framework.decorators import action
 from rest_framework.response import Response
+from rest_framework.throttling import ScopedRateThrottle
 
 from .models import Property, Testimonial, ListingRequest, Subscriber, ContactMessage
 from .serializers import (
@@ -15,6 +16,12 @@ from .filters import PropertyFilter
 
 
 logger = logging.getLogger(__name__)
+
+
+def _header_safe(value):
+    """Collapse all whitespace (incl. newlines) so user-supplied names can't
+    inject extra headers into the email subject (BadHeaderError)."""
+    return " ".join(str(value or "").split())
 
 
 def _send_lead_email(subject, body, reply_to=None):
@@ -67,6 +74,8 @@ class TestimonialViewSet(viewsets.ReadOnlyModelViewSet):
 class ListingRequestViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
     queryset = ListingRequest.objects.all()
     serializer_class = ListingRequestSerializer
+    throttle_classes = [ScopedRateThrottle]
+    throttle_scope = "leads"
 
     def perform_create(self, serializer):
         obj = serializer.save()
@@ -87,7 +96,7 @@ class ListingRequestViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
             f"\nMarrë më: {obj.created_at:%Y-%m-%d %H:%M}\n"
         )
         _send_lead_email(
-            subject=f"[AS Capital] Ofertë e re prone — {obj.first_name} {obj.last_name}",
+            subject=f"[AS Capital] Ofertë e re prone — {_header_safe(f'{obj.first_name} {obj.last_name}')}",
             body=body,
             reply_to=obj.email,
         )
@@ -96,11 +105,15 @@ class ListingRequestViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
 class SubscriberViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
     queryset = Subscriber.objects.all()
     serializer_class = SubscriberSerializer
+    throttle_classes = [ScopedRateThrottle]
+    throttle_scope = "subscribers"
 
 
 class ContactMessageViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
     queryset = ContactMessage.objects.all()
     serializer_class = ContactMessageSerializer
+    throttle_classes = [ScopedRateThrottle]
+    throttle_scope = "leads"
 
     def perform_create(self, serializer):
         obj = serializer.save()
@@ -115,7 +128,7 @@ class ContactMessageViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
             f"\nMarrë më: {obj.created_at:%Y-%m-%d %H:%M}\n"
         )
         _send_lead_email(
-            subject=f"[AS Capital] Mesazh i ri — {obj.first_name} {obj.last_name}",
+            subject=f"[AS Capital] Mesazh i ri — {_header_safe(f'{obj.first_name} {obj.last_name}')}",
             body=body,
             reply_to=obj.email,
         )

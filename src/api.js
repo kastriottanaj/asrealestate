@@ -43,35 +43,27 @@ export async function fetchTestimonials() {
   return res.json();
 }
 
-export async function submitListingRequest(formData) {
-  const res = await fetch(`${BASE_URL}/listings/`, {
+async function postJson(path, payload) {
+  const res = await fetch(`${BASE_URL}${path}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(formData),
+    body: JSON.stringify(payload),
   });
-  const data = await res.json();
+  // Error responses may not be JSON (proxy 502 HTML, throttle pages) —
+  // fall back to {} so callers' Object.values(err) hits their default copy.
+  const data = await res.json().catch(() => ({}));
   if (!res.ok) throw data;
   return data;
 }
 
-export async function submitSubscriber(email) {
-  const res = await fetch(`${BASE_URL}/subscribers/`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email }),
-  });
-  const data = await res.json();
-  if (!res.ok) throw data;
-  return data;
+export function submitListingRequest(formData) {
+  return postJson('/listings/', formData);
 }
 
-export async function submitContact(formData) {
-  const res = await fetch(`${BASE_URL}/contacts/`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(formData),
-  });
-  const data = await res.json();
-  if (!res.ok) throw data;
-  return data;
+export function submitSubscriber(email) {
+  return postJson('/subscribers/', { email });
+}
+
+export function submitContact(formData) {
+  return postJson('/contacts/', formData);
 }

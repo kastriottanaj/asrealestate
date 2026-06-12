@@ -368,7 +368,7 @@ function PropertyCard({ p }) {
         <div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-4 text-sm text-slate-600">
           {p.bedrooms > 0 && <span className="flex items-center gap-1.5"><Bed className="h-4 w-4 text-brand-600" /> {p.bedrooms}</span>}
           {p.bathrooms > 0 && <span className="flex items-center gap-1.5"><Bath className="h-4 w-4 text-brand-600" /> {p.bathrooms}</span>}
-          <span className="flex items-center gap-1.5"><Maximize2 className="h-4 w-4 text-brand-600" /> {p.area} m²</span>
+          {p.area != null && <span className="flex items-center gap-1.5"><Maximize2 className="h-4 w-4 text-brand-600" /> {p.area} m²</span>}
         </div>
       </div>
     </Wrapper>

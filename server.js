@@ -17,6 +17,18 @@ const DIST = path.join(__dirname, 'dist');
 // Render's edge sets X-Forwarded-* headers; trust them so req.hostname is the
 // public hostname (e.g. asrealestate-rks.com), not the internal one.
 app.set('trust proxy', true);
+app.disable('x-powered-by');
+
+// Baseline security headers for everything this server emits. Django sets
+// its own on proxied /admin and /api responses; the proxy copies those over
+// these where they overlap.
+app.use((req, res, next) => {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  res.setHeader('Strict-Transport-Security', 'max-age=2592000');
+  next();
+});
 
 // /static covers Django admin's CSS/JS (Vite emits frontend assets under /assets,
 // so no clash). pathFilter (not app.use mount path) so the prefix isn't stripped
@@ -58,8 +70,10 @@ app.use(express.static(DIST, { redirect: false }));
 // HTML (with proper <title>/<h1>/JSON-LD) is delivered to crawlers.
 app.get('*', (req, res) => {
   if (!path.extname(req.path)) {
-    const nested = path.join(DIST, req.path, 'index.html');
-    if (nested.startsWith(DIST) && fs.existsSync(nested)) {
+    // resolve + path.sep boundary: a crafted path can neither escape dist/
+    // via ../ segments nor reach a sibling directory like dist-backup/.
+    const nested = path.resolve(DIST, '.' + req.path, 'index.html');
+    if (nested.startsWith(DIST + path.sep) && fs.existsSync(nested)) {
       return res.sendFile(nested);
     }
   }

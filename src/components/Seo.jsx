@@ -63,10 +63,11 @@ export default function Seo({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
 
-      {/* JSON-LD */}
+      {/* JSON-LD — escape "<" so admin-entered text (e.g. a property
+          description containing "</script>") can't break out of the tag */}
       {jsonLd.map((data, i) => (
         <script key={i} type="application/ld+json">
-          {JSON.stringify(data)}
+          {JSON.stringify(data).replace(/</g, '\\u003c')}
         </script>
       ))}
     </Helmet>

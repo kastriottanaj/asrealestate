@@ -21,9 +21,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 load_dotenv(BASE_DIR / ".env")
 
-SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-l4rd82+l*q*(78sgzkn&&**p+j=#wn%t$j6gj40nrdrge#r^!l')
+# Fail safe: production (Render) always provides SECRET_KEY and DEBUG=False;
+# local dev opts in via DEBUG=True in backend/.env. A missing env var must
+# never silently produce a debug-mode server with a known secret key.
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-DEBUG = os.environ.get('DEBUG', 'True') == 'True'
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
+if not SECRET_KEY:
+    if DEBUG:
+        SECRET_KEY = 'django-insecure-dev-only-do-not-use-in-production'
+    else:
+        from django.core.exceptions import ImproperlyConfigured
+        raise ImproperlyConfigured('SECRET_KEY env var is required when DEBUG=False')
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
 
@@ -35,6 +44,14 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 USE_X_FORWARDED_HOST = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+if not DEBUG:
+    # TLS is terminated by Render's edge (which also redirects http→https),
+    # so no SECURE_SSL_REDIRECT — but cookies must never travel over http
+    # and browsers should remember the site is https-only.
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_HSTS_SECONDS = 60 * 60 * 24 * 30  # 30 days
 
 
 # Application definition
@@ -76,6 +93,14 @@ REST_FRAMEWORK = {
     # DRF's CSRF enforcement on these public endpoints. Django admin keeps
     # its own session+CSRF flow independent of DRF.
     'DEFAULT_AUTHENTICATION_CLASSES': [],
+    # Best-effort spam/abuse brake on the public POST endpoints (each lead
+    # triggers an email to the agency). Per-process LocMem cache and proxy
+    # X-Forwarded-For identity make this approximate, but it stops naive
+    # bots from flooding the inbox or the DB.
+    'DEFAULT_THROTTLE_RATES': {
+        'leads': '30/hour',
+        'subscribers': '15/hour',
+    },
 }
 
 CORS_ALLOWED_ORIGINS = os.environ.get('CORS_ALLOWED_ORIGINS', 'http://localhost:5173,http://127.0.0.1:5173,http://localhost:4173').split(',')
@@ -157,7 +182,15 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE was removed in Django 5.1 — STORAGES is its replacement.
+STORAGES = {
+    'default': {
+        'BACKEND': 'django.core.files.storage.FileSystemStorage',
+    },
+    'staticfiles': {
+        'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
+    },
+}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

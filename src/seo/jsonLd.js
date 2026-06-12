@@ -74,9 +74,9 @@ export function propertyProductJsonLd(p, lang = "sq") {
     : [p.image_src || p.image_url].filter(Boolean);
 
   const additionalProperty = [
-    { "@type": "PropertyValue", name: "area", value: p.area, unitCode: "MTK" },
+    p.area != null ? { "@type": "PropertyValue", name: "area", value: p.area, unitCode: "MTK" } : null,
     { "@type": "PropertyValue", name: "neighborhood", value: p.neighborhood },
-  ];
+  ].filter(Boolean);
   if (p.bedrooms > 0) additionalProperty.unshift({ "@type": "PropertyValue", name: "bedrooms", value: p.bedrooms });
   if (p.bathrooms > 0) additionalProperty.splice(1, 0, { "@type": "PropertyValue", name: "bathrooms", value: p.bathrooms });
   if (p.has_ownership_doc) additionalProperty.push({ "@type": "PropertyValue", name: "titleDeed", value: "Verified" });
@@ -85,7 +85,7 @@ export function propertyProductJsonLd(p, lang = "sq") {
     "@context": "https://schema.org",
     "@type": "Product",
     name: p.title,
-    description: p.description || `${p.title} — ${p.neighborhood}, ${p.area} m².`,
+    description: p.description || `${p.title} — ${[p.neighborhood, p.area != null ? `${p.area} m²` : null].filter(Boolean).join(', ')}.`,
     image: images,
     sku: p.slug,
     brand: ORGANIZATION_REF,

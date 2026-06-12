@@ -203,7 +203,7 @@ function DetailContent({ property, similar, c, lang }) {
 
   const seoTitle = `${property.title} — ${property.formatted_price}`;
   const seoDescription = (property.description?.trim().slice(0, 160))
-    || `${property.title} — ${property.neighborhood}, ${property.area} m². ${property.formatted_price}. Verifikim ligjor falas, kontratë e rishikuar nga ekipi ynë.`;
+    || `${property.title} — ${[property.neighborhood, property.area != null ? `${property.area} m²` : null].filter(Boolean).join(', ')}. ${property.formatted_price}. Verifikim ligjor falas, kontratë e rishikuar nga ekipi ynë.`;
   const ogImage = images[0] || undefined;
   const jsonLd = [
     breadcrumbJsonLd([
@@ -267,7 +267,7 @@ function DetailContent({ property, similar, c, lang }) {
 
           {/* Stat chips */}
           <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
-            <StatChip icon={Maximize2} value={`${property.area} ${c.stats.area}`} label={c.stats.area} />
+            {property.area != null && <StatChip icon={Maximize2} value={`${property.area} ${c.stats.area}`} label={c.stats.area} />}
             {property.bedrooms > 0 && <StatChip icon={Bed} value={property.bedrooms} label={c.stats.bedrooms} />}
             {property.bathrooms > 0 && <StatChip icon={Bath} value={property.bathrooms} label={c.stats.bathrooms} />}
             {property.has_ownership_doc && <StatChip icon={ShieldCheck} value="✓" label={c.stats.ownership} />}
@@ -635,7 +635,7 @@ function SimilarCard({ p, c }) {
         <div className="mt-3 flex items-center gap-3 text-xs text-slate-600 border-t border-slate-100 pt-3">
           {p.bedrooms > 0 && <span className="flex items-center gap-1"><Bed className="h-3.5 w-3.5 text-brand-600" /> {p.bedrooms}</span>}
           {p.bathrooms > 0 && <span className="flex items-center gap-1"><Bath className="h-3.5 w-3.5 text-brand-600" /> {p.bathrooms}</span>}
-          <span className="flex items-center gap-1"><Maximize2 className="h-3.5 w-3.5 text-brand-600" /> {p.area} m²</span>
+          {p.area != null && <span className="flex items-center gap-1"><Maximize2 className="h-3.5 w-3.5 text-brand-600" /> {p.area} m²</span>}
         </div>
       </div>
     </Link>

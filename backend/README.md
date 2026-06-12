@@ -1,11 +1,11 @@
 # AS Capital Real Estate — Backend
 
-Django 4.2 + Django REST Framework backend for the AS Capital demo site.
+Django 5.2 + Django REST Framework backend for the AS Capital demo site.
 
 ## Stack
-- Python 3.9+
-- Django 4.2 LTS
-- Django REST Framework 3.15
+- Python 3.10+ (3.12 recommended — matches production on Render)
+- Django 5.2 LTS
+- Django REST Framework 3.16
 - PostgreSQL 14+
 - django-cors-headers, django-filter, python-dotenv
 
@@ -13,7 +13,7 @@ Django 4.2 + Django REST Framework backend for the AS Capital demo site.
 
 ```bash
 cd backend
-python3 -m venv venv
+python3.12 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
