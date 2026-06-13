@@ -6,7 +6,7 @@ export default function Logo({ variant = "dark", className = "" }) {
   return (
     <Link to={href("/")} className={`inline-flex items-center ${className}`} aria-label="AS Capital Real Estate">
       <img
-        src="/logo.svg"
+        src="/as-real-estate.svg"
         alt="AS Capital Real Estate"
         className={`h-28 w-auto transition ${
           variant === "light" ? "brightness-0 invert" : ""

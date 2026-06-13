@@ -40,8 +40,8 @@ export function agencyJsonLd({ contactPage = false } = {}) {
     name: SITE_NAME,
     legalName: "AS Capital Real Estate",
     url: SITE_URL,
-    logo: `${SITE_URL}/logo.svg`,
-    image: `${SITE_URL}/logo.svg`,
+    logo: `${SITE_URL}/as-real-estate.svg`,
+    image: `${SITE_URL}/as-real-estate.svg`,
     telephone: PHONE,
     email: EMAIL,
     description:
