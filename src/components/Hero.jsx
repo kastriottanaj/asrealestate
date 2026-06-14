@@ -107,12 +107,10 @@ export default function Hero() {
             {TAGLINE[lang]}
           </span>
           <h1 className="mt-6 font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05] text-white">
-            {t.hero.title.split("Kosovo").length > 1 ? (
+            {t.hero.title.includes("AS Real Estate") ? (
               <>
-                {t.hero.title.split(/(Kosovo|Kosovë|Kosovo\.)/)[0]}
-                <span className="block text-brand-200">
-                  {t.hero.title.includes("Kosovë") ? "në Kosovë." : t.hero.title.includes("Kosovo.") ? "Kosovo." : "im Kosovo."}
-                </span>
+                {t.hero.title.split("AS Real Estate")[0].replace(/[-–—]\s*$/, "")}
+                <span className="block text-brand-200">AS Real Estate</span>
               </>
             ) : (
               t.hero.title

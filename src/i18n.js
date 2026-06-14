@@ -7,7 +7,7 @@ export const translations = {
     },
     hero: {
       tagline: "Pasuri të paluajtshme • Investime • Besueshmëri",
-      title: "Gjej shtëpinë e duhur për ty në Kosovë.",
+      title: "Agjenci për Patundshmëri - AS Real Estate",
       subtitle: "Nga banesa juaj e parë deri te investimi që ju siguron të ardhmen — ju gjejmë pronën e duhur, me çmim të drejtë dhe kontrata të pastra. Pa humbje kohe. Pa surpriza.",
       cta1: "Shiko pronat", cta2: "Konsultim falas",
       searchLabel: "Gjej pronën që ju përshtatet",
@@ -94,7 +94,7 @@ export const translations = {
     },
     hero: {
       tagline: "Real Estate • Investments • Reliability",
-      title: "Find the right home for you in Kosovo.",
+      title: "Real Estate Agency - AS Real Estate",
       subtitle: "From your first home to the investment that secures your future — we find the right property, at the right price with clean contracts. No wasted time. No surprises.",
       cta1: "View properties", cta2: "Free consultation",
       searchLabel: "Find the property that suits you",
@@ -181,7 +181,7 @@ export const translations = {
     },
     hero: {
       tagline: "Immobilien • Investitionen • Vertrauenswürdigkeit",
-      title: "Finden Sie das passende Zuhause im Kosovo.",
+      title: "Immobilienagentur - AS Real Estate",
       subtitle: "Von Ihrer ersten Wohnung bis zur Investition, die Ihre Zukunft sichert — wir finden die richtige Immobilie zum richtigen Preis mit sauberen Verträgen. Keine Zeitverschwendung. Keine Überraschungen.",
       cta1: "Immobilien ansehen", cta2: "Kostenlose Beratung",
       searchLabel: "Finden Sie die passende Immobilie",

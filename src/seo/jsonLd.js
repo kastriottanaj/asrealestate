@@ -53,7 +53,7 @@ export function webSiteJsonLd() {
   };
 }
 
-export function webPageJsonLd({ url, name, description, type = "WebPage", lang = "sq", breadcrumbs }) {
+export function webPageJsonLd({ url, name, description, type = "WebPage", lang = "sq", breadcrumbs, keywords }) {
   const node = {
     "@context": "https://schema.org",
     "@type": type,
@@ -66,6 +66,7 @@ export function webPageJsonLd({ url, name, description, type = "WebPage", lang =
     about: ORGANIZATION_REF,
     publisher: ORGANIZATION_REF,
   };
+  if (keywords) node.keywords = keywords;
   if (breadcrumbs) {
     node.breadcrumb = { "@id": `${SITE_URL}${url}#breadcrumb` };
   }

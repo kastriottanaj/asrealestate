@@ -18,16 +18,19 @@ const SEO = {
     title: "AS Real Estate — Agjenci pasurish të paluajtshme në Kosovë",
     description:
       "AS Real Estate — partneri juaj i besueshëm për shitje, qira dhe investime në Prishtinë, Obiliq dhe rajon. 8+ vite ekspertizë lokale, prona të verifikuara, konsultim falas.",
+    keywords: "Agjenci për Patundshmëri, AS Real Estate, agjenci patundshmërie Kosovë, prona Prishtinë, shitje qira investime",
   },
   en: {
     title: "AS Real Estate — Real estate agency in Kosovo",
     description:
       "AS Real Estate — your trusted partner for property sales, rentals and investments in Prishtina, Obiliq and the wider region. 8+ years of local expertise, verified listings, free consultation.",
+    keywords: "Real estate agency, AS Real Estate, real estate agency Kosovo, property Prishtina, sales rentals investments",
   },
   de: {
     title: "AS Real Estate — Immobilienagentur im Kosovo",
     description:
       "AS Real Estate — Ihr zuverlässiger Partner für Verkauf, Vermietung und Investitionen in Prishtina, Obiliq und Umgebung. 8+ Jahre lokale Expertise, geprüfte Angebote, kostenlose Beratung.",
+    keywords: "Immobilienagentur, AS Real Estate, Immobilienagentur Kosovo, Immobilien Prishtina, Verkauf Vermietung Investitionen",
   },
 };
 
@@ -42,6 +45,7 @@ export default function HomePage() {
       name: seo.title,
       description: seo.description,
       lang,
+      keywords: seo.keywords,
     }),
   ];
   return (
