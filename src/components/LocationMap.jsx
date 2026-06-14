@@ -8,7 +8,7 @@ const COPY = {
     subtitle:
       'Rruga "Ahmet Krasniqi" Nr. 15, Prishtinë 10000 — lehtësisht e arritshme, me parking pranë.',
     directions: "Hap në Google Maps",
-    iframeTitle: "Harta — Zyra AS Capital Real Estate, Prishtinë",
+    iframeTitle: "Harta — Zyra AS Real Estate, Prishtinë",
   },
   en: {
     eyebrow: "Find us on the map",
@@ -16,7 +16,7 @@ const COPY = {
     subtitle:
       'Rruga "Ahmet Krasniqi" Nr. 15, Prishtinë 10000 — easy to reach, with parking nearby.',
     directions: "Open in Google Maps",
-    iframeTitle: "Map — AS Capital Real Estate office, Prishtina",
+    iframeTitle: "Map — AS Real Estate office, Prishtina",
   },
   de: {
     eyebrow: "Finden Sie uns auf der Karte",
@@ -24,7 +24,7 @@ const COPY = {
     subtitle:
       'Rruga "Ahmet Krasniqi" Nr. 15, Prishtinë 10000 — gut erreichbar, mit Parkplatz in der Nähe.',
     directions: "In Google Maps öffnen",
-    iframeTitle: "Karte — AS Capital Real Estate Büro, Prishtina",
+    iframeTitle: "Karte — AS Real Estate Büro, Prishtina",
   },
 };
 

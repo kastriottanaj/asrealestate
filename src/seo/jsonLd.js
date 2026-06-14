@@ -1,9 +1,14 @@
 import { SITE_URL, SITE_NAME, AGENCY_ID, ORGANIZATION_REF } from "./agency";
 
 export function breadcrumbJsonLd(items) {
+  // Anchor the list to the current page (its last crumb) so the WebPage node's
+  // `breadcrumb: { "@id": ".../#breadcrumb" }` reference resolves to a real node.
+  const last = items[items.length - 1];
+  const lastUrl = last.url.startsWith("http") ? last.url : `${SITE_URL}${last.url}`;
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": `${lastUrl}#breadcrumb`,
     itemListElement: items.map((it, i) => ({
       "@type": "ListItem",
       position: i + 1,

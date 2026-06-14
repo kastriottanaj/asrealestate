@@ -82,7 +82,7 @@ class ListingRequestViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
         price = f"€{obj.price:,.0f}".replace(",", " ") if obj.price else "—"
         area = f"{obj.area} m²" if obj.area else "—"
         body = (
-            f"Ofertë e re prone në AS Capital\n"
+            f"Ofertë e re prone në AS Real Estate\n"
             f"-----------------------------------\n"
             f"Emri:           {obj.first_name} {obj.last_name}\n"
             f"Email:          {obj.email}\n"
@@ -96,7 +96,7 @@ class ListingRequestViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
             f"\nMarrë më: {obj.created_at:%Y-%m-%d %H:%M}\n"
         )
         _send_lead_email(
-            subject=f"[AS Capital] Ofertë e re prone — {_header_safe(f'{obj.first_name} {obj.last_name}')}",
+            subject=f"[AS Real Estate] Ofertë e re prone — {_header_safe(f'{obj.first_name} {obj.last_name}')}",
             body=body,
             reply_to=obj.email,
         )
@@ -118,7 +118,7 @@ class ContactMessageViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
     def perform_create(self, serializer):
         obj = serializer.save()
         body = (
-            f"Mesazh i ri kontakti në AS Capital\n"
+            f"Mesazh i ri kontakti në AS Real Estate\n"
             f"-----------------------------------\n"
             f"Emri:      {obj.first_name} {obj.last_name}\n"
             f"Email:     {obj.email}\n"
@@ -128,7 +128,7 @@ class ContactMessageViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
             f"\nMarrë më: {obj.created_at:%Y-%m-%d %H:%M}\n"
         )
         _send_lead_email(
-            subject=f"[AS Capital] Mesazh i ri — {_header_safe(f'{obj.first_name} {obj.last_name}')}",
+            subject=f"[AS Real Estate] Mesazh i ri — {_header_safe(f'{obj.first_name} {obj.last_name}')}",
             body=body,
             reply_to=obj.email,
         )

@@ -1,6 +1,6 @@
-# AS Capital Real Estate — Backend
+# AS Real Estate — Backend
 
-Django 5.2 + Django REST Framework backend for the AS Capital demo site.
+Django 5.2 + Django REST Framework backend for the AS Real Estate demo site.
 
 ## Stack
 - Python 3.10+ (3.12 recommended — matches production on Render)

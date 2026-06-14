@@ -54,13 +54,13 @@ const COPY = {
     eyebrow: "Shërbimet",
     title: "Shitje, qira, investime — me ekipin që njeh çdo lagje",
     subtitle:
-      "Çfarëdo qoftë qëllimi juaj — të blini shtëpinë e parë, të jepni një banesë me qira, ose të ndërtoni një portfolio investimesh në Prishtinë — AS Capital ju shoqëron nga konsultimi i parë te kontrata e nënshkruar. 8 vite ekspertizë lokale, të gjitha me komision vetëm pas mbylljes.",
+      "Çfarëdo qoftë qëllimi juaj — të blini shtëpinë e parë, të jepni një banesë me qira, ose të ndërtoni një portfolio investimesh në Prishtinë — AS Real Estate ju shoqëron nga konsultimi i parë te kontrata e nënshkruar. 8 vite ekspertizë lokale, të gjitha me komision vetëm pas mbylljes.",
     pain: {
       eyebrow: "Pse të zgjidhni një ekspert lokal",
       title: "Çfarë rrezikoni pa ndërmjetës me 8+ vite në treg",
       subtitle: "Tregu i Kosovës ka rregullat e veta të pashkruara. Pa to, ju paguani më shumë dhe rrezikoni më shumë.",
       painLabel: "Pa ekspertizë",
-      gainLabel: "Me AS Capital",
+      gainLabel: "Me AS Real Estate",
       pain: [
         "Mbi-pagesa 5–15% mbi çmimin real të lagjes",
         "Ekspozim ligjor — fletë poseduese, hipotekë, leje që nuk i shihni",
@@ -115,7 +115,7 @@ const COPY = {
       ],
     },
     quote: {
-      text: "Po kërkonim të investonim në Prishtinë por nga Zvicra ishte e pamundur të menaxhonim. AS Capital trajtoi gjithçka — vlerësim, kontratë, regjistrim. 14 muaj më vonë, prona ka rritur 18% në vlerë.",
+      text: "Po kërkonim të investonim në Prishtinë por nga Zvicra ishte e pamundur të menaxhonim. AS Real Estate trajtoi gjithçka — vlerësim, kontratë, regjistrim. 14 muaj më vonë, prona ka rritur 18% në vlerë.",
       author: "Faton Ademi",
       role: "Investitor diasporë, Zürich",
       avatar: "https://i.pravatar.cc/120?img=68",
@@ -144,13 +144,13 @@ const COPY = {
     eyebrow: "Services",
     title: "Sales, rentals, investments — with a team that knows every neighbourhood",
     subtitle:
-      "Whatever your goal — buying your first home, renting out an apartment, or building an investment portfolio in Prishtina — AS Capital walks with you from first consultation to signed contract. 8 years of local expertise, all with commission only after closing.",
+      "Whatever your goal — buying your first home, renting out an apartment, or building an investment portfolio in Prishtina — AS Real Estate walks with you from first consultation to signed contract. 8 years of local expertise, all with commission only after closing.",
     pain: {
       eyebrow: "Why choose a local expert",
       title: "What you risk without a broker with 8+ years in the market",
       subtitle: "Kosovo's market has its own unwritten rules. Without them, you pay more and risk more.",
       painLabel: "Without expertise",
-      gainLabel: "With AS Capital",
+      gainLabel: "With AS Real Estate",
       pain: [
         "Overpaying 5–15% above the real neighbourhood price",
         "Legal exposure — title, mortgage, permits you don't see",
@@ -205,7 +205,7 @@ const COPY = {
       ],
     },
     quote: {
-      text: "We wanted to invest in Prishtina from Switzerland but managing it remotely felt impossible. AS Capital handled everything — valuation, contract, registration. 14 months later, the property is up 18% in value.",
+      text: "We wanted to invest in Prishtina from Switzerland but managing it remotely felt impossible. AS Real Estate handled everything — valuation, contract, registration. 14 months later, the property is up 18% in value.",
       author: "Faton Ademi",
       role: "Diaspora investor, Zürich",
       avatar: "https://i.pravatar.cc/120?img=68",
@@ -234,13 +234,13 @@ const COPY = {
     eyebrow: "Dienstleistungen",
     title: "Verkauf, Miete, Investitionen — mit einem Team, das jedes Quartier kennt",
     subtitle:
-      "Was auch immer Ihr Ziel ist — den Kauf Ihres ersten Eigenheims, die Vermietung einer Wohnung, oder den Aufbau eines Investmentportfolios in Prishtina — AS Capital begleitet Sie von der Erstberatung bis zum unterzeichneten Vertrag. 8 Jahre lokale Expertise, alles mit Provision erst nach Abschluss.",
+      "Was auch immer Ihr Ziel ist — den Kauf Ihres ersten Eigenheims, die Vermietung einer Wohnung, oder den Aufbau eines Investmentportfolios in Prishtina — AS Real Estate begleitet Sie von der Erstberatung bis zum unterzeichneten Vertrag. 8 Jahre lokale Expertise, alles mit Provision erst nach Abschluss.",
     pain: {
       eyebrow: "Warum einen lokalen Experten wählen",
       title: "Was Sie ohne Makler mit 8+ Jahren Markterfahrung riskieren",
       subtitle: "Der Kosovo-Markt hat seine ungeschriebenen Regeln. Ohne sie zahlen Sie mehr und riskieren mehr.",
       painLabel: "Ohne Expertise",
-      gainLabel: "Mit AS Capital",
+      gainLabel: "Mit AS Real Estate",
       pain: [
         "5–15% über dem realen Quartierspreis bezahlen",
         "Rechtliche Risiken — Titel, Hypothek, Genehmigungen, die Sie nicht sehen",
@@ -295,7 +295,7 @@ const COPY = {
       ],
     },
     quote: {
-      text: "Wir wollten aus der Schweiz im Kosovo investieren, aber Fernsteuerung schien unmöglich. AS Capital hat alles übernommen — Bewertung, Vertrag, Eintragung. 14 Monate später ist das Objekt 18% im Wert gestiegen.",
+      text: "Wir wollten aus der Schweiz im Kosovo investieren, aber Fernsteuerung schien unmöglich. AS Real Estate hat alles übernommen — Bewertung, Vertrag, Eintragung. 14 Monate später ist das Objekt 18% im Wert gestiegen.",
       author: "Faton Ademi",
       role: "Diaspora-Investor, Zürich",
       avatar: "https://i.pravatar.cc/120?img=68",

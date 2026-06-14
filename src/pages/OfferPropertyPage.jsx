@@ -16,19 +16,19 @@ const SEO = {
   sq: {
     title: "Ofroni pronën — Vlerësim falas, komision vetëm pas mbylljes",
     description:
-      "Listoni shtëpinë, banesën ose tokën tuaj me AS Capital. Vlerësim tregu falas, marketing profesional, blerës të verifikuar. Komision vetëm pas mbylljes së suksesshme.",
+      "Listoni shtëpinë, banesën ose tokën tuaj me AS Real Estate. Vlerësim tregu falas, marketing profesional, blerës të verifikuar. Komision vetëm pas mbylljes së suksesshme.",
     breadcrumb: "Ofroni Pronën",
   },
   en: {
     title: "List your property — Free valuation, commission only after closing",
     description:
-      "List your house, apartment or land with AS Capital. Free market valuation, professional marketing, verified buyers. Commission only after successful closing.",
+      "List your house, apartment or land with AS Real Estate. Free market valuation, professional marketing, verified buyers. Commission only after successful closing.",
     breadcrumb: "List Your Property",
   },
   de: {
     title: "Immobilie inserieren — Kostenlose Bewertung, Provision erst nach Abschluss",
     description:
-      "Listen Sie Ihr Haus, Ihre Wohnung oder Ihr Grundstück bei AS Capital. Kostenlose Marktbewertung, professionelles Marketing, geprüfte Käufer. Provision erst nach Abschluss.",
+      "Listen Sie Ihr Haus, Ihre Wohnung oder Ihr Grundstück bei AS Real Estate. Kostenlose Marktbewertung, professionelles Marketing, geprüfte Käufer. Provision erst nach Abschluss.",
     breadcrumb: "Immobilie inserieren",
   },
 };
@@ -44,7 +44,7 @@ const COPY = {
       title: "DIY në Facebook vs listim profesional — diferenca është e madhe",
       subtitle: "Shumica e pronarëve që provojnë vetë në grupe Facebook ngeleni 6+ muaj në treg dhe shesin 8–15% nën vlerën reale. Ja pse.",
       painLabel: "Vetë në Facebook",
-      gainLabel: "Me AS Capital",
+      gainLabel: "Me AS Real Estate",
       pain: [
         "Foto me telefon — paraqitje që zhvlerëson pronën",
         "Postim që humbet midis qindra ofertave të tjera çdo ditë",
@@ -64,7 +64,7 @@ const COPY = {
     },
     benefits: {
       eyebrow: "Pse të listoni me ne",
-      title: "Çfarë merrni kur listoni pronën tuaj me AS Capital",
+      title: "Çfarë merrni kur listoni pronën tuaj me AS Real Estate",
       subtitle: "Listingu juaj nuk është thjesht një postim në një portal — është një strategji e plotë marketingu për të gjetur blerësin ose qiramarrësin më të mirë sa më shpejt që është e mundur.",
       items: [
         { label: "Marketing", title: "Promovim profesional", desc: "Listingu shfaqet në uebsajtin tonë, kanalet sociale, dhe i dërgohet drejtpërdrejt klientëve aktivë në databazën tonë që përshtaten me kriteret tuaja." },
@@ -110,7 +110,7 @@ const COPY = {
       ],
     },
     quote: {
-      text: "Pronën e kisha 8 muaj në Facebook pa lëvizur. Me AS Capital — sesion fotografie të dielën, listim të hënën, oferta të para të premten, kontrata pas tre javësh me 6,000 € më shumë sesa kërkesa ime fillestare. Pendohem vetëm që nuk i thirra më herët.",
+      text: "Pronën e kisha 8 muaj në Facebook pa lëvizur. Me AS Real Estate — sesion fotografie të dielën, listim të hënën, oferta të para të premten, kontrata pas tre javësh me 6,000 € më shumë sesa kërkesa ime fillestare. Pendohem vetëm që nuk i thirra më herët.",
       author: "Granit Mustafa",
       role: "Pronar shitës, Bregu i Diellit",
       avatar: "https://i.pravatar.cc/120?img=15",
@@ -145,7 +145,7 @@ const COPY = {
       title: "Facebook DIY vs professional listing — the gap is wide",
       subtitle: "Most owners who try Facebook groups themselves stay 6+ months on market and sell 8–15% under real value. Here's why.",
       painLabel: "DIY on Facebook",
-      gainLabel: "With AS Capital",
+      gainLabel: "With AS Real Estate",
       pain: [
         "Phone-camera photos — presentation that devalues the property",
         "Post lost among hundreds of others every day",
@@ -165,7 +165,7 @@ const COPY = {
     },
     benefits: {
       eyebrow: "Why list with us",
-      title: "What you get when you list with AS Capital",
+      title: "What you get when you list with AS Real Estate",
       subtitle: "Your listing isn't just a portal post — it's a complete marketing strategy to find the best buyer or tenant as fast as possible.",
       items: [
         { label: "Marketing", title: "Professional promotion", desc: "Your listing shows on our website, social channels, and is sent directly to active clients in our database who match your criteria." },
@@ -211,7 +211,7 @@ const COPY = {
       ],
     },
     quote: {
-      text: "I had the property on Facebook for 8 months without a single move. With AS Capital — photo session Sunday, listing Monday, first offers Friday, signed contract three weeks later at €6,000 above my asking price. I only regret not calling them earlier.",
+      text: "I had the property on Facebook for 8 months without a single move. With AS Real Estate — photo session Sunday, listing Monday, first offers Friday, signed contract three weeks later at €6,000 above my asking price. I only regret not calling them earlier.",
       author: "Granit Mustafa",
       role: "Seller, Bregu i Diellit",
       avatar: "https://i.pravatar.cc/120?img=15",
@@ -246,7 +246,7 @@ const COPY = {
       title: "Facebook-DIY vs professionelle Listung — der Unterschied ist groß",
       subtitle: "Die meisten Eigentümer, die es selbst in Facebook-Gruppen versuchen, bleiben 6+ Monate am Markt und verkaufen 8–15% unter dem realen Wert. Hier ist warum.",
       painLabel: "Selbst auf Facebook",
-      gainLabel: "Mit AS Capital",
+      gainLabel: "Mit AS Real Estate",
       pain: [
         "Handy-Fotos — Präsentation, die das Objekt entwertet",
         "Beitrag verschwindet zwischen Hunderten anderen täglich",
@@ -266,7 +266,7 @@ const COPY = {
     },
     benefits: {
       eyebrow: "Warum bei uns inserieren",
-      title: "Was Sie bekommen, wenn Sie bei AS Capital inserieren",
+      title: "Was Sie bekommen, wenn Sie bei AS Real Estate inserieren",
       subtitle: "Ihr Inserat ist nicht nur ein Portal-Eintrag — es ist eine vollständige Marketing-Strategie, um den besten Käufer oder Mieter so schnell wie möglich zu finden.",
       items: [
         { label: "Marketing", title: "Professionelle Vermarktung", desc: "Ihr Inserat erscheint auf unserer Website, in unseren Social-Channels und wird direkt an aktive Kunden in unserer Datenbank gesendet." },
@@ -312,7 +312,7 @@ const COPY = {
       ],
     },
     quote: {
-      text: "Das Objekt war 8 Monate auf Facebook ohne jede Bewegung. Mit AS Capital — Foto-Shooting Sonntag, Listung Montag, erste Angebote Freitag, Vertrag drei Wochen später für 6.000 € über meinem Wunschpreis. Ich bedauere nur, sie nicht früher angerufen zu haben.",
+      text: "Das Objekt war 8 Monate auf Facebook ohne jede Bewegung. Mit AS Real Estate — Foto-Shooting Sonntag, Listung Montag, erste Angebote Freitag, Vertrag drei Wochen später für 6.000 € über meinem Wunschpreis. Ich bedauere nur, sie nicht früher angerufen zu haben.",
       author: "Granit Mustafa",
       role: "Verkäufer, Bregu i Diellit",
       avatar: "https://i.pravatar.cc/120?img=15",

@@ -16,13 +16,13 @@ PROPERTIES = [
 
 TESTIMONIALS = [
     {"name": "Arbër Krasniqi", "role": "Blerës i banesës së parë", "language": "sq",
-     "text": "Ekipi i AS Capital më ndihmoi të gjej banesën e ëndrrave në Qendër — procesi ishte i qartë, i shpejtë dhe pa stres. Do i rekomandoja gjithkujt.",
+     "text": "Ekipi i AS Real Estate më ndihmoi të gjej banesën e ëndrrave në Qendër — procesi ishte i qartë, i shpejtë dhe pa stres. Do i rekomandoja gjithkujt.",
      "avatar_url": "https://i.pravatar.cc/120?img=12"},
     {"name": "Drita Berisha", "role": "Investitore", "language": "sq",
      "text": "Investimi im i parë në Prishtinë shkoi në mënyrë perfekte falë analizës së tyre të tregut. Këshilltarë të vërtetë, jo thjesht agjentë.",
      "avatar_url": "https://i.pravatar.cc/120?img=47"},
     {"name": "Blerim Hoxha", "role": "Pronar i një lokali", "language": "sq",
-     "text": "E kam dhënë lokalin me qira përmes AS Capital — kontrata e qartë, qiramarrës të verifikuar dhe menaxhim i përkryer. Shumë profesionalë.",
+     "text": "E kam dhënë lokalin me qira përmes AS Real Estate — kontrata e qartë, qiramarrës të verifikuar dhe menaxhim i përkryer. Shumë profesionalë.",
      "avatar_url": "https://i.pravatar.cc/120?img=33"},
 ]
 

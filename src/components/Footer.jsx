@@ -104,7 +104,7 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <div className="container-x py-6 flex flex-col sm:flex-row gap-3 items-center justify-between text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} AS Capital Real Estate. {t.footer.copyright}</p>
+          <p>© {new Date().getFullYear()} AS Real Estate. {t.footer.copyright}</p>
           <div className="flex items-center gap-4">
             <Link to={href("/privatesia")} className="hover:text-white transition">
               {t.footer.privacy || "Privatësia"}

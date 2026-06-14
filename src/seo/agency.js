@@ -1,5 +1,5 @@
 export const SITE_URL = "https://asrealestate-rks.com";
-export const SITE_NAME = "AS Capital Real Estate";
+export const SITE_NAME = "AS Real Estate";
 export const PHONE = "+38349942941";
 export const PHONE_DISPLAY = "+383 49 942 941";
 export const EMAIL = "asrealestaterks@gmail.com";
@@ -38,7 +38,7 @@ export function agencyJsonLd({ contactPage = false } = {}) {
     "@type": "RealEstateAgent",
     "@id": AGENCY_ID,
     name: SITE_NAME,
-    legalName: "AS Capital Real Estate",
+    legalName: "AS Real Estate",
     url: SITE_URL,
     logo: `${SITE_URL}/as-real-estate.svg`,
     image: `${SITE_URL}/as-real-estate.svg`,

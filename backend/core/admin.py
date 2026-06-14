@@ -72,9 +72,9 @@ class PropertyAdminForm(forms.ModelForm):
             return None
         return parsed.quantize(Decimal("0.01"))
 
-admin.site.site_header = "AS Capital Real Estate Administration"
-admin.site.site_title = "AS Capital Real Estate Admin"
-admin.site.index_title = "Welcome to AS Capital Real Estate Admin Panel"
+admin.site.site_header = "AS Real Estate Administration"
+admin.site.site_title = "AS Real Estate Admin"
+admin.site.index_title = "Welcome to AS Real Estate Admin Panel"
 
 class PropertyImageInline(admin.TabularInline):
     model = PropertyImage

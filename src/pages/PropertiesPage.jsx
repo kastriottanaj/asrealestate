@@ -44,7 +44,7 @@ const COPY = {
       title: "Lëreni grupet e Facebook-ut. Le të punojë ekipi për ju.",
       subtitle: "Shumica e blerësve në Kosovë humbin 3–6 muaj duke kërkuar vetë. Ja pse.",
       painLabel: "Vetë në treg",
-      gainLabel: "Me AS Capital",
+      gainLabel: "Me AS Real Estate",
       pain: [
         "Postime pa filtër në Facebook me foto të dobëta dhe çmime të rrejshme",
         "Vizita pa fund në prona që nuk përshtaten me buxhetin ose lagjen",
@@ -113,7 +113,7 @@ const COPY = {
       ],
     },
     quote: {
-      text: "Po kërkoja banesën e parë për familjen prej 4 muajsh në grupe Facebook. Me AS Capital e gjeta brenda 3 javësh — me kontratë të pastër dhe çmim 8% nën listim. Nuk do të kthehesha kurrë te metoda e vjetër.",
+      text: "Po kërkoja banesën e parë për familjen prej 4 muajsh në grupe Facebook. Me AS Real Estate e gjeta brenda 3 javësh — me kontratë të pastër dhe çmim 8% nën listim. Nuk do të kthehesha kurrë te metoda e vjetër.",
       author: "Adelina Krasniqi",
       role: "Bleresë e banesës së parë, Dardania",
       avatar: "https://i.pravatar.cc/120?img=44",
@@ -149,7 +149,7 @@ const COPY = {
       title: "Drop the Facebook groups. Let our team work for you.",
       subtitle: "Most buyers in Kosovo lose 3–6 months searching alone. Here's why.",
       painLabel: "On your own",
-      gainLabel: "With AS Capital",
+      gainLabel: "With AS Real Estate",
       pain: [
         "Unfiltered Facebook posts with weak photos and inflated prices",
         "Endless viewings of properties that don't match your budget or area",
@@ -218,7 +218,7 @@ const COPY = {
       ],
     },
     quote: {
-      text: "I'd been searching for our family's first apartment for 4 months in Facebook groups. With AS Capital we found it in 3 weeks — clean contract, 8% under list. I'd never go back to the old way.",
+      text: "I'd been searching for our family's first apartment for 4 months in Facebook groups. With AS Real Estate we found it in 3 weeks — clean contract, 8% under list. I'd never go back to the old way.",
       author: "Adelina Krasniqi",
       role: "First-time buyer, Dardania",
       avatar: "https://i.pravatar.cc/120?img=44",
@@ -254,7 +254,7 @@ const COPY = {
       title: "Lassen Sie die Facebook-Gruppen. Lassen Sie das Team für Sie arbeiten.",
       subtitle: "Die meisten Käufer im Kosovo verlieren 3–6 Monate auf eigene Faust. Hier ist warum.",
       painLabel: "Auf eigene Faust",
-      gainLabel: "Mit AS Capital",
+      gainLabel: "Mit AS Real Estate",
       pain: [
         "Ungefilterte Facebook-Posts mit schlechten Fotos und überzogenen Preisen",
         "Endlose Besichtigungen von Objekten, die nicht zum Budget oder zur Lage passen",
@@ -323,7 +323,7 @@ const COPY = {
       ],
     },
     quote: {
-      text: "Ich habe 4 Monate in Facebook-Gruppen nach der ersten Familienwohnung gesucht. Mit AS Capital fanden wir sie in 3 Wochen — sauberer Vertrag, 8% unter Listenpreis. Ich würde nie zurück zur alten Methode.",
+      text: "Ich habe 4 Monate in Facebook-Gruppen nach der ersten Familienwohnung gesucht. Mit AS Real Estate fanden wir sie in 3 Wochen — sauberer Vertrag, 8% unter Listenpreis. Ich würde nie zurück zur alten Methode.",
       author: "Adelina Krasniqi",
       role: "Erstkäuferin, Dardania",
       avatar: "https://i.pravatar.cc/120?img=44",

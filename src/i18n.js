@@ -31,7 +31,7 @@ export const translations = {
     about: {
       eyebrow: "Rreth Nesh",
       title: "8+ vite në zemër të tregut kosovar",
-      subtitle: "AS Capital nuk është thjesht një agjenci — është partneri që qëndron pranë jush nga konsultimi i parë deri te dorëzimi i çelësave.",
+      subtitle: "AS Real Estate nuk është thjesht një agjenci — është partneri që qëndron pranë jush nga konsultimi i parë deri te dorëzimi i çelësave.",
       features: [
         { title: "Siguri ligjore", desc: "Çdo pronë kalon verifikim të plotë ligjor para listimit." },
         { title: "Partneritet afatgjatë", desc: "Nuk mbyllim dosjen kur nënshkruhet kontrata — jemi pranë edhe pas." },
@@ -118,7 +118,7 @@ export const translations = {
     about: {
       eyebrow: "About Us",
       title: "8+ years at the heart of the Kosovo market",
-      subtitle: "AS Capital is not just an agency — it's the partner that stays by your side from the first consultation to the key handover.",
+      subtitle: "AS Real Estate is not just an agency — it's the partner that stays by your side from the first consultation to the key handover.",
       features: [
         { title: "Legal security", desc: "Every property undergoes full legal verification before listing." },
         { title: "Long-term partnership", desc: "We don't close the file when the contract is signed — we're here after too." },
@@ -205,7 +205,7 @@ export const translations = {
     about: {
       eyebrow: "Über uns",
       title: "8+ Jahre im Herzen des Kosovo-Marktes",
-      subtitle: "AS Capital ist nicht nur eine Agentur — es ist der Partner, der von der ersten Beratung bis zur Schlüsselübergabe an Ihrer Seite bleibt.",
+      subtitle: "AS Real Estate ist nicht nur eine Agentur — es ist der Partner, der von der ersten Beratung bis zur Schlüsselübergabe an Ihrer Seite bleibt.",
       features: [
         { title: "Rechtssicherheit", desc: "Jede Immobilie wird vor der Listung vollständig rechtlich geprüft." },
         { title: "Langfristige Partnerschaft", desc: "Wir schließen die Akte nicht, wenn der Vertrag unterzeichnet ist — wir sind auch danach da." },

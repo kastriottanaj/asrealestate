@@ -17,19 +17,19 @@ const SEO = {
   sq: {
     title: "Rreth Nesh — 8+ vite ekspertizë pasurish në Kosovë",
     description:
-      "AS Capital Real Estate — agjenci pasurish të paluajtshme me 8+ vite ekspertizë lokale, 500+ prona të shitura dhe 1200+ familje të vendosura në Prishtinë dhe rajon.",
+      "AS Real Estate — agjenci pasurish të paluajtshme me 8+ vite ekspertizë lokale, 500+ prona të shitura dhe 1200+ familje të vendosura në Prishtinë dhe rajon.",
     breadcrumb: "Rreth Nesh",
   },
   en: {
     title: "About Us — 8+ years of property expertise in Kosovo",
     description:
-      "AS Capital Real Estate — a Kosovo real estate agency with 8+ years of local expertise, 500+ properties sold and 1200+ families settled across Prishtina and the region.",
+      "AS Real Estate — a Kosovo real estate agency with 8+ years of local expertise, 500+ properties sold and 1200+ families settled across Prishtina and the region.",
     breadcrumb: "About Us",
   },
   de: {
     title: "Über uns — 8+ Jahre Immobilien-Expertise im Kosovo",
     description:
-      "AS Capital Real Estate — eine Kosovo-Immobilienagentur mit 8+ Jahren lokaler Expertise, 500+ verkauften Objekten und 1200+ eingezogenen Familien in Prishtina und Umgebung.",
+      "AS Real Estate — eine Kosovo-Immobilienagentur mit 8+ Jahren lokaler Expertise, 500+ verkauften Objekten und 1200+ eingezogenen Familien in Prishtina und Umgebung.",
     breadcrumb: "Über uns",
   },
 };
@@ -39,7 +39,7 @@ const COPY = {
     eyebrow: "Rreth Nesh",
     title: "8 vite, 500+ prona, 1200+ familje në shtëpinë e duhur",
     subtitle:
-      "AS Capital Real Estate u themelua me një bindje: tregu i Kosovës meriton ndërmjetës që punojnë për klientin, jo vetëm për provizionin. Sot, 8 nga 10 klientë na vijnë nga rekomandime — matja jonë më e rëndësishme e suksesit.",
+      "AS Real Estate u themelua me një bindje: tregu i Kosovës meriton ndërmjetës që punojnë për klientin, jo vetëm për provizionin. Sot, 8 nga 10 klientë na vijnë nga rekomandime — matja jonë më e rëndësishme e suksesit.",
     stats: {
       items: [
         { value: "500+", label: "Transaksione të mbyllura" },
@@ -50,9 +50,9 @@ const COPY = {
     },
     story: {
       eyebrow: "Historia jonë",
-      title: "Si nisi AS Capital Real Estate",
+      title: "Si nisi AS Real Estate",
       paragraphs: [
-        "AS Capital Real Estate u themelua me një bindje të thjeshtë: tregu i pasurive të paluajtshme në Kosovë meriton ndërmjetës që punojnë për klientin, jo vetëm për provizionin. Që nga themelimi, kemi mbyllur me sukses qindra transaksione — banesa familjare, vila premium, zyre biznesi, lokale tregtare dhe parcela investimi.",
+        "AS Real Estate u themelua me një bindje të thjeshtë: tregu i pasurive të paluajtshme në Kosovë meriton ndërmjetës që punojnë për klientin, jo vetëm për provizionin. Që nga themelimi, kemi mbyllur me sukses qindra transaksione — banesa familjare, vila premium, zyre biznesi, lokale tregtare dhe parcela investimi.",
         "Përvoja jonë në treg na ka mësuar atë që portalet e listingjeve nuk e tregojnë: çmimet reale të çdo lagjeje, ndërtuesit e besueshëm, projektet që do të ndryshojnë vlerat në vitet e ardhshme, dhe kurthet ligjore që duhen shmangur. Këtë njohuri e vëmë në dispozicion të çdo klienti, që në takimin e parë.",
         "Sot, 8 nga 10 klientë na vijnë nga rekomandimet — familjet që kanë blerë me ne i flasin për ne fqinjit, kushërinjtë në diasporë, kolegët në punë. Kjo është matja jonë më e rëndësishme e suksesit.",
       ],
@@ -62,7 +62,7 @@ const COPY = {
       title: "Çfarë ndryshon kur punoni me ekipin e duhur",
       subtitle: "Tregu i Kosovës është i vogël por kompleks. Detajet e vogla bëjnë diferencën e madhe.",
       painLabel: "Agjenci tradicionale",
-      gainLabel: "Me AS Capital",
+      gainLabel: "Me AS Real Estate",
       pain: [
         "Pa konsultim falas — paguani që në hapin e parë",
         "Nuk verifikojnë pronën para listimit",
@@ -117,19 +117,19 @@ const COPY = {
       ],
     },
     quote: {
-      text: "Çka më bind te AS Capital nuk është që mbyllin transaksione — është që pas blerjes, kur kisha një pyetje për taksën në pronë 6 muaj më vonë, përgjigja erdhi në 30 minuta. Kjo është marrëdhënie e vërtetë.",
+      text: "Çka më bind te AS Real Estate nuk është që mbyllin transaksione — është që pas blerjes, kur kisha një pyetje për taksën në pronë 6 muaj më vonë, përgjigja erdhi në 30 minuta. Kjo është marrëdhënie e vërtetë.",
       author: "Blerim Hoxha",
       role: "Pronar lokali, Prishtinë",
       avatar: "https://i.pravatar.cc/120?img=33",
     },
     faq: {
       eyebrow: "Pyetje për agjencinë",
-      title: "Çka duhet të dini për AS Capital",
+      title: "Çka duhet të dini për AS Real Estate",
       items: [
-        { q: "Sa kohë ka që operon AS Capital Real Estate?", a: "Mbi 8 vite në tregun e pasurive të paluajtshme në Kosovë. Gjatë kësaj kohe kemi mbyllur me sukses qindra transaksione — shitje, qira, investime — kryesisht në Prishtinë dhe komunat fqinje." },
+        { q: "Sa kohë ka që operon AS Real Estate?", a: "Mbi 8 vite në tregun e pasurive të paluajtshme në Kosovë. Gjatë kësaj kohe kemi mbyllur me sukses qindra transaksione — shitje, qira, investime — kryesisht në Prishtinë dhe komunat fqinje." },
         { q: "Ku ndodhet zyra juaj?", a: "Zyra jonë qendrore ndodhet në Rrugën \"Ahmet Krasniqi\" Nr. 15, Prishtinë, Kosovë 10000. Jeni të mirëpritur për takim ditët e javës — ju lutemi caktoni një orar nëpërmjet telefonit ose WhatsApp për të siguruar disponueshmërinë." },
-        { q: "A jeni të licencuar?", a: "Po. AS Capital Real Estate operon në përputhje me të gjitha kërkesat ligjore për ndërmjetësim të pasurive të paluajtshme në Kosovë. Dokumentet e licencimit janë në dispozicion për shqyrtim me kërkesë." },
-        { q: "Çfarë e bën AS Capital të ndryshëm nga agjencitë e tjera?", a: "Tre gjëra: ekspertizë vërtet lokale (njohim lagjet jo si emra në një portal, por si komunitete me histori dhe trende), procesi ynë i verifikimit para listimit (që ka shmangur shumë probleme për klientët tanë), dhe disponueshmëria pas dorëzimit (marrëdhënia jonë nuk është transaksionale)." },
+        { q: "A jeni të licencuar?", a: "Po. AS Real Estate operon në përputhje me të gjitha kërkesat ligjore për ndërmjetësim të pasurive të paluajtshme në Kosovë. Dokumentet e licencimit janë në dispozicion për shqyrtim me kërkesë." },
+        { q: "Çfarë e bën AS Real Estate të ndryshëm nga agjencitë e tjera?", a: "Tre gjëra: ekspertizë vërtet lokale (njohim lagjet jo si emra në një portal, por si komunitete me histori dhe trende), procesi ynë i verifikimit para listimit (që ka shmangur shumë probleme për klientët tanë), dhe disponueshmëria pas dorëzimit (marrëdhënia jonë nuk është transaksionale)." },
       ],
     },
     cta: {
@@ -144,7 +144,7 @@ const COPY = {
     eyebrow: "About Us",
     title: "8 years, 500+ properties, 1200+ families in the right home",
     subtitle:
-      "AS Capital Real Estate was founded on a single belief: Kosovo's market deserves brokers who work for the client, not just for the commission. Today, 8 in 10 of our clients come from referrals — our most important measure of success.",
+      "AS Real Estate was founded on a single belief: Kosovo's market deserves brokers who work for the client, not just for the commission. Today, 8 in 10 of our clients come from referrals — our most important measure of success.",
     stats: {
       items: [
         { value: "500+", label: "Closed transactions" },
@@ -155,9 +155,9 @@ const COPY = {
     },
     story: {
       eyebrow: "Our story",
-      title: "How AS Capital Real Estate started",
+      title: "How AS Real Estate started",
       paragraphs: [
-        "AS Capital Real Estate was founded on a simple belief: Kosovo's real estate market deserves brokers who work for the client, not just for the commission. Since founding, we have closed hundreds of successful transactions — family apartments, premium villas, business offices, retail and investment plots.",
+        "AS Real Estate was founded on a simple belief: Kosovo's real estate market deserves brokers who work for the client, not just for the commission. Since founding, we have closed hundreds of successful transactions — family apartments, premium villas, business offices, retail and investment plots.",
         "Our market experience has taught us what listing portals don't show: real prices per neighbourhood, trusted developers, projects that will shift values in coming years, and the legal pitfalls to avoid. We bring this knowledge to every client, from the first meeting.",
         "Today, 8 in 10 of our clients come from referrals — families who bought with us tell their neighbours, their relatives in the diaspora, their colleagues at work. That's the most important measure of our success.",
       ],
@@ -167,7 +167,7 @@ const COPY = {
       title: "What changes when you work with the right team",
       subtitle: "Kosovo's market is small but complex. Small details make the big difference.",
       painLabel: "Traditional agency",
-      gainLabel: "With AS Capital",
+      gainLabel: "With AS Real Estate",
       pain: [
         "No free consultation — you pay from step one",
         "No property verification before listing",
@@ -222,19 +222,19 @@ const COPY = {
       ],
     },
     quote: {
-      text: "What convinced me about AS Capital wasn't that they close transactions — it was that 6 months after the purchase, when I had a property tax question, the answer came in 30 minutes. That's a real relationship.",
+      text: "What convinced me about AS Real Estate wasn't that they close transactions — it was that 6 months after the purchase, when I had a property tax question, the answer came in 30 minutes. That's a real relationship.",
       author: "Blerim Hoxha",
       role: "Shop owner, Prishtina",
       avatar: "https://i.pravatar.cc/120?img=33",
     },
     faq: {
       eyebrow: "About the agency",
-      title: "What you should know about AS Capital",
+      title: "What you should know about AS Real Estate",
       items: [
-        { q: "How long has AS Capital Real Estate been operating?", a: "Over 8 years in the Kosovo real estate market. We have successfully closed hundreds of transactions in that time — sales, rentals, investments — mainly in Prishtina and neighbouring municipalities." },
+        { q: "How long has AS Real Estate been operating?", a: "Over 8 years in the Kosovo real estate market. We have successfully closed hundreds of transactions in that time — sales, rentals, investments — mainly in Prishtina and neighbouring municipalities." },
         { q: "Where is your office?", a: "Our head office is at Rruga \"Ahmet Krasniqi\" Nr. 15, Prishtinë, Kosovo 10000. You're welcome to come in for a meeting on weekdays — please schedule via phone or WhatsApp to ensure availability." },
-        { q: "Are you licensed?", a: "Yes. AS Capital Real Estate operates in compliance with all legal requirements for real estate brokerage in Kosovo. Licensing documents are available for review on request." },
-        { q: "What makes AS Capital different from other agencies?", a: "Three things: genuinely local expertise (we know neighbourhoods not as portal names but as communities with history and trends), our pre-listing verification process (which has prevented many issues for our clients), and post-handover availability (our relationship is not transactional)." },
+        { q: "Are you licensed?", a: "Yes. AS Real Estate operates in compliance with all legal requirements for real estate brokerage in Kosovo. Licensing documents are available for review on request." },
+        { q: "What makes AS Real Estate different from other agencies?", a: "Three things: genuinely local expertise (we know neighbourhoods not as portal names but as communities with history and trends), our pre-listing verification process (which has prevented many issues for our clients), and post-handover availability (our relationship is not transactional)." },
       ],
     },
     cta: {
@@ -249,7 +249,7 @@ const COPY = {
     eyebrow: "Über uns",
     title: "8 Jahre, 500+ Immobilien, 1200+ Familien im richtigen Zuhause",
     subtitle:
-      "AS Capital Real Estate wurde aus einer Überzeugung gegründet: Der Kosovo-Markt verdient Makler, die für den Kunden arbeiten — nicht nur für die Provision. Heute kommen 8 von 10 Kunden über Empfehlungen — unser wichtigster Erfolgsmaßstab.",
+      "AS Real Estate wurde aus einer Überzeugung gegründet: Der Kosovo-Markt verdient Makler, die für den Kunden arbeiten — nicht nur für die Provision. Heute kommen 8 von 10 Kunden über Empfehlungen — unser wichtigster Erfolgsmaßstab.",
     stats: {
       items: [
         { value: "500+", label: "Abgeschlossene Transaktionen" },
@@ -260,9 +260,9 @@ const COPY = {
     },
     story: {
       eyebrow: "Unsere Geschichte",
-      title: "So begann AS Capital Real Estate",
+      title: "So begann AS Real Estate",
       paragraphs: [
-        "AS Capital Real Estate wurde aus einer einfachen Überzeugung gegründet: Der Immobilienmarkt im Kosovo verdient Makler, die für den Kunden arbeiten — nicht nur für die Provision. Seit der Gründung haben wir Hunderte erfolgreicher Transaktionen abgeschlossen — Familienwohnungen, Premium-Villen, Büros, Geschäfte und Investmentparzellen.",
+        "AS Real Estate wurde aus einer einfachen Überzeugung gegründet: Der Immobilienmarkt im Kosovo verdient Makler, die für den Kunden arbeiten — nicht nur für die Provision. Seit der Gründung haben wir Hunderte erfolgreicher Transaktionen abgeschlossen — Familienwohnungen, Premium-Villen, Büros, Geschäfte und Investmentparzellen.",
         "Unsere Markterfahrung hat uns gelehrt, was Portale nicht zeigen: reale Preise je Quartier, vertrauenswürdige Bauträger, kommende Projekte, die Werte verändern werden, und rechtliche Fallen. Dieses Wissen bringen wir in jedes Kundengespräch ein, von Anfang an.",
         "Heute kommen 8 von 10 Kunden über Empfehlungen — Familien, die bei uns gekauft haben, sprechen mit Nachbarn, Verwandten in der Diaspora und Kollegen über uns. Das ist unser wichtigster Erfolgsmaßstab.",
       ],
@@ -272,7 +272,7 @@ const COPY = {
       title: "Was sich ändert, wenn Sie mit dem richtigen Team arbeiten",
       subtitle: "Der Kosovo-Markt ist klein, aber komplex. Kleine Details machen den großen Unterschied.",
       painLabel: "Traditionelle Agentur",
-      gainLabel: "Mit AS Capital",
+      gainLabel: "Mit AS Real Estate",
       pain: [
         "Keine kostenlose Beratung — Sie zahlen ab dem ersten Schritt",
         "Keine Objekt-Prüfung vor der Listung",
@@ -327,19 +327,19 @@ const COPY = {
       ],
     },
     quote: {
-      text: "Was mich bei AS Capital überzeugt hat, war nicht der Abschluss — es war, dass 6 Monate nach dem Kauf, als ich eine Frage zur Grundsteuer hatte, die Antwort in 30 Minuten kam. Das ist eine echte Beziehung.",
+      text: "Was mich bei AS Real Estate überzeugt hat, war nicht der Abschluss — es war, dass 6 Monate nach dem Kauf, als ich eine Frage zur Grundsteuer hatte, die Antwort in 30 Minuten kam. Das ist eine echte Beziehung.",
       author: "Blerim Hoxha",
       role: "Ladenbesitzer, Prishtina",
       avatar: "https://i.pravatar.cc/120?img=33",
     },
     faq: {
       eyebrow: "Über die Agentur",
-      title: "Was Sie über AS Capital wissen sollten",
+      title: "Was Sie über AS Real Estate wissen sollten",
       items: [
-        { q: "Wie lange ist AS Capital Real Estate tätig?", a: "Über 8 Jahre auf dem Kosovo-Immobilienmarkt. In dieser Zeit haben wir Hunderte Transaktionen erfolgreich abgeschlossen — Verkäufe, Vermietungen, Investments — vor allem in Prishtina und Nachbargemeinden." },
+        { q: "Wie lange ist AS Real Estate tätig?", a: "Über 8 Jahre auf dem Kosovo-Immobilienmarkt. In dieser Zeit haben wir Hunderte Transaktionen erfolgreich abgeschlossen — Verkäufe, Vermietungen, Investments — vor allem in Prishtina und Nachbargemeinden." },
         { q: "Wo befindet sich Ihr Büro?", a: "Unser Hauptbüro ist in der Rruga \"Ahmet Krasniqi\" Nr. 15, Prishtinë, Kosovo 10000. Wir freuen uns auf Termine an Werktagen — bitte vereinbaren Sie diese telefonisch oder per WhatsApp." },
-        { q: "Sind Sie lizenziert?", a: "Ja. AS Capital Real Estate erfüllt alle rechtlichen Anforderungen für Immobilienvermittlung im Kosovo. Lizenzunterlagen sind auf Anfrage einsehbar." },
-        { q: "Was unterscheidet AS Capital von anderen Agenturen?", a: "Drei Dinge: echte lokale Expertise (wir kennen Quartiere nicht als Portal-Namen, sondern als Gemeinschaften mit Historie und Trends), unser Prüfprozess vor der Listung (der vielen Kunden Probleme erspart hat) und Erreichbarkeit nach der Übergabe (unsere Beziehung ist nicht transaktional)." },
+        { q: "Sind Sie lizenziert?", a: "Ja. AS Real Estate erfüllt alle rechtlichen Anforderungen für Immobilienvermittlung im Kosovo. Lizenzunterlagen sind auf Anfrage einsehbar." },
+        { q: "Was unterscheidet AS Real Estate von anderen Agenturen?", a: "Drei Dinge: echte lokale Expertise (wir kennen Quartiere nicht als Portal-Namen, sondern als Gemeinschaften mit Historie und Trends), unser Prüfprozess vor der Listung (der vielen Kunden Probleme erspart hat) und Erreichbarkeit nach der Übergabe (unsere Beziehung ist nicht transaktional)." },
       ],
     },
     cta: {

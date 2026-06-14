@@ -1,11 +1,11 @@
-b# AS Capital Real Estate — Demo Website
+b# AS Real Estate — Demo Website
 
 ## Project Context
-This is a frontend demo site built in **Vite + React + Tailwind** for **AS Capital Real Estate**, a real estate agency in Kosovo (Hasan Prishtina, Obiliq). Services: **Shitje, Qira, Investime** (Sales, Rentals, Investments). Brand color is bright blue (`brand-600` / `#1e88e5`), logo is an "AS" mark with a house-roof motif, tagline is *"Pasuri të paluajtshme • Investime të sigurta • Besueshmëri."*
+This is a frontend demo site built in **Vite + React + Tailwind** for **AS Real Estate**, a real estate agency in Kosovo (Hasan Prishtina, Obiliq). Services: **Shitje, Qira, Investime** (Sales, Rentals, Investments). Brand color is bright blue (`brand-600` / `#1e88e5`), logo is an "AS" mark with a house-roof motif, tagline is *"Pasuri të paluajtshme • Investime të sigurta • Besueshmëri."*
 
 **Two audiences, one site:**
 1. **Primary (the conversion target)** — Albanian-speaking Kosovars looking to buy, rent, or invest in property. Every section of the site must move this visitor toward a lead (call, WhatsApp, form submit).
-2. **Secondary (the sales target)** — AS Capital's decision-maker, scrolling this demo during a pitch meeting. If the site visibly converts *their* future leads, they buy the service. **The demo IS the pitch.**
+2. **Secondary (the sales target)** — AS Real Estate's decision-maker, scrolling this demo during a pitch meeting. If the site visibly converts *their* future leads, they buy the service. **The demo IS the pitch.**
 
 Every copy/UX decision should serve (1) as the on-screen goal and (2) as the meta-effect.
 
@@ -13,9 +13,9 @@ Every copy/UX decision should serve (1) as the on-screen goal and (2) as the met
 The site follows Jordan Belfort's Straight Line Persuasion adapted for a real estate agency. All copy, UX, and page structure must reinforce:
 
 ### The Three 10's — every section should move the visitor toward:
-1. **Love the offer (10/10)** — Position AS Capital's properties and brokerage as the clear, premium choice in Kosovo. Lead with concrete outcomes: *prona të shitura, familje të vendosura, investime me ROI të qëndrueshëm.* Show properties that look desirable (photos, pricing clarity, EUR formatting, m²/dhomat/banjat).
-2. **Trust the agent/person (10/10)** — Establish the AS Capital agents as sharp, local, accessible experts. Use Albanian testimonials with real Kosovo names, an "8+ vite në treg" anchor, a founder/team story that feels human, and low-friction contact (WhatsApp, direct number +383 49 579 992).
-3. **Trust the company (10/10)** — AS Capital as an established, integrous, long-term partner. Reinforce with: verified-listings messaging, transparent process, contracts/legal assurances (*kontrata ligjore, prona të verifikuara*), social proof counters (followers, reviews, properties sold), and a clean professional visual system.
+1. **Love the offer (10/10)** — Position AS Real Estate's properties and brokerage as the clear, premium choice in Kosovo. Lead with concrete outcomes: *prona të shitura, familje të vendosura, investime me ROI të qëndrueshëm.* Show properties that look desirable (photos, pricing clarity, EUR formatting, m²/dhomat/banjat).
+2. **Trust the agent/person (10/10)** — Establish the AS Real Estate agents as sharp, local, accessible experts. Use Albanian testimonials with real Kosovo names, an "8+ vite në treg" anchor, a founder/team story that feels human, and low-friction contact (WhatsApp, direct number +383 49 579 992).
+3. **Trust the company (10/10)** — AS Real Estate as an established, integrous, long-term partner. Reinforce with: verified-listings messaging, transparent process, contracts/legal assurances (*kontrata ligjore, prona të verifikuara*), social proof counters (followers, reviews, properties sold), and a clean professional visual system.
 
 ### First Impression (4 seconds)
 Within seconds of landing, a visitor must perceive:
@@ -31,14 +31,14 @@ Surface — never manipulate — the real costs of going without a trusted agenc
 - **Bad rentals** — undocumented contracts, unreliable landlords/tenants, hidden costs
 - **Wasted months** chasing unsuitable properties on Facebook groups with no filter
 
-Use **future pacing** — paint the "after" picture: picking up keys to the right apartment in Qendër, signing a clean contract with full ligjor clarity, watching a small investment compound over years with AS Capital managing the relationship. The visitor should *feel* the outcome before they book the call.
+Use **future pacing** — paint the "after" picture: picking up keys to the right apartment in Qendër, signing a clean contract with full ligjor clarity, watching a small investment compound over years with AS Real Estate managing the relationship. The visitor should *feel* the outcome before they book the call.
 
 ### Lower the Buying Threshold
 Make the first step feel free, fast, and low-commitment:
 - **Primary CTA everywhere: "Konsultim falas"** (free consultation) or **"Vlerësim falas"** (free valuation). Never "Kontakto" as a hard sell — always framed as something *they receive.*
 - **WhatsApp as first-contact channel** — Kosovo expects it. Always one tap away.
 - **Multiple contact surfaces** — phone, WhatsApp, email, form, zyra address. Any objection ("I'd rather text than fill a form") is pre-handled.
-- **Property search bar in hero** — a zero-commitment interaction that pre-qualifies the lead for AS Capital.
+- **Property search bar in hero** — a zero-commitment interaction that pre-qualifies the lead for AS Real Estate.
 
 ### Straight Line Funnel (site flow)
 1. **Hook & Filter** — Hero grabs attention, search bar lets visitors self-qualify by intent (Shitje/Qira/Investim) × type × lokacion.
