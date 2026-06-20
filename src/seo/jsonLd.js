@@ -87,6 +87,17 @@ export function propertyProductJsonLd(p, lang = "sq") {
   if (p.bathrooms > 0) additionalProperty.splice(1, 0, { "@type": "PropertyValue", name: "bathrooms", value: p.bathrooms });
   if (p.has_ownership_doc) additionalProperty.push({ "@type": "PropertyValue", name: "titleDeed", value: "Verified" });
 
+  // Numeric price -> a priced Offer. Text price ("Me marrëveshje") -> omit the
+  // numeric price so we never emit invalid (null) schema.org pricing.
+  const offers = {
+    "@type": "Offer",
+    priceCurrency: "EUR",
+    availability: "https://schema.org/InStock",
+    url,
+    seller: ORGANIZATION_REF,
+  };
+  if (p.price != null) offers.price = p.price;
+
   return {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -95,14 +106,7 @@ export function propertyProductJsonLd(p, lang = "sq") {
     image: images,
     sku: p.slug,
     brand: ORGANIZATION_REF,
-    offers: {
-      "@type": "Offer",
-      price: p.price,
-      priceCurrency: "EUR",
-      availability: "https://schema.org/InStock",
-      url,
-      seller: ORGANIZATION_REF,
-    },
+    offers,
     additionalProperty,
   };
 }

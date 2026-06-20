@@ -35,7 +35,12 @@ class Property(models.Model):
     slug = models.SlugField(max_length=240, unique=True, blank=True, db_index=True)
     status = models.CharField(max_length=20, choices=PROPERTY_STATUS_CHOICES, db_index=True)
     type = models.CharField(max_length=20, choices=PROPERTY_TYPE_CHOICES, db_index=True)
-    price = models.DecimalField(max_digits=12, decimal_places=2)
+    # Numeric price (€). Kept null when the owner enters a text price instead —
+    # see `price_label`. Stays numeric so range filtering / SEO pricing keep working.
+    price = models.DecimalField(max_digits=12, decimal_places=2, null=True, blank=True)
+    # Free-text price (e.g. "Me marrëveshje"). Set automatically when the single
+    # "Price" admin field receives non-numeric text; takes priority on display.
+    price_label = models.CharField(max_length=100, blank=True, default="")
     neighborhood = models.CharField(max_length=200, blank=True, default="", db_index=True)
     bedrooms = models.PositiveSmallIntegerField(default=0)
     bathrooms = models.PositiveSmallIntegerField(default=0)
@@ -65,6 +70,10 @@ class Property(models.Model):
 
     @property
     def formatted_price(self):
+        if self.price_label:
+            return self.price_label
+        if self.price is None:
+            return "Me marrëveshje"
         amount = int(self.price) if self.price == int(self.price) else self.price
         formatted = f"{amount:,.0f}".replace(",", " ")
         if self.status == "qira":

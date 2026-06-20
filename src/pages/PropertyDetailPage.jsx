@@ -196,7 +196,7 @@ function DetailContent({ property, similar, c, lang }) {
       content_name: property.title,
       content_type: "product",
       content_category: property.type,
-      value: parseFloat(property.price),
+      value: property.price != null ? parseFloat(property.price) : undefined,
       currency: "EUR",
     });
   }, [property.slug, property.title, property.type, property.price]);

@@ -46,9 +46,13 @@ def parse_loose_number(value):
 
 
 class PropertyAdminForm(forms.ModelForm):
+    # Single visible "Price" input. The owner types either a number (e.g. 48500)
+    # or free text (e.g. "Çmimi me marrëveshje"). A number is stored in the numeric
+    # `price` column; anything non-numeric goes to `price_label`. The `price_label`
+    # column itself is hidden from the form (excluded below) — it's derived here.
     price = forms.CharField(
         label="Price",
-        help_text="P.sh. 48500 ose 48,500 ose 48.500 — sistemi e kupton.",
+        help_text="Shkruaj një numër (p.sh. 48500 ose 48,500) ose tekst (p.sh. 'Çmimi me marrëveshje').",
     )
     area = forms.CharField(
         label="Area",
@@ -58,13 +62,39 @@ class PropertyAdminForm(forms.ModelForm):
 
     class Meta:
         model = Property
-        fields = "__all__"
+        exclude = ("price_label",)
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # When editing, show the text price if one was set, otherwise the number.
+        inst = getattr(self, "instance", None)
+        if inst is not None and inst.pk:
+            if inst.price_label:
+                self.initial["price"] = inst.price_label
+            elif inst.price is not None:
+                self.initial["price"] = inst.price
 
     def clean_price(self):
-        parsed = parse_loose_number(self.cleaned_data.get("price"))
-        if parsed is None:
+        raw = (self.cleaned_data.get("price") or "").strip()
+        if not raw:
             raise forms.ValidationError("Çmimi është i detyrueshëm.")
+        try:
+            parsed = parse_loose_number(raw)
+        except forms.ValidationError:
+            parsed = None
+        if parsed is None:
+            # Non-numeric input -> store as a text label, clear the numeric price.
+            self._price_label = raw
+            return None
+        self._price_label = ""
         return parsed.quantize(Decimal("0.01"))
+
+    def save(self, commit=True):
+        obj = super().save(commit=False)
+        obj.price_label = getattr(self, "_price_label", "")
+        if commit:
+            obj.save()
+        return obj
 
     def clean_area(self):
         parsed = parse_loose_number(self.cleaned_data.get("area"))
@@ -91,13 +121,17 @@ class PropertyImageInline(admin.TabularInline):
 @admin.register(Property)
 class PropertyAdmin(admin.ModelAdmin):
     form = PropertyAdminForm
-    list_display = ("title", "status", "type", "neighborhood", "price", "featured", "is_published", "created_at")
+    list_display = ("title", "status", "type", "neighborhood", "price_display", "featured", "is_published", "created_at")
     list_filter = ("is_published", "status", "type", "featured", "has_ownership_doc")
     search_fields = ("title", "neighborhood", "slug")
     list_editable = ("featured", "is_published")
     ordering = ("-featured", "-created_at")
     readonly_fields = ("slug",)
     inlines = [PropertyImageInline]
+
+    @admin.display(description="Price", ordering="price")
+    def price_display(self, obj):
+        return obj.formatted_price
 
 
 @admin.register(Testimonial)
